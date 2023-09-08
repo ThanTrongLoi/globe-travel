@@ -4679,6 +4679,10 @@ body::-webkit-scrollbar {
     max-width: 100%;
     background-position: 98%;
   }
+  .drop-down--hotel {
+    max-width: 100%;
+    background-position: 2%;
+  }
   #plan {
     width: 80%;
   }

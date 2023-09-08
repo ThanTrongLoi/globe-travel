@@ -39,7 +39,7 @@ $(document).ready(function () {
     console.log(pathSlice)
 
     form.on('submit', function (e) {
-        // e.preventDefault();
+        e.preventDefault();
         // validateInputs()
         switch (pathSlice) {
             case "authLogin.html":
@@ -97,25 +97,17 @@ $(document).ready(function () {
                     e.preventDefault();
                 }
                 break;
-            // case "index.html":
-            //     validateFormFlight()
-            //     if (isFormValid()) {
-            //         form.submit();
-            //     } else {
-            //         e.preventDefault();
-            //     }
-            //     break;
+            case "flight.html":
+                validateFormFlight()
+                if (isFormValid()) {
+                    form.submit();
+                } else {
+                    e.preventDefault();
+                }
+                break;
             default:
         }
     })
-    const isFormValid = () => {
-        let result = false
-        inputContainers.each(function () {
-            if ($(this).hasClass('success')) result = true
-            else result = false
-        })
-        return result
-    }
 
     inputContainers.on('input', function (e) {
         if (e.target.value) {
@@ -126,6 +118,14 @@ $(document).ready(function () {
         }
     })
 
+    const isFormValid = () => {
+        let result = false
+        inputContainers.each(function () {
+            if ($(this).hasClass('success')) result = true
+            else result = false
+        })
+        return result
+    }
     const validateFormLogin = () => {
         if (email.val().trim() == "") {
             setError(email)
@@ -405,11 +405,12 @@ const validateFormFlight = () => {
     }
     if (departReturn.val().trim() == '') {
         setError(departReturn)
-    }else {
-        window.location.href = "flightListing.html"
     }
+    // else {
+    //     window.location.href = "flightListing.html"
+    // }
 } 
-const validateFormStay = () => {
+const validateFormStay = (e) => {
     const address = $('#address')
     const checkIn = $('#check-in')
     const checkOut = $('#check-out')
@@ -421,8 +422,7 @@ const validateFormStay = () => {
     }
     if (checkOut.val().trim() == '') {
         setError(checkOut)
-    }
-    else {
+    }else {
         window.location.href = "hotelListing.html"
     }
 } 
