@@ -1,0 +1,96 @@
+$(document).ready(function () {
+    const rangePrice = $('#price-field input')
+    const progressPrice = $('#price-slider .flow-progress')
+    const priceMin = $('#price-field .range-min')
+    const priceMax = $('#price-field .range-max')
+
+    let priceGap = 100
+    priceMin.css({
+        left: 0,
+    })
+    priceMax.css({
+        right: 0,
+    })
+    rangePrice.each(() => {
+        $(this).on('input', (e) => {
+            let minVal = parseInt(rangePrice[0].value),
+                maxVal = parseInt(rangePrice[1].value)
+
+            const minPrice = "$" + minVal
+            const maxPrice = "$" + maxVal
+
+            if (maxVal - minVal < priceGap) {
+
+
+                if (e.target.className === "flow-range__min") {
+                    rangePrice[0].value = maxVal - priceGap
+                } else {
+                    rangePrice[1].value = minVal + priceGap
+
+                }
+            } else {
+                priceMin.html(minPrice)
+                priceMax.html(maxPrice)
+                progressPrice.css({
+                    left: (minVal / rangePrice[0].max) * 100 + "%",
+                    right: 100 - (maxVal / rangePrice[1].max) * 100 + "%"
+                })
+                priceMin.css("left", (minVal / rangePrice[0].max) * 100 - 4 + "%")
+                priceMax.css("right", 100 - (maxVal / rangePrice[0].max) * 100 + "%")
+            }
+
+
+        })
+    })
+
+
+    const rangeTime = $('#time-field input')
+    const progressTime = $('#time-slider .flow-progress')
+    const timeMin = $('#time-field .range-min')
+    const timeMax = $('#time-field .range-max')
+    timeMin.css({
+        left: 0,
+    })
+    timeMax.css({
+        right: 0,
+    })
+
+
+    const flowFilterIcon = $('.flow-filter__icon')
+    const closeFilter = $('#close-filter')
+    const filter = $('.flow-filter')
+    $(window).resize(function () {
+        let width = $(window).width()
+        if (width < 1280) {
+            console.log(false)
+            // filter.addClass('flow-filter--res')
+            flowFilterIcon.on('click', function () {
+                filter.css({
+                    visibility: "visible",
+                    opacity: 1,
+                    width: "80%",
+                })
+            })
+            closeFilter.on('click', function () {
+                filter.css({
+                    visibility: "hidden",
+                    opacity: 0,
+                    width: 0,
+                })
+            })
+
+        } else {
+            console.log(true)
+            // filter.removeClass('flow-filter--res')
+            filter.removeAttr('style')
+        }
+    })
+
+    const filterIcons = $('.filter-icon')
+    filterIcons.each(function () {
+        console.log($(this).parent())
+        $(this).click(function () {
+            $(this).parent().children().not('.filter__main, .filter-icon').toggle('slow')
+        })
+    })
+})

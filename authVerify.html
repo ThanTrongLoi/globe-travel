@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="golobe - travel agency, find stays, find flights, hotel, resort, 
+    tourism">
+    <meta name="keywords" content="golobe - travel, find stays, find flights, hotel, resort, 
+    tourism">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgotpassword - Golobe - Travel Agency</title>
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section id="auth">
+        <div class="auth container">
+            <div class="auth-form">
+                <a href="index.html" class="auth-form__logo">
+                    <img src="assets/images/Logo.png" alt="">
+                </a>
+
+                <div class="auth-form__heading">
+                    <a href="authLogin.html" class="btn btn--none">
+                        <img src="assets/icons/vector/chevron_back.svg" alt="#">
+                        <span class="btn__text -medium">Back to login</span>
+                    </a>
+                    <h2 class="auth-form__main -trade-gothic -bold">Verify code</h2>
+                    <p class="auth-form__des -regular">An authentication code has been sent to your email.</p>
+                </div>
+                <form action="authNewpassword.html" id="auth-form">
+                    <fieldset class="auth-form__form">
+                        <div id="input-group" class="auth-form__input -regular">
+                            <input id="code" type="text" placeholder="VD: 7789BM6X">
+                            <label class="auth-form__label" for="code">Enter Code</label>
+                            <div class="auth-form__icon">
+                                <img src="assets/icons/fill/eyeOff.svg" alt="">
+                            </div>
+                        </div>
+                        <h4 class="auth-form__none btn__text -medium auth-form--resend">Didn’t receive a code? <a class="-semi-bold" href="#">Resend</a></h4>
+                    </fieldset>
+                    <!-- <a href="authNewpassword.html" class="btn btn--fill -large">
+                        <span class="btn__text  -semi-bold">Verify</span>
+                    </a> -->
+                    <input class="btn btn--fill btn__text -semi-bold " type="submit" value="Verify">
+                </form>
+            </div>
+            <div class="auth-image">
+                <div class="slider">
+                    <div id="slider-1" class="slide">
+                        <img src="assets/images/auth1.png" alt="">
+                    </div>
+                    <div id="slider-2" class="slide">
+                        <img src="assets/images/auth2.png" alt="">
+                    </div>
+                    <div id="slider-3" class="slide">
+                        <img src="assets/images/auth3.png" alt="">
+                    </div>
+                </div>
+                <div class="slide-dot">
+                    <a href="#slider-1" class="active"></a>
+                    <a href="#slider-2"></a>
+                    <a href="#slider-3"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="js/form.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+</body>
+
+</html>

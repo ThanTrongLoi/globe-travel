@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="golobe - travel agency, find stays, find flights, hotel, resort, 
+    tourism">
+    <meta name="keywords" content="golobe - travel, find stays, find flights, hotel, resort, 
+    tourism">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golobe - Travel Agency</title>
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a id="flights" href="flight.html" class="btn btn--none">
+                <div class="btn__icon">
+                    <img src="assets/icons/fill/airPlane.svg" alt="airPlane">
+                </div>
+                <span class="btn__text -semi-bold">find flight</span>
+            </a>
+
+
+            <a id="stays" href="hotel.html" class="btn btn--none">
+                <div class="btn__icon">
+                    <img src="assets/icons/fill/bed.svg" alt="bed">
+                </div>
+                <span class="btn__text -semi-bold">find stays</span>
+            </a>
+        </div>
+        <a href="index.html" class="header-logo">
+            <img src="assets/images/Logo.png" alt="logo">
+        </a>
+        <div class="header-right">
+            <a href="authLogin.html" class="btn btn--none"><span class="btn__text -semi-bold">Login</span></a>
+            <a href="authSignup.html" class="btn btn--signup btn--flow -large"><span class="btn__text -white -semi-bold">Sign
+                    up</span></a>
+        </div>
+        <div class="header-account">
+            <a href="favorite.html" class="header-account__favorite" style="--clr:#112211">
+                <i class="fa-solid fa-heart"></i>
+                <span class="btn__text -semi-bold">Favourites</span></a>
+            <div class="header-account__user">
+                <div class="header-account__avt">
+                    <img src="assets/images/user.jpeg" alt="">
+                </div>
+                <span class="btn__text -semi-bold">John D.</span>
+            </div>
+            <div class="user-info">
+                <div class="user-info__heading">
+                    <div class="user-info__avatar">
+                        <img src="assets/images/user.jpeg" alt="user-avt">
+                    </div>
+                    <div class="user-info__content">
+                        <p class="user-info__name -semi-bold">John Doe.</p>
+                        <p class="user-info__status -regular">Online</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="user-info__account">
+                    <a href="account.html">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/User.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">My account</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/card.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Payments</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/setting.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Settings</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                </div>
+                <hr>
+                <div class="user-info__support">
+                    <a href="#">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/Support.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Support</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                    <button onclick="logout();">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/Logout.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Logout</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h3 class="booking-heading btn__text -medium">
+            <a href="#">Turkey</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="#">Istanbul</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="#">CVK Park Bosphorus Hotel Istanbul</a>
+        </h3>
+        <section id="flight-image" class="flight-image container">
+                <div class="flight-image-heading">
+                    <div class="flight-image-content">
+                        <h2 class="flight-image-content__main -trade-gothic -bold">Emirates A380 Airbus</h2>
+                        <p class="flight-image-content__des -medium"><i
+                                class="fa-solid fa-location-dot"></i>&nbsp;Gümüssuyu Mah. Inönü Cad. No:8,
+                            Istanbul 34437</p>
+                        <div class="flow-review">
+                            <div class="rating-item btn--outline"><span class="rating-item__text -medium">4.2</span>
+                            </div>
+                            <p class="flight-review__main -medium"><strong>Very Good</strong> 54 reviews</p>
+                        </div>
+                    </div>
+                    <div class="flight-image-price">
+                        <h2 class="flight-image-price__main -bold">$240</h2>
+                        <div class="flight-image-button">
+                            <a href="" class="btn btn--outline -large">
+                                <img src="assets/icons/outline/heart.svg" alt="">
+                            </a>
+                            <a href="" class="btn btn--outline -large">
+                                <img src="assets/icons/fill/Share.svg" alt="">
+                            </a>
+                            <a href="flightBooking.html" class="btn btn--fill -large">
+                                <span class="btn__text -semi-bold">View Deals</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flight-image__image">
+                    <img src="assets/images/flightdetails.jpeg" alt="">
+                </div>
+                <div class="flight-image-image">
+                </div>
+        </section>
+        <section id="flight-detail">
+            <div class="flight-detail container">
+                <div class="flight-detail-heading">
+                    <h2 class="flight-detail-heading__title -trade-gothic -bold">Basic Economy Features</h2>
+                    <div class="flight-detail-classify">
+                        <div class="flight-detail-check">
+                            <input id="Economy" type="checkbox" required name="Economy" checked/>
+                            <label for="Economy" class="btn__text -medium">Economy</label>
+                        </div>
+                        <div class="flight-detail-check">
+                            <input id="First-Class" type="checkbox" required name="First-Class" />
+                            <label for="First-Class" class="btn__text -medium">First Class</label>
+                        </div>
+                        <div class="flight-detail-check">
+                            <input id="Business-Class" type="checkbox" required name="Busines-Class" />
+                            <label for="Business-Class" class="btn__text -medium">Business Class</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="flight-detail-image">
+                    <div class="flight-detail-image__item">
+                        <img src="assets/images/flight-class1.jpeg" alt="">
+                    </div>
+                    <div class="flight-detail-image__item">
+                        <img src="assets/images/flight-class2.jpeg" alt="">
+                    </div>
+                    <div class="flight-detail-image__item">
+                        <img src="assets/images/flight-class3.jpeg" alt="">
+                    </div>
+                    <div class="flight-detail-image__item">
+                        <img src="assets/images/flight-class4.jpeg" alt="">
+                    </div>
+                    <div class="flight-detail-image__item">
+                        <img src="assets/images/flight-class3.jpeg" alt="">
+                    </div>
+                    <div class="flight-detail-image__item">
+                        <img src="assets/images/flight-class4.jpeg" alt="">
+                    </div>
+                    <div class="flight-detail-image__item">
+                        <img src="assets/images/flight-class4.jpeg" alt="">
+                    </div>
+                    <div class="flight-detail-image__item">
+                        <img src="assets/images/flight-class5.jpeg" alt="">
+                    </div>
+                    <div class="flight-detail-image__item">
+                        <img src="assets/images/flight-class6.jpeg" alt="">
+                    </div>
+                </div>
+                <div class="flight-detail-policies">
+                    <h2 class="flight-detail-heading__title -trade-gothic -bold">Basic Economy Features</h2>
+                    <div class="flight-detail-policies__icon">
+                        <img src="assets/icons/vector/ion_stopwatch.svg" alt="">
+                        <p class="flight-detail-policies__des -medium">
+                            &nbsp;&nbsp;&nbsp;Pre-flight cleaning, installation of cabin HEPA filters.</p>
+                    </div>
+                    <div class="flight-detail-policies__icon">
+                        <img src="assets/icons/vector/ion_stopwatch.svg" alt="">
+                        <p class="flight-detail-policies__des -medium">
+                            &nbsp;&nbsp;&nbsp;Pre-flight health screening questions.</p>
+                    </div>
+                </div>
+                <div class="booking-item booking-item--flight --info">
+                    <div class="info-heading">
+                        <h3 class="info-heading__return -trade-gothic -bold">Return Wed, Dec 8</h3>
+                        <h3 class="info-heading__time -medium">2h 28m</h3>
+                    </div>
+                    <div class="info-service">
+                        <div class="service-image">
+                            <div class="service-image__image">
+                                <img src="assets/images/emirates.png" alt="">
+                            </div>
+                            <div class="service-title">
+                                <h3 class="service-title__main -semi-bold">Emirates</h3>
+                                <p class="service-title__des -medium">Airbus A320</p>
+                            </div>
+                        </div>
+                        <div class="service-icons">
+                            <div class="service-icons__icon">
+                                <img src="assets/icons/vector/plane.svg" alt="">
+                            </div>
+                            <span></span>
+                            <div class="service-icons__icon">
+                                <img src="assets/icons/vector/Wifi.svg" alt="">
+                            </div>
+                            <span></span>
+                            <div class="service-icons__icon">
+                                <img src="assets/icons/vector/ion_stopwatch.svg" alt="">
+                            </div>
+                            <span></span>
+                            <div class="service-icons__icon">
+                                <img src="assets/icons/vector/ion_fast-food.svg" alt="">
+                            </div>
+                            <span></span>
+                            <div class="service-icons__icon">
+                                <img src="assets/icons/vector/ic_round-airline-seat-recline-normal.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-times info-times--flight">
+                        <div class="info-time">
+                            <div class="info-time__main -semi-bold">12:00 pm</div>
+                            <div class="info-time__des -medium">Newark(EWR)</div>
+                        </div>
+                        <div class="info-plane info-plane--flight">
+                            <span></span>
+                            <div class="info-plane__icon">
+                                <img src="assets/icons/vector/plane.svg" alt="">
+                            </div>
+                            <span></span>
+                        </div>
+                        <div class="info-time">
+                            <div class="info-time__main -semi-bold">12:00 pm</div>
+                            <div class="info-time__des -medium">Newark(EWR)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="booking-item booking-item--flight --info">
+                    <div class="info-heading">
+                        <h3 class="info-heading__return -trade-gothic -bold">Return Wed, Dec 8</h3>
+                        <h3 class="info-heading__time -medium">2h 28m</h3>
+                    </div>
+                    <div class="info-service">
+                        <div class="service-image">
+                            <div class="service-image__image">
+                                <img src="assets/images/emirates.png" alt="">
+                            </div>
+                            <div class="service-title">
+                                <h3 class="service-title__main -semi-bold">Emirates</h3>
+                                <p class="service-title__des -medium">Airbus A320</p>
+                            </div>
+                        </div>
+                        <div class="service-icons">
+                            <div class="service-icons__icon">
+                                <img src="assets/icons/vector/plane.svg" alt="">
+                            </div>
+                            <span></span>
+                            <div class="service-icons__icon">
+                                <img src="assets/icons/vector/Wifi.svg" alt="">
+                            </div>
+                            <span></span>
+                            <div class="service-icons__icon">
+                                <img src="assets/icons/vector/ion_stopwatch.svg" alt="">
+                            </div>
+                            <span></span>
+                            <div class="service-icons__icon">
+                                <img src="assets/icons/vector/ion_fast-food.svg" alt="">
+                            </div>
+                            <span></span>
+                            <div class="service-icons__icon">
+                                <img src="assets/icons/vector/ic_round-airline-seat-recline-normal.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-times info-times--flight">
+                        <div class="info-time">
+                            <div class="info-time__main -semi-bold">12:00 pm</div>
+                            <div class="info-time__des -medium">Newark(EWR)</div>
+                        </div>
+                        <div class="info-plane info-plane--flight">
+                            <span></span>
+                            <div class="info-plane__icon">
+                                <img src="assets/icons/vector/plane.svg" alt="">
+                            </div>
+                            <span></span>
+                        </div>
+                        <div class="info-time">
+                            <div class="info-time__main -semi-bold">12:00 pm</div>
+                            <div class="info-time__des -medium">Newark(EWR)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-heading container">
+            <div class="footer-heading__content">
+                <h2 class="footer-heading__main -trade-gothic -bold">Subscribe<br>Newsletter</h2>
+                <h3 class="footer-heading__sub -trade-gothic-bold">The Travel</h3>
+                <p class="footer-heading__des -medium">Get inspired! Receive travel discounts, tips and behind the
+                    scenes stories.</p>
+                <form action="post">
+                    <input type="text" placeholder="Your email address">
+                    <a href="#" class="btn btn--subscribe"><span class="btn__text -semi-bold">subscribe</span></a>
+                </form>
+            </div>
+            <div class="footer-heading__image">
+                <img src="assets/icons/emojione-v1_open-mailbox-with-lowered-flag.png" alt="#">
+            </div>
+        </div>
+        <div class="footer-content container">
+            <div class="footer-content__icon">
+                <div class="footer-content__logo">
+                    <img src="assets/images/Logo2.png" alt="logo">
+                </div>
+                <div class="footer-content__social">
+                    <img src="assets/icons/vector/akar-icons_facebook-fill.png" alt="facebook">
+                    <img src="assets/icons/vector/akar-icons_twitter-fill.png" alt="twitter">
+                    <img src="assets/icons/vector/akar-icons_youtube-fill.png" alt="youtube">
+                    <img src="assets/icons/vector/ant-design_instagram-filled.png" alt="instagram">
+                </div>
+            </div>
+            <div class="footer-content__menu">
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Our Destinations</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Canada</a></li>
+                        <li><a href="#" class="-medium">Alaksa</a></li>
+                        <li><a href="#" class="-medium">France</a></li>
+                        <li><a href="#" class="-medium">Iceland</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Our Activities</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Northern Lights</a></li>
+                        <li><a href="#" class="-medium">Cruising & sailing</a></li>
+                        <li><a href="#" class="-medium">Multi-activities</a></li>
+                        <li><a href="#" class="-medium">Kayaing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Travel Blogs</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Bali Travel Guide</a></li>
+                        <li><a href="#" class="-medium">Sri Lanks Travel Guide</a></li>
+                        <li><a href="#" class="-medium">Peru Travel Guide</a></li>
+                        <li><a href="#" class="-medium">Bali Travel Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">About Us</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Our Story</a></li>
+                        <li><a href="#" class="-medium">Work with us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Contact Us</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Our Story</a></li>
+                        <li><a href="#" class="-medium">Work with us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="js/form.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+</body>
+
+</html>
+<!-- arrow-right -->

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="golobe - travel agency, find stays, find flights, hotel, resort, 
+    tourism">
+    <meta name="keywords" content="golobe - travel, find stays, find flights, hotel, resort, 
+    tourism">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golobe - Travel Agency</title>
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a id="flights" href="flight.html" class="btn btn--none">
+                <div class="btn__icon">
+                    <img src="assets/icons/fill/airPlane.svg" alt="airPlane">
+                </div>
+                <span class="btn__text -semi-bold">find flight</span>
+            </a>
+
+
+            <a id="stays" href="hotel.html" class="btn btn--none">
+                <div class="btn__icon">
+                    <img src="assets/icons/fill/bed.svg" alt="bed">
+                </div>
+                <span class="btn__text -semi-bold">find stays</span>
+            </a>
+        </div>
+        <a href="index.html" class="header-logo">
+            <img src="assets/images/Logo.png" alt="logo">
+        </a>
+        <div class="header-right">
+            <a href="authLogin.html" class="btn btn--none"><span class="btn__text -semi-bold">Login</span></a>
+            <a href="authSignup.html" class="btn btn--signup btn--flow -large"><span class="btn__text -white -semi-bold">Sign
+                    up</span></a>
+        </div>
+        <div class="header-account">
+            <a href="favorite.html" class="header-account__favorite" style="--clr:#112211">
+                <i class="fa-solid fa-heart"></i>
+                <span class="btn__text -semi-bold">Favourites</span></a>
+            <div class="header-account__user">
+                <div class="header-account__avt">
+                    <img src="assets/images/user.jpeg" alt="">
+                </div>
+                <span class="btn__text -semi-bold">John D.</span>
+            </div>
+            <div class="user-info">
+                <div class="user-info__heading">
+                    <div class="user-info__avatar">
+                        <img src="assets/images/user.jpeg" alt="user-avt">
+                    </div>
+                    <div class="user-info__content">
+                        <p class="user-info__name -semi-bold">John Doe.</p>
+                        <p class="user-info__status -regular">Online</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="user-info__account">
+                    <a href="account.html">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/User.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">My account</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/card.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Payments</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/setting.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Settings</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                </div>
+                <hr>
+                <div class="user-info__support">
+                    <a href="#">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/Support.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Support</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                    <button onclick="logout();">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/Logout.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Logout</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h3 class="booking-heading btn__text -medium -detail">
+            <a href="#">Turkey</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="#">Istanbul</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="#">CVK Park Bosphorus Hotel Istanbul</a>
+        </h3>
+        <section id="booking-detail">
+            <div class="booking-detail container">
+                <div class="detail-heading">
+                    <div class="detail-title">
+                        <h2 class="detail-title__main -trade-gothic -bold">Emirates A380 Airbus</h2>
+                        <p class="detail-title__sub -medium"><i class="fa-solid fa-location-dot"></i>&nbsp;Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437</p>
+                    </div>
+                    <div class="detail-price">
+                        <h3 class="detail-price__main -bold">$240</h3>
+                        <div class="detail-button">
+                            <a href="#" class="btn btn--outline -large">
+                                <img src="assets/icons/fill/Share.svg" alt="share-icon">
+                            </a>
+                            <a href="#" class="btn btn--fill -large"><span class="btn__text -semi-bold">Download</span></a>    
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-info">
+                    <div class="detail-times">
+                        <div class="detail-time">
+                            <div class="detail-time__main -semi-bold">12:00 pm</div>
+                            <div class="detail-time__des -medium">Newark(EWR)</div>
+                        </div>
+                        <span class="detail-time__line"></span>
+                        <div class="detail-time__icon">
+                            <img src="assets/icons/fill/airPlane.svg" alt="">
+                        </div>
+                        <span class="detail-time__line"></span>
+                        <div class="detail-time">
+                            <div class="detail-time__main -semi-bold">12:00 pm</div>
+                            <div class="detail-time__des -medium">Newark(EWR)</div>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="card-heading">
+                            <div class="card-user">
+                                <div class="card-user__avatar">
+                                    <img src="assets/images/user.jpeg" alt="user">
+                                </div>
+                                <div class="card-content">
+                                    <h2 class="card-content__name -trade-gothic -bold">James Doe</h2>
+                                    <p class="card-content__des -regular">Boarding Pass N’123</p>
+                                </div>
+                            </div>
+                            <h2 class="card-content__sub -trade-gothic -bold">Busniess Class</h2>
+                        </div>
+                        <div class="card-info">
+                            <div class="history-info__item">
+                                <div class="history-info__icon">
+                                    <img src="assets/icons/vector/calendar.png" alt="calendar-icon">
+                                </div>
+                                <div class="history-info__content">
+                                    <div class="card-info__sub -semi-bold">Date</div>
+                                    <div class="card-info__main -medium">Newark(EWR)</div>
+                                </div>
+                            </div>
+                            <div class="history-info__item">
+                                <div class="history-info__icon">
+                                    <img src="assets/icons/vector/timmer.png" alt="timmer-icon">
+                                </div>
+                                <div class="history-info__content">
+                                    <div class="card-info__sub -semi-bold">Flight time</div>
+                                    <div class="card-info__main -medium">12:00</div>
+                                </div>
+                            </div>
+                            <div class="history-info__item">
+                                <div class="history-info__icon">
+                                    <img src="assets/icons/vector/door.svg" alt="door-icon">
+                                </div>
+                                <div class="history-info__content">
+                                    <div class="card-info__sub -semi-bold">Gate</div>
+                                    <div class="card-info__main -medium">A12</div>
+                                </div>
+                            </div>
+                            <div class="history-info__item">
+                                <div class="history-info__icon">
+                                    <img src="assets/icons/vector/ic_round-airline-seat-recline-normal.png" alt="ic_round-airline-seat-icon">
+                                </div>
+                                <div class="history-info__content">
+                                    <div class="card-info__sub -semi-bold">Seat</div>
+                                    <div class="card-info__main -medium">128</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-barcode">
+                            <h3 class="card-barcode__main -semi-bold">EK <span class="card-barcode__des -medium">ABC12345</span></h3>
+                            <div class="card-barcode__image">
+                                <img src="assets/icons/vector/barcode.svg" alt="barcode">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detail-location">
+                        <img src="assets/images/bookinglocation.png" alt="map">
+                        <div class="location-item -item-01">
+                            <div class="location-item__image">
+                                <img src="assets/images/location.jpeg" alt="location-image">
+                            </div>
+                            <div class="location-content">
+                                <div class="location-content__main -trade-gothic -bold">James Doe</div>
+                                <div class="location-content__des -regular">Boarding Pass N’123</div>
+                            </div>
+                        </div>
+                        <div class="location-item -item-02">
+                            <div class="location-item__image">
+                                <img src="assets/images/location.jpeg" alt="location-image">
+                            </div>
+                            <div class="location-content">
+                                <div class="location-content__main -trade-gothic -bold">James Doe</div>
+                                <div class="location-content__des -regular">Boarding Pass N’123</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-content">
+                    <h2 class="detail-content__main -semi-bold">Terms and Conditions</h2>
+                    <h3 class="detail-content__sub -medium">Payments</h3>
+                    <ul class="detail-list">
+                        <li class="detail-content__des -regular">If you are purchasing your ticket using a debit or credit card via the Website, we will process these payments via the automated secure common payment gateway which will be subject to fraud screening purposes. </li>
+                        <li class="detail-content__des -regular">If you do not supply the correct card billing address and/or cardholder information, your booking will not be confirmed and the overall cost may increase. We reserve the right to cancel your booking if payment is declined for any reason or if you have supplied incorrect card information. If we become aware of, or is notified of, any fraud or illegal activity associated with the payment for the booking, the booking will be cancelled and you will be liable for all costs and expenses arising from such cancellation, without prejudice to any action that may be taken against us.</li>
+                        <li class="detail-content__des -regular">Golobe may require the card holder to provide additional payment verification upon request by either submitting an online form or visiting the nearest Golobe office, or at the airport at the time of check-in. Golobe reserves the right to deny boarding or to collect a guarantee payment (in cash or from another credit card) if the card originally used for the purchase cannot be presented by the cardholder at check-in or when collecting the tickets, or in the case the original payment has been withheld or disputed by the card issuing bank. Credit card details are held in a secured environment and transferred through an internationally accepted system.</li>
+                    </ul>
+                    <h3 class="detail-content__sub -medium">Contact Us</h3>
+                    <ul>
+                        <li class="detail-content__des -regular">If you have any questions about our Website or our Terms of Use, please contact:</li>
+                        <li class="detail-content__des -regular">Golobe Group Q.C.S.C</li>
+                        <li class="detail-content__des -regular">Golobe Tower</li>
+                        <li class="detail-content__des -regular">P.O. Box: 22550</li>
+                        <li class="detail-content__des -regular">Doha, State of Qatar</li>
+                        <li class="detail-content__des -regular">Further contact details can be found at golobe.com/help</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-heading container">
+            <div class="footer-heading__content">
+                <h2 class="footer-heading__main -trade-gothic -bold">Subscribe<br>Newsletter</h2>
+                <h3 class="footer-heading__sub -trade-gothic-bold">The Travel</h3>
+                <p class="footer-heading__des -medium">Get inspired! Receive travel discounts, tips and behind the
+                    scenes stories.</p>
+                <form action="post">
+                    <input type="text" placeholder="Your email address">
+                    <a href="#" class="btn btn--subscribe"><span class="btn__text -semi-bold">subscribe</span></a>
+                </form>
+            </div>
+            <div class="footer-heading__image">
+                <img src="assets/icons/emojione-v1_open-mailbox-with-lowered-flag.png" alt="#">
+            </div>
+        </div>
+        <div class="footer-content container">
+            <div class="footer-content__icon">
+                <div class="footer-content__logo">
+                    <img src="assets/images/Logo2.png" alt="logo">
+                </div>
+                <div class="footer-content__social">
+                    <img src="assets/icons/vector/akar-icons_facebook-fill.png" alt="facebook">
+                    <img src="assets/icons/vector/akar-icons_twitter-fill.png" alt="twitter">
+                    <img src="assets/icons/vector/akar-icons_youtube-fill.png" alt="youtube">
+                    <img src="assets/icons/vector/ant-design_instagram-filled.png" alt="instagram">
+                </div>
+            </div>
+            <div class="footer-content__menu">
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Our Destinations</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Canada</a></li>
+                        <li><a href="#" class="-medium">Alaksa</a></li>
+                        <li><a href="#" class="-medium">France</a></li>
+                        <li><a href="#" class="-medium">Iceland</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Our Activities</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Northern Lights</a></li>
+                        <li><a href="#" class="-medium">Cruising & sailing</a></li>
+                        <li><a href="#" class="-medium">Multi-activities</a></li>
+                        <li><a href="#" class="-medium">Kayaing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Travel Blogs</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Bali Travel Guide</a></li>
+                        <li><a href="#" class="-medium">Sri Lanks Travel Guide</a></li>
+                        <li><a href="#" class="-medium">Peru Travel Guide</a></li>
+                        <li><a href="#" class="-medium">Bali Travel Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">About Us</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Our Story</a></li>
+                        <li><a href="#" class="-medium">Work with us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Contact Us</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Our Story</a></li>
+                        <li><a href="#" class="-medium">Work with us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+</body>
+
+</html>
+<!-- arrow-right -->

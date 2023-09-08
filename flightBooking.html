@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="golobe - travel agency, find stays, find flights, hotel, resort, 
+    tourism">
+    <meta name="keywords" content="golobe - travel, find stays, find flights, hotel, resort, 
+    tourism">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golobe - Travel Agency</title>
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a id="flights" href="flight.html" class="btn btn--none">
+                <div class="btn__icon">
+                    <img src="assets/icons/fill/airPlane.svg" alt="airPlane">
+                </div>
+                <span class="btn__text -semi-bold">find flight</span>
+            </a>
+
+
+            <a id="stays" href="hotel.html" class="btn btn--none">
+                <div class="btn__icon">
+                    <img src="assets/icons/fill/bed.svg" alt="bed">
+                </div>
+                <span class="btn__text -semi-bold">find stays</span>
+            </a>
+        </div>
+        <a href="index.html" class="header-logo">
+            <img src="assets/images/Logo.png" alt="logo">
+        </a>
+        <div class="header-right">
+            <a href="authLogin.html" class="btn btn--none"><span class="btn__text -semi-bold">Login</span></a>
+            <a href="authSignup.html" class="btn btn--signup btn--flow -large"><span class="btn__text -white -semi-bold">Sign
+                    up</span></a>
+        </div>
+        <div class="header-account">
+            <a href="favorite.html" class="header-account__favorite" style="--clr:#112211">
+                <i class="fa-solid fa-heart"></i>
+                <span class="btn__text -semi-bold">Favourites</span></a>
+            <div href="account.html" class="header-account__user">
+                <div class="header-account__avt">
+                    <img src="assets/images/user.jpeg" alt="">
+                </div>
+                <span class="btn__text -semi-bold">John D.</span>
+            </div>
+            <div class="user-info">
+                <div class="user-info__heading">
+                    <div class="user-info__avatar">
+                        <img src="assets/images/user.jpeg" alt="user-avt">
+                    </div>
+                    <div class="user-info__content">
+                        <p class="user-info__name -semi-bold">John Doe.</p>
+                        <p class="user-info__status -regular">Online</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="user-info__account">
+                    <a href="account.html">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/User.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">My account</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/card.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Payments</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/setting.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Settings</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                </div>
+                <hr>
+                <div class="user-info__support">
+                    <a href="#">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/Support.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Support</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                    <button onclick="logout();">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/Logout.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Logout</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h3 class="booking-heading btn__text -medium">
+            <a href="#">Turkey</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="#">Istanbul</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="#">CVK Park Bosphorus Hotel Istanbul</a>
+        </h3>
+        <section id="booking" class="booking">
+            <!-- <div class="booking-box"> -->
+                <div class="booking-content">
+                    <div class="booking-item --info">
+                        <div class="info-heading">
+                            <h2 class="info-heading__title -trade-gothic -bold">Emirates A380 Airbus</h2>
+                            <h2 class="info-heading__price -bold">$240</h2>
+                            <h3 class="info-heading__return -trade-gothic -bold">Return Wed, Dec 8</h3>
+                            <h3 class="info-heading__time -medium">2h 28m</h3>
+                        </div>
+                        <div class="info-service">
+                            <div class="service-image">
+                                <div class="service-image__image">
+                                    <img src="assets/images/emirates.png" alt="">
+                                </div>
+                                <div class="service-title">
+                                    <h3 class="service-title__main -semi-bold">Emirates</h3>
+                                    <p class="service-title__des -medium">Airbus A320</p>
+                                </div>
+                            </div>
+                            <div class="service-icons">
+                                <div class="service-icons__icon">
+                                    <img src="assets/icons/vector/plane.svg" alt="">
+                                </div>
+                                <span></span>
+                                <div class="service-icons__icon">
+                                    <img src="assets/icons/vector/Wifi.svg" alt="">
+                                </div>
+                                <span></span>
+                                <div class="service-icons__icon">
+                                    <img src="assets/icons/vector/ion_stopwatch.svg" alt="">
+                                </div>
+                                <span></span>
+                                <div class="service-icons__icon">
+                                    <img src="assets/icons/vector/ion_fast-food.svg" alt="">
+                                </div>
+                                <span></span>
+                                <div class="service-icons__icon">
+                                    <img src="assets/icons/vector/ic_round-airline-seat-recline-normal.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-times">
+                            <div class="info-time">
+                                <div class="info-time__main -semi-bold">12:00 pm</div>
+                                <div class="info-time__des -medium">Newark(EWR)</div>
+                            </div>
+                            <div class="info-plane">
+                                <span></span>
+                                <div class="info-plane__icon">
+                                    <img src="assets/icons/vector/plane.svg" alt="">
+                                </div>
+                                <span></span>
+                            </div>
+                            <div class="info-time">
+                                <div class="info-time__main -semi-bold">12:00 pm</div>
+                                <div class="info-time__des -medium">Newark(EWR)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="booking-pay" class="booking-item --pay">
+                        <div class="pay-item pay--active">
+                            <label for="pay-full">
+                                <h3 class="pay__main -trade-gothic -bold">Pay in full</h3>
+                                <p class="pay__des -regular">Pay the total and you are all set</p>
+                            </label>
+                            <input type="radio" id="pay-full" value="pay-full" name="pay" checked>
+                        </div>
+                        <div class="pay-item">
+                            <label for="pay-part">
+                                <h3 class="pay__main -trade-gothic -bold">Pay part now, part later</h3>
+                                <p class="pay__des -regular">Pay $207.43 now, and the rest ($207.43) will be
+                                    automatically charged to the same payment method on Nov 14, 2022. No extra fees.</p>
+                                <a href="#" class="pay__more -medium">More info</a>
+                            </label>
+                            <input type="radio" id="pay-part" value="pay-part" name="pay">
+                        </div>
+                    </div>
+                    <div id="booking-login" class="booking-item --login">
+                        <h2 class="booking-login__main -trade-gothic -bold">Login or Sign up to book</h2>
+                        <form action="post" id="auth-form">
+                            <input class="auth-form__input -regular" id="phoneNumber" type="number"
+                                placeholder="Phone Number" required>
+                            <p class="booking-login__des -regular">We’ll call or text you to confirm your number.
+                                Standard message and data rates apply. Privacy Policy
+                            </p>
+                            <input class="btn btn--fill btn__text -medium " type="submit" value="Continue">
+                            <!-- <button type="submit" form="auth-form" value="submit" class="btn btn--fill -large">
+                                <span class="btn__text -semi-bold">auth</span></button> -->
+                        </form>
+                        <div class="auth-form__line --booking-login">
+                            <hr>
+                            <span class="btn__text -regular">Or</span>
+                        </div>
+                        <div class="auth-form__social">
+                            <a href="#" class="btn btn--outline btn--social">
+                                <img src="assets/icons/Vector.png" alt="">
+                            </a>
+                            <a href="#" class="btn btn--outline btn--social">
+                                <img src="assets/icons/flat-color-icons_google.png" alt="">
+                            </a>
+                            <a href="#" class="btn btn--outline btn--social">
+                                <img src="assets/icons/ant-design_apple-filled.png" alt="">
+                            </a>
+                            <a href="#" class="btn btn--outline btn--social">
+                                <img src="assets/icons/fill/Mail.svg" alt="">
+                                <span class="-medium">Continue with email</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="booking-card" class="booking-item --pay">
+                        <div id="booking-flight" class="pay-item pay--active">
+                            <label class="pay-card" for="card-01">
+                                <div class="pay-card__visa">
+                                    <img src="assets/icons/fill/visa.svg" alt="">
+                                </div>
+                                <span class="pay-card__number -trade-gothic -bold">****&nbsp;4321</span>
+                                <span class="pay-card__date -regular">02/27</span>
+                            </label>
+                            <input type="radio" id="card-01" value="card-01" name="card" checked>
+                        </div>
+                        <div class="account-card -card--add --pay-card">
+                            <div class="account-add__image --pay-image">
+                                <img src="assets/icons/outline/add-circle-outline.svg" alt="">
+                            </div>
+                            <span class="account-add__text -medium">Add a new card</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="booking-box">
+                    <div class="box-class">
+                        <div class="class-image">
+                            <img src="assets/images/flightdetails.jpeg" alt="">
+                        </div>
+                        <div class="class-content">
+                            <h3 class="class-content__des -medium">Economy</h3>
+                            <h2 class="class-content__main -semi-bold">Emirates A380 Airbus</h2>
+                            <div class="flow-review">
+                                <div class="rating-item btn--outline"><span class="rating-item__text -medium">4.2</span>
+                                </div>
+                                <p class="flight-review__main -medium"><strong>Very Good</strong> 54 reviews</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <h2 class="box-note -regular">Your booking is protected by&nbsp;<strong>golobe</strong></h2>
+                    <hr>
+                    <div class="box-price">
+                        <h3 class="filter__main -semi-bold">Price Details</h3>
+                        <article class="price-item">
+                            <p class="price-item__fee -medium">Base Fare </p>
+                            <p class="price-item__price -semi-bold">$400</p>
+                        </article>
+                        <article class="price-item">
+                            <p class="price-item__fee -medium">Discount</p>
+                            <p class="price-item__price -semi-bold">$400</p>
+                        </article>
+                        <article class="price-item">
+                            <p class="price-item__fee -medium">Taxes</p>
+                            <p class="price-item__price -semi-bold">$400</p>
+                        </article>
+                        <article class="price-item">
+                            <p class="price-item__fee -medium">Service Fee</p>
+                            <p class="price-item__price -semi-bold">$400</p>
+                        </article>
+                    </div>
+                    <hr>
+                    <article class="price-item">
+                        <p class="price-item__fee -medium">Total </p>
+                        <p class="price-item__price -semi-bold">$400</p>
+                    </article>
+                </div>
+            <!-- </div> -->
+        </section>
+        <div class="pop-up">
+            <form action="post" id="add-payment" class="add-payment --popup">
+                <div class="add-payment__close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <h2 class="add-payment__title -trade-gothic -bold">Add a new Card</h2>
+                <fieldset class="add-payment__form">
+                    <div class="add-payment__input -regular">
+                        <input id="cardNumber" type="number" placeholder="EX: 4321 4321 4321 4321" required>
+                        <label class="add-payment__label" for="cardNumber">Card Number</label>
+                        <div class="add-payment__icon --visa">
+                            <img src="assets/icons/fill/visa.svg" alt="visa">
+                        </div>
+                    </div>
+                    <div class="add-payment__info">
+                        <div class="add-payment__input -regular">
+                            <input id="expDate" type="text" placeholder="EX: 02/27" required>
+                            <label class="add-payment__label" for="expDate">Exp. Date</label>
+                        </div>
+                        <div class="add-payment__input -regular">
+                            <input id="cvc" type="number" placeholder="EX: 123" required>
+                            <label class="add-payment__label" for="cvc">CVC</label>
+                        </div>
+                    </div>
+                    <div class="add-payment__input -regular">
+                        <input id="nameCard" type="text" placeholder="EX: John Doe" required>
+                        <label class="add-payment__label" for="nameCard">Name on Card</label>
+                    </div>
+                    <div class="add-payment__input -regular">
+                        <input id="country" type="text" placeholder="United States" required>
+                        <label class="add-payment__label" for="country">Country or Region</label>
+                        <div class="add-payment__icon">
+                            <img src="assets/icons/vector/chevron_down.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="add-payment__agree">
+                        <input id="agree" type="checkbox" required name="agree" checked />
+                        <label for="agree" class="btn__text -medium">Securely save my information for 1-click
+                            checkout</label>
+                    </div>
+                </fieldset>
+                <input class="btn btn--fill btn__text -semi-bold " type="submit" value="Add payment method">
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-heading container">
+            <div class="footer-heading__content">
+                <h2 class="footer-heading__main -trade-gothic -bold">Subscribe<br>Newsletter</h2>
+                <h3 class="footer-heading__sub -trade-gothic-bold">The Travel</h3>
+                <p class="footer-heading__des -medium">Get inspired! Receive travel discounts, tips and behind the
+                    scenes stories.</p>
+                <form action="post">
+                    <input type="text" placeholder="Your email address">
+                    <a href="#" class="btn btn--subscribe"><span class="btn__text -semi-bold">subscribe</span></a>
+                </form>
+            </div>
+            <div class="footer-heading__image">
+                <img src="assets/icons/emojione-v1_open-mailbox-with-lowered-flag.png" alt="#">
+            </div>
+        </div>
+        <div class="footer-content container">
+            <div class="footer-content__icon">
+                <div class="footer-content__logo">
+                    <img src="assets/images/Logo2.png" alt="logo">
+                </div>
+                <div class="footer-content__social">
+                    <img src="assets/icons/vector/akar-icons_facebook-fill.png" alt="facebook">
+                    <img src="assets/icons/vector/akar-icons_twitter-fill.png" alt="twitter">
+                    <img src="assets/icons/vector/akar-icons_youtube-fill.png" alt="youtube">
+                    <img src="assets/icons/vector/ant-design_instagram-filled.png" alt="instagram">
+                </div>
+            </div>
+            <div class="footer-content__menu">
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Our Destinations</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Canada</a></li>
+                        <li><a href="#" class="-medium">Alaksa</a></li>
+                        <li><a href="#" class="-medium">France</a></li>
+                        <li><a href="#" class="-medium">Iceland</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Our Activities</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Northern Lights</a></li>
+                        <li><a href="#" class="-medium">Cruising & sailing</a></li>
+                        <li><a href="#" class="-medium">Multi-activities</a></li>
+                        <li><a href="#" class="-medium">Kayaing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Travel Blogs</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Bali Travel Guide</a></li>
+                        <li><a href="#" class="-medium">Sri Lanks Travel Guide</a></li>
+                        <li><a href="#" class="-medium">Peru Travel Guide</a></li>
+                        <li><a href="#" class="-medium">Bali Travel Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">About Us</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Our Story</a></li>
+                        <li><a href="#" class="-medium">Work with us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Contact Us</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Our Story</a></li>
+                        <li><a href="#" class="-medium">Work with us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+    <script src="js/booking.js" type="text/javascript"></script>
+    <script src="js/popup.js" type="text/javascript"></script>
+</body>
+
+</html>
+<!-- arrow-right -->

@@ -1,0 +1,223 @@
+header {
+    z-index: 101;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 .4rem 1.6rem rgba(17, 34, 17, 0.05);
+    padding: 2.1rem 10.4rem;
+
+}
+
+.header {
+
+    &-left,
+    &-right {
+        display: flex;
+        align-items: center;
+        gap: 0 3.2rem;
+        position: relative;
+    }
+
+    &-right {
+        .btn--signup {
+            padding: 0 2.4rem;
+        }
+
+        .btn--ld {
+            @include customButton($white, none, $white, 1px solid $white, $neutrals-gray, none, none, $neutrals-gray)
+        }
+
+        .btn--flow {
+            @include customButton($black-green, none, $black-green, 1px solid $black-green, $neutrals-gray, none, none, $neutrals-gray)
+        }
+    }
+
+    &-logo {
+        margin-right: 5rem;
+    }
+
+    &-account {
+        display: flex;
+        align-items: center;
+        gap: 0 3.2rem;
+        position: relative;
+
+        &__favorite {
+            display: flex;
+            align-items: center;
+            gap: 0 0.625rem;
+            padding-right: 1.6rem;
+            border-right: 2px solid var(--clr);
+
+            &>i {
+                font-size: 2em;
+            }
+        }
+
+        &__user {
+            display: flex;
+            align-items: center;
+            gap: 0 .4rem;
+            z-index: 20;
+            cursor: pointer;
+
+            // &:hover+&-info{
+            //     top: 5.6rem;
+            //     visibility: visible;
+            //     opacity: 1;
+            // }
+
+        }
+
+        &__avt {
+            width: 4.5rem;
+            height: 4.5rem;
+            border-radius: 50%;
+            // overflow: hidden;
+            position: relative;
+            z-index: 102;
+
+            &>img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            @include pseudo(after) {
+                content: url('../../assets/icons/vector/circle-down.svg');
+                bottom: 0;
+                right: 0;
+                z-index: 100;
+            }
+        }
+
+
+    }
+
+    &--ld {
+        position: absolute;
+        padding: 2.4rem 6.2rem 0;
+        box-shadow: none;
+    }
+    &-active {
+        @include transition-ease();
+
+        @include pseudo(after) {
+            width: 100%;
+            height: 5px;
+            background-color: $primary-color;
+            left: 0;
+            bottom: -3.1rem;
+        }
+    }
+}
+
+.user-info {
+    width: 32.9rem;
+    height: 36.3rem;
+    background-color: $white;
+    border-radius: 1.2rem;
+    padding: 3.2rem;
+    position: absolute;
+    right: 1.3rem;
+    top: 0;
+    visibility: hidden;
+    opacity: 0;
+    box-shadow: 0 20px 16px rgba(17, 34, 17, 0.1);
+    // top: 5.6rem;
+    // visibility: visible;
+    // opacity: 1;
+    z-index: 101;
+    @include transition-ease();
+
+    &--active {
+        top: 5.6rem;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &>hr {
+        margin: 2.4rem 0;
+    }
+
+    &__heading {
+        display: flex;
+        align-items: center;
+        gap: 0 1.6rem;
+    }
+
+    &__avatar {
+        width: 6.4rem;
+        height: 6.4rem;
+        border-radius: 50%;
+        overflow: hidden;
+
+        &>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__name {
+        font-size: 1.6em;
+        margin-bottom: 0.4rem;
+        @include style-height();
+    }
+
+    &__status {
+        font-size: 1.4em;
+        opacity: 75%;
+        @include style-height();
+    }
+
+    a,button {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.6rem;
+        @include transition-ease();
+        &:nth-child(3){
+            margin-bottom: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            background-color: rgba(17, 34, 17, 0.05);
+            border-radius: .8rem;
+            transform: scale(1.1);
+        }
+    }
+    button {
+        border: 0;
+        background: transparent;
+        width: 100%;
+        text-align: left;
+        font-size: 1em;
+        font-family: 'Montserrat', sans-serif;
+        cursor: pointer;
+    }
+    &__icon{
+        width: 1.8rem;
+        height: 1.8rem;
+        overflow: hidden;
+        &>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &:last-child {
+            
+            text-align: right;
+        }
+    }
+
+    &__title {
+        width: 80%;
+        margin-left: 0.8rem;
+    }
+}

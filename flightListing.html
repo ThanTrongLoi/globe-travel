@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="golobe - travel agency, find stays, find flights, hotel, resort, 
+    tourism">
+    <meta name="keywords" content="golobe - travel, find stays, find flights, hotel, resort, 
+    tourism">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golobe - Travel Agency</title>
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a id="flights" href="flight.html" class="btn btn--none">
+                <div class="btn__icon">
+                    <img src="assets/icons/fill/airPlane.svg" alt="airPlane">
+                </div>
+                <span class="btn__text -semi-bold">find flight</span>
+            </a>
+
+
+            <a id="stays" href="hotel.html" class="btn btn--none active">
+                <div class="btn__icon">
+                    <img src="assets/icons/fill/bed.svg" alt="bed">
+                </div>
+                <span class="btn__text -semi-bold">find stays</span>
+            </a>
+        </div>
+        <a href="index.html" class="header-logo">
+            <img src="assets/images/Logo.png" alt="logo">
+        </a>
+        <div class="header-right">
+            <a href="authLogin.html" class="btn btn--none"><span class="btn__text -semi-bold">Login</span></a>
+            <a href="authSignup.html" class="btn btn--signup btn--flow -large"><span class="btn__text -white -semi-bold">Sign
+                    up</span></a>
+        </div>
+        <div class="header-account">
+            <a href="favorite.html" class="header-account__favorite" style="--clr:#112211">
+                <i class="fa-solid fa-heart"></i>
+                <span class="btn__text -semi-bold">Favourites</span></a>
+            <div class="header-account__user">
+                <div class="header-account__avt">
+                    <img src="assets/images/user.jpeg" alt="">
+                </div>
+                <span class="btn__text -semi-bold">John D.</span>
+            </div>
+            <div class="user-info">
+                <div class="user-info__heading">
+                    <div class="user-info__avatar">
+                        <img src="assets/images/user.jpeg" alt="user-avt">
+                    </div>
+                    <div class="user-info__content">
+                        <p class="user-info__name -semi-bold">John Doe.</p>
+                        <p class="user-info__status -regular">Online</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="user-info__account">
+                    <a href="account.html">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/User.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">My account</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/card.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Payments</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/setting.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Settings</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                </div>
+                <hr>
+                <div class="user-info__support">
+                    <a href="#">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/Support.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Support</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                    <button onclick="logout();">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/Logout.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Logout</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <form class="flow-form container" method="post" action="#">
+            <!-- <fieldset class="hero-search__form"> -->
+            <div class="hero-search__input hero-input--flight">
+                <input id="location" type="text" value="Lahore - Karachi">
+                <label class="-regular" for="location">From - To</label>
+                <div class="btn__icon hero-search__icon">
+                    <img src="assets/icons/vector/ion_swap-horizontal.svg" alt="">
+                </div>
+            </div>
+            <div class="drop-down drop-down--trip">
+                <p class="btn__text -regular">Trip</p>
+                <span id="tripValue" class="drop-down__main -regular">Return</span>
+                <div class="drop-down-item">
+                    <div class="drop-down-item__trip">
+                        <input type="radio" name="trip" id="Return" value="Return" checked>
+                        <label for="Return" class="drop-down__main -regular">Return</label>
+                        <input type="radio" name="trip" id="Depart" value="Depart">
+                        <label for="Depart" class="drop-down__main -regular">Depart</label>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-search__input hero-input--flight">
+                <input id="depart-return" type="text" value="07 Nov 22 - 13 Nov 22">
+                <label class="-regular" for="depart-return">Depart - Return</label>
+            </div>
+            <div class="drop-down">
+                <p class="btn__text -regular">Passenger - Class</p>
+                <span id="numberOfPassenger" class="drop-down__main -regular">1</span>
+                &nbsp;&nbsp;<span class="drop-down__main -regular">Passenger,</span>
+                &nbsp;&nbsp;<span id="pass-class" class="drop-down__main -regular">Economy</span>
+                <div class="drop-down-item">
+                    <div class="drop-down-item__heading">
+                        <input type="radio" name="classify" id="economy-class" value="Economy" checked>
+                        <label for="economy-class" class="drop-down__main -regular">Economy</label>
+                        <input type="radio" name="classify" id="business-class" value="Business">
+                        <label for="business-class" class="drop-down__main -regular">Business</label>
+                    </div>
+                    <div class="drop-down-item__content">
+                        <article>
+                            <span class="drop-down__main -regular">Passenger</span>
+                            <div class="count">
+                                <i id="minus" class="fa-solid fa-minus"></i>
+                                <span id="count" class="drop-down__main -regular">1</span>
+                                <i id="plus" class="fa-solid fa-plus"></i>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn btn--fill"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <!-- </fieldset> -->
+        </form>
+        <span class="flow-filter__icon -trade-gothic -semi-bold">Filters <i class="fa-solid fa-filter"></i></span>
+        <section id="flow-content" class="flow-content container">
+                <div class="flow-filter">
+                    <i id="close-filter" class="fa-solid fa-xmark"></i>
+                    <h2 class="filter__title -semi-bold">Filters</h2>
+                    <div class="filter-price">
+                        <h3 class="filter__main -semi-bold">Price</h3>
+                        <div class="filter-icon">
+                            <i class="fa-solid fa-chevron-up"></i>
+                        </div>
+                        <div id="price-slider" class="flow-slider">
+                            <div class="flow-progress"></div>
+                        </div>
+                        <div id="price-field" class="flow-range">
+                            <input type="range" name="range-min" id="range-min" class="flow-range__min" min="50" max="1200" value="0">
+                            <label class="range-min -medium" for="range-min">$50</label>
+                            <input type="range" name="range-max" id="range-max" class="flow-range__max" min="50" max="1200" value="1200">
+                            <label class="range-max -medium" for="range-max">$1200</label>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="filter-departure">
+                        <h3 class="filter__main -semi-bold">Departure Time</h3>
+                        <div class="filter-icon">
+                            <i class="fa-solid fa-chevron-up"></i>
+                        </div>
+                        <div id="time-slider" class="flow-slider">
+                            <div class="flow-progress"></div>
+                        </div>
+                        <div id="time-field" class="flow-range">
+                            <input type="range" name="time-min" id="time-min" class="flow-range__min" min="0" max="23" value="0">
+                            <label class="range-min -medium" for="time-min">12:01Am</label>
+                            <input type="range" name="time-max" id="time-max" class="flow-range__max" min="0" max="23" value="23">
+                            <label class="range-max -medium" for="time-max">11:56Pm</label>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="filter-rating">
+                        <h3 class="filter__main -semi-bold">Rating</h3>
+                        <div class="rating-box">
+                            <div class="rating-item btn--outline">
+                                <span class="rating-item__text -medium">0+</span>
+                            </div>
+                            <div class="rating-item btn--outline">
+                                <span class="rating-item__text -medium">1+</span>
+                            </div>
+                            <div class="rating-item btn--outline">
+                                <span class="rating-item__text -medium">2+</span>
+                            </div>
+                            <div class="rating-item btn--outline">
+                                <span class="rating-item__text -medium">3+</span>
+                            </div>
+                            <div class="rating-item btn--outline">
+                                <span class="rating-item__text -medium">4+</span>
+                            </div>
+                        </div>
+                        <div class="filter-icon">
+                            <i class="fa-solid fa-chevron-up"></i>
+                        </div>
+                    </div>
+                    <hr>
+                    <fieldset class="filter-checks">
+                        <h3 class="filter__main -semi-bold">Airlines</h3>
+                        <div class="filter-check">
+                            <input id="Emirated" type="checkbox" required name="Emirated" />
+                            <label for="Emirated" class="btn__text -medium">Emirated</label>
+                        </div>
+                        <div class="filter-check">
+                            <input id="Dubai" type="checkbox" required name="Dubai" />
+                            <label for="Dubai" class="btn__text -medium">Fly Dubai</label>
+                        </div>
+                        <div class="filter-check">
+                            <input id="Qatar" type="checkbox" required name="Qatar" />
+                            <label for="Qatar" class="btn__text -medium">Qatar</label>
+                        </div>
+                        <div class="filter-check">
+                            <input id="Etihad" type="checkbox" required name="Etihad" />
+                            <label for="Etihad" class="btn__text -medium">Etihad</label>
+                        </div>
+                        
+                        <div class="filter-icon">
+                            <i class="fa-solid fa-chevron-up"></i>
+                        </div>
+                    </fieldset>
+                    <hr>
+                    <fieldset class="filter-checks">
+                        <h3 class="filter__main -semi-bold">Trips</h3>
+                        <div class="filter-check">
+                            <input id="Round-trip" type="checkbox" required name="Round-trip" />
+                            <label for="Round-trip" class="btn__text -medium">Round trip</label>
+                        </div>
+                        <div class="filter-check">
+                            <input id="On-Way" type="checkbox" required name="On-Way" />
+                            <label for="On-Way" class="btn__text -medium">On Way</label>
+                        </div>
+                        <div class="filter-check">
+                            <input id="Multi-City" type="checkbox" required name="Multi-City" />
+                            <label for="Multi-City" class="btn__text -medium">Multi-City</label>
+                        </div>
+                        <div class="filter-check">
+                            <input id="My-Dates" type="checkbox" required name="My-Dates" />
+                            <label for="My-Dates" class="btn__text -medium">My Dates Are Flexible</label>
+                        </div>
+                        <div class="filter-icon">
+                            <i class="fa-solid fa-chevron-up"></i>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="flow-list">
+                    
+                    <div id="myTabs" style="--i:4">
+                        <input type="radio" id="tabCheapest" name="tabListFlights">
+                        <label class="-semi-bold" for="tabCheapest">
+                            Cheapest
+                            <br>
+                            <span class="-regular">$99 . 2h 18m</span></label>
+                            <div id="tab" class="flow-box" style="background-color: red;">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit possimus quisquam in quam commodi
+                            voluptatibus doloremque sit placeat dignissimos recusandae, deserunt ducimus officia tempore
+                            iste a quibusdam ratione sunt qui.
+                            Atque sequi eligendi, a suscipit eius nesciunt? Tempore laboriosam tempora voluptatibus pariatur
+                            perferendis atque exercitationem ex asperiores provident expedita nostrum enim, velit dolorem,
+                            cum error modi delectus earum iure quaerat.
+                            Vitae at quas sed possimus illo omnis expedita fugiat excepturi corporis repudiandae? Assumenda
+                            cupiditate cumque enim voluptas sequi fugit repellat provident nihil possimus placeat. Similique
+                            reiciendis qui illum accusantium quidem!
+                            Hic eius explicabo fugiat. Temporibus sit eaque enim natus molestiae hic harum possimus quasi et
+                            pariatur illo magnam praesentium labore tempora, explicabo rerum? Libero sit culpa deserunt,
+                            esse inventore numquam.
+                            Sunt numquam necessitatibus deleniti autem ad quisquam unde, nostrum ratione impedit repudiandae
+                            maxime itaque modi corrupti incidunt sit possimus minima. Omnis accusamus aperiam expedita iusto
+                            cumque nesciunt itaque eum libero.
+                            Repellendus, fuga architecto iure natus autem ratione veritatis optio, omnis a nobis molestiae
+                            voluptatibus. Quas optio delectus, culpa voluptate non doloribus porro quibusdam ad eius?
+                            Reprehenderit cupiditate ipsa totam accusamus?
+                            Suscipit ab dolor eos tempore ipsa laboriosam amet nisi aperiam in labore, repudiandae
+                            voluptatibus praesentium ea delectus iusto cumque accusamus porro ut voluptate dicta soluta.
+                            Odio nesciunt in adipisci exercitationem.
+                            Repellendus, sequi, laboriosam temporibus maiores velit quaerat, magnam excepturi corporis
+                            quidem dolorum eum perferendis! Perferendis quae odio voluptatum unde voluptatem excepturi,
+                            veritatis delectus. Quia soluta delectus quos repellat beatae perferendis?
+                            Saepe assumenda ad voluptas, illum qui magnam doloremque nisi, quas molestiae a ut officiis
+                            blanditiis explicabo! Aliquid quos veniam ullam, suscipit sapiente id sunt pariatur accusantium,
+                            cum, illo nulla quam.
+                            Voluptate, adipisci animi, itaque officia nulla fugiat illum vitae cupiditate earum consectetur
+                            alias, iusto aperiam recusandae perferendis assumenda quaerat. Aliquam, maiores tempora debitis
+                            ipsum iure enim delectus fugit quasi est.
+                        </div>
+                        
+                        <input type="radio" id="tabBest" name="tabListFlights" checked>
+                        <label class="-semi-bold" for="tabBest">
+                            Best
+                            <br>
+                            <span class="-regular">$99 . 2h 18m</span></label>
+                            <div id="tab" class="flow-box">
+                                <div class="flow-quantity">
+                                    <h3 class="-semi-bold">Showing 4 of <span>257 places</span></h3>
+                                    <p>Sort by <strong>Recommended</strong>&nbsp;&nbsp;<i class="fa-solid fa-chevron-down"></i></p>
+                                </div>
+                                <div class="flow-card">
+                                    <div class="flow-image">
+                                        <img src="assets/images/emirates.png" alt="">
+                                    </div>
+                                    <div class="flow-flight">
+                                        <div class="flight-heading">
+                                            <div class="flow-review">
+                                                <div class="rating-item btn--outline"><span
+                                                        class="rating-item__text -medium">4.2</span></div>
+                                                <p class="flight-review__main -medium"><strong>Very Good</strong> 54 reviews</p>
+                                            </div>
+                                            <div class="flow-price">
+                                                <p class="flow-price__des -medium">starting from</p>
+                                                <h2 class="flow-price__main -bold">$104</h2>
+                                            </div>
+                                        </div>
+                                        <div class="flight-time">
+                                            <div class="flight-check">
+                                                <input type="checkbox" name="time-1" id="time-1">
+                                                <label for="time-1">
+                                                    <div class="flight-timeBox">
+                                                        <h3 class="flight-time__main -semi-bold">12:00 pm - 01:28 pm</h3>
+                                                        <p class="flight-time__des -regular">Emirates</p>
+                                                    </div>
+                                                    <span class="-semi-bold">non stop</span>
+                                                    <div class="flight-timeBox">
+                                                        <h3 class="flight-time__main -semi-bold">2h 28m</h3>
+                                                        <p class="flight-time__des -regular">EWR-BNA</p>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="flight-check">
+                                                <input type="checkbox" name="time-2" id="time-2">
+                                                <label for="time-2">
+                                                    <div class="flight-timeBox">
+                                                        <h3 class="flight-time__main -semi-bold">12:00 pm - 01:28 pm</h3>
+                                                        <p class="flight-time__des -regular">Emirates</p>
+                                                    </div>
+                                                    <span class="-semi-bold">non stop</span>
+                                                    <div class="flight-timeBox">
+                                                        <h3 class="flight-time__main -semi-bold">2h 28m</h3>
+                                                        <p class="flight-time__des -regular">EWR-BNA</p>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="flow-button">
+                                            <a href="" class="btn btn--outline -large">
+                                                <img src="assets/icons/outline/heart.svg" alt="">
+                                            </a>
+                                            <a href="flightDetail.html" class="btn btn--fill -large"><span class="btn__text -semi-bold">View
+                                                    Deals</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flow-card">
+                                    <div class="flow-image">
+                                        <img src="assets/images/dubai.png" alt="">
+                                    </div>
+                                    <div class="flow-flight">
+                                        <div class="flight-heading">
+                                            <div class="flow-review">
+                                                <div class="rating-item btn--outline"><span
+                                                        class="rating-item__text -medium">4.2</span></div>
+                                                <p class="flight-review__main -medium"><strong>Very Good</strong> 54 reviews</p>
+                                            </div>
+                                            <div class="flow-price">
+                                                <p class="flow-price__des -medium">starting from</p>
+                                                <h2 class="flow-price__main -bold">$104</h2>
+                                            </div>
+                                        </div>
+                                        <div class="flight-time">
+                                            <div class="flight-check">
+                                                <input type="checkbox" name="time-3" id="time-3">
+                                                <label for="time-3">
+                                                    <div class="flight-timeBox">
+                                                        <h3 class="flight-time__main -semi-bold">12:00 pm - 01:28 pm</h3>
+                                                        <p class="flight-time__des -regular">Emirates</p>
+                                                    </div>
+                                                    <span class="-semi-bold">non stop</span>
+                                                    <div class="flight-timeBox">
+                                                        <h3 class="flight-time__main -semi-bold">2h 28m</h3>
+                                                        <p class="flight-time__des -regular">EWR-BNA</p>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="flight-check">
+                                                <input type="checkbox" name="time-4" id="time-4">
+                                                <label for="time-4">
+                                                    <div class="flight-timeBox">
+                                                        <h3 class="flight-time__main -semi-bold">12:00 pm - 01:28 pm</h3>
+                                                        <p class="flight-time__des -regular">Emirates</p>
+                                                    </div>
+                                                    <span class="-semi-bold">non stop</span>
+                                                    <div class="flight-timeBox">
+                                                        <h3 class="flight-time__main -semi-bold">2h 28m</h3>
+                                                        <p class="flight-time__des -regular">EWR-BNA</p>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="flow-button">
+                                            <a href="" class="btn btn--outline -large">
+                                                <img src="assets/icons/outline/heart.svg" alt="">
+                                            </a>
+                                            <a href="flightDetail.html" class="btn btn--fill -large"><span class="btn__text -semi-bold">View
+                                                    Deals</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flow-card">
+                                    <div class="flow-image">
+                                        <img src="assets/images/quatar.png" alt="">
+                                    </div>
+                                    <div class="flow-flight">
+                                        <div class="flight-heading">
+                                            <div class="flow-review">
+                                                <div class="rating-item btn--outline"><span
+                                                        class="rating-item__text -medium">4.2</span></div>
+                                                <p class="flight-review__main -medium"><strong>Very Good</strong> 54 reviews</p>
+                                            </div>
+                                            <div class="flow-price">
+                                                <p class="flow-price__des -medium">starting from</p>
+                                                <h2 class="flow-price__main -bold">$104</h2>
+                                            </div>
+                                        </div>
+                                        <div class="flight-time">
+                                            <div class="flight-check">
+                                                <input type="checkbox" name="time-5" id="time-5">
+                                                <label for="time-5">
+                                                    <div class="flight-timeBox">
+                                                        <h3 class="flight-time__main -semi-bold">12:00 pm - 01:28 pm</h3>
+                                                        <p class="flight-time__des -regular">Emirates</p>
+                                                    </div>
+                                                    <span class="-semi-bold">non stop</span>
+                                                    <div class="flight-timeBox">
+                                                        <h3 class="flight-time__main -semi-bold">2h 28m</h3>
+                                                        <p class="flight-time__des -regular">EWR-BNA</p>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="flight-check">
+                                                <input type="checkbox" name="time-6" id="time-6">
+                                                <label for="time-6">
+                                                    <div class="flight-timeBox">
+                                                        <h3 class="flight-time__main -semi-bold">12:00 pm - 01:28 pm</h3>
+                                                        <p class="flight-time__des -regular">Emirates</p>
+                                                    </div>
+                                                    <span class="-semi-bold">non stop</span>
+                                                    <div class="flight-timeBox">
+                                                        <h3 class="flight-time__main -semi-bold">2h 28m</h3>
+                                                        <p class="flight-time__des -regular">EWR-BNA</p>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="flow-button">
+                                            <a href="" class="btn btn--outline -large">
+                                                <img src="assets/icons/outline/heart.svg" alt="">
+                                            </a>
+                                            <a href="flightDetail.html" class="btn btn--fill -large"><span class="btn__text -semi-bold">View
+                                                    Deals</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flow-card">
+                                    <div class="flow-image">
+                                        <img src="assets/images/etihad.png" alt="">
+                                    </div>
+                                    <div class="flow-flight">
+                                        <div class="flight-heading">
+                                            <div class="flow-review">
+                                                <div class="rating-item btn--outline"><span
+                                                        class="rating-item__text -medium">4.2</span></div>
+                                                <p class="flight-review__main -medium"><strong>Very Good</strong> 54 reviews</p>
+                                            </div>
+                                            <div class="flow-price">
+                                                <p class="flow-price__des -medium">starting from</p>
+                                                <h2 class="flow-price__main -bold">$104</h2>
+                                            </div>
+                                        </div>
+                                        <div class="flight-time">
+                                            <div class="flight-check">
+                                                <input type="checkbox" name="time-7" id="time-7">
+                                                <label for="time-7">
+                                                    <div class="flight-timeBox">
+                                                        <h3 class="flight-time__main -semi-bold">12:00 pm - 01:28 pm</h3>
+                                                        <p class="flight-time__des -regular">Emirates</p>
+                                                    </div>
+                                                    <span class="-semi-bold">non stop</span>
+                                                    <div class="flight-timeBox">
+                                                        <h3 class="flight-time__main -semi-bold">2h 28m</h3>
+                                                        <p class="flight-time__des -regular">EWR-BNA</p>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="flight-check">
+                                                <input type="checkbox" name="time-8" id="time-8">
+                                                <label for="time-8">
+                                                    <div class="flight-timeBox">
+                                                        <h3 class="flight-time__main -semi-bold">12:00 pm - 01:28 pm</h3>
+                                                        <p class="flight-time__des -regular">Emirates</p>
+                                                    </div>
+                                                    <span class="-semi-bold">non stop</span>
+                                                    <div class="flight-timeBox">
+                                                        <h3 class="flight-time__main -semi-bold">2h 28m</h3>
+                                                        <p class="flight-time__des -regular">EWR-BNA</p>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="flow-button">
+                                            <a href="" class="btn btn--outline -large">
+                                                <img src="assets/icons/outline/heart.svg" alt="">
+                                            </a>
+                                            <a href="flightDetail.html" class="btn btn--fill -large"><span class="btn__text -semi-bold">View
+                                                    Deals</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <input type="radio" id="tabQuickest" name="tabListFlights">
+                        <label class="-semi-bold" for="tabQuickest">
+                            Quickest
+                            <br><span class="-regular">$99 . 2h 18m</span></label>
+                        <div id="tab" class="flow-box" style="background-color: yellow;">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit possimus quisquam in quam commodi
+                            voluptatibus doloremque sit placeat dignissimos recusandae, deserunt ducimus officia tempore
+                            iste a quibusdam ratione sunt qui.
+                            Atque sequi eligendi, a suscipit eius nesciunt? Tempore laboriosam tempora voluptatibus pariatur
+                            perferendis atque exercitationem ex asperiores provident expedita nostrum enim, velit dolorem,
+                            cum error modi delectus earum iure quaerat.
+                            Vitae at quas sed possimus illo omnis expedita fugiat excepturi corporis repudiandae? Assumenda
+                            cupiditate cumque enim voluptas sequi fugit repellat provident nihil possimus placeat. Similique
+                            reiciendis qui illum accusantium quidem!
+                            Hic eius explicabo fugiat. Temporibus sit eaque enim natus molestiae hic harum possimus quasi et
+                            pariatur illo magnam praesentium labore tempora, explicabo rerum? Libero sit culpa deserunt,
+                            esse inventore numquam.
+                            Sunt numquam necessitatibus deleniti autem ad quisquam unde, nostrum ratione impedit repudiandae
+                            maxime itaque modi corrupti incidunt sit possimus minima. Omnis accusamus aperiam expedita iusto
+                            cumque nesciunt itaque eum libero.
+                            Repellendus, fuga architecto iure natus autem ratione veritatis optio, omnis a nobis molestiae
+                            voluptatibus. Quas optio delectus, culpa voluptate non doloribus porro quibusdam ad eius?
+                            Reprehenderit cupiditate ipsa totam accusamus?
+                            Suscipit ab dolor eos tempore ipsa laboriosam amet nisi aperiam in labore, repudiandae
+                            voluptatibus praesentium ea delectus iusto cumque accusamus porro ut voluptate dicta soluta.
+                            Odio nesciunt in adipisci exercitationem.
+                            Repellendus, sequi, laboriosam temporibus maiores velit quaerat, magnam excepturi corporis
+                            quidem dolorum eum perferendis! Perferendis quae odio voluptatum unde voluptatem excepturi,
+                            veritatis delectus. Quia soluta delectus quos repellat beatae perferendis?
+                            Saepe assumenda ad voluptas, illum qui magnam doloremque nisi, quas molestiae a ut officiis
+                            blanditiis explicabo! Aliquid quos veniam ullam, suscipit sapiente id sunt pariatur accusantium,
+                            cum, illo nulla quam.
+                            Voluptate, adipisci animi, itaque officia nulla fugiat illum vitae cupiditate earum consectetur
+                            alias, iusto aperiam recusandae perferendis assumenda quaerat. Aliquam, maiores tempora debitis
+                            ipsum iure enim delectus fugit quasi est.
+                        </div>
+                        <input type="radio" id="tabOther" name="tabListFlights">
+                        <label class="-medium" for="tabOther"><i
+                            class="fa-solid fa-bars"></i>
+                            Other sort</label>
+                        <div id="tab" class="flow-box" style="background-color: greenyellow;">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit possimus quisquam in quam commodi
+                            voluptatibus doloremque sit placeat dignissimos recusandae, deserunt ducimus officia tempore
+                            iste a quibusdam ratione sunt qui.
+                            Atque sequi eligendi, a suscipit eius nesciunt? Tempore laboriosam tempora voluptatibus pariatur
+                            perferendis atque exercitationem ex asperiores provident expedita nostrum enim, velit dolorem,
+                            cum error modi delectus earum iure quaerat.
+                            Vitae at quas sed possimus illo omnis expedita fugiat excepturi corporis repudiandae? Assumenda
+                            cupiditate cumque enim voluptas sequi fugit repellat provident nihil possimus placeat. Similique
+                            reiciendis qui illum accusantium quidem!
+                            Hic eius explicabo fugiat. Temporibus sit eaque enim natus molestiae hic harum possimus quasi et
+                            pariatur illo magnam praesentium labore tempora, explicabo rerum? Libero sit culpa deserunt,
+                            esse inventore numquam.
+                            Sunt numquam necessitatibus deleniti autem ad quisquam unde, nostrum ratione impedit repudiandae
+                            maxime itaque modi corrupti incidunt sit possimus minima. Omnis accusamus aperiam expedita iusto
+                            cumque nesciunt itaque eum libero.
+                            Repellendus, fuga architecto iure natus autem ratione veritatis optio, omnis a nobis molestiae
+                            voluptatibus. Quas optio delectus, culpa voluptate non doloribus porro quibusdam ad eius?
+                            Reprehenderit cupiditate ipsa totam accusamus?
+                            Suscipit ab dolor eos tempore ipsa laboriosam amet nisi aperiam in labore, repudiandae
+                            voluptatibus praesentium ea delectus iusto cumque accusamus porro ut voluptate dicta soluta.
+                            Odio nesciunt in adipisci exercitationem.
+                            Repellendus, sequi, laboriosam temporibus maiores velit quaerat, magnam excepturi corporis
+                            quidem dolorum eum perferendis! Perferendis quae odio voluptatum unde voluptatem excepturi,
+                            veritatis delectus. Quia soluta delectus quos repellat beatae perferendis?
+                            Saepe assumenda ad voluptas, illum qui magnam doloremque nisi, quas molestiae a ut officiis
+                            blanditiis explicabo! Aliquid quos veniam ullam, suscipit sapiente id sunt pariatur accusantium,
+                            cum, illo nulla quam.
+                            Voluptate, adipisci animi, itaque officia nulla fugiat illum vitae cupiditate earum consectetur
+                            alias, iusto aperiam recusandae perferendis assumenda quaerat. Aliquam, maiores tempora debitis
+                            ipsum iure enim delectus fugit quasi est.
+                        </div>
+                    </div>
+                    <a href="#" class="btn flight-show -large"><span class="btn__text -semi-bold -white">Show more results</span></a>
+                </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-heading container">
+            <div class="footer-heading__content">
+                <h2 class="footer-heading__main -trade-gothic -bold">Subscribe<br>Newsletter</h2>
+                <h3 class="footer-heading__sub -trade-gothic-bold">The Travel</h3>
+                <p class="footer-heading__des -medium">Get inspired! Receive travel discounts, tips and behind the
+                    scenes stories.</p>
+                <form action="post">
+                    <input type="text" placeholder="Your email address">
+                    <a href="#" class="btn btn--subscribe"><span class="btn__text -semi-bold">subscribe</span></a>
+                </form>
+            </div>
+            <div class="footer-heading__image">
+                <img src="assets/icons/emojione-v1_open-mailbox-with-lowered-flag.png" alt="#">
+            </div>
+        </div>
+        <div class="footer-content container">
+            <div class="footer-content__icon">
+                <div class="footer-content__logo">
+                    <img src="assets/images/Logo2.png" alt="logo">
+                </div>
+                <div class="footer-content__social">
+                    <img src="assets/icons/vector/akar-icons_facebook-fill.png" alt="facebook">
+                    <img src="assets/icons/vector/akar-icons_twitter-fill.png" alt="twitter">
+                    <img src="assets/icons/vector/akar-icons_youtube-fill.png" alt="youtube">
+                    <img src="assets/icons/vector/ant-design_instagram-filled.png" alt="instagram">
+                </div>
+            </div>
+            <div class="footer-content__menu">
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Our Destinations</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Canada</a></li>
+                        <li><a href="#" class="-medium">Alaksa</a></li>
+                        <li><a href="#" class="-medium">France</a></li>
+                        <li><a href="#" class="-medium">Iceland</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Our Activities</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Northern Lights</a></li>
+                        <li><a href="#" class="-medium">Cruising & sailing</a></li>
+                        <li><a href="#" class="-medium">Multi-activities</a></li>
+                        <li><a href="#" class="-medium">Kayaing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Travel Blogs</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Bali Travel Guide</a></li>
+                        <li><a href="#" class="-medium">Sri Lanks Travel Guide</a></li>
+                        <li><a href="#" class="-medium">Peru Travel Guide</a></li>
+                        <li><a href="#" class="-medium">Bali Travel Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">About Us</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Our Story</a></li>
+                        <li><a href="#" class="-medium">Work with us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Contact Us</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Our Story</a></li>
+                        <li><a href="#" class="-medium">Work with us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="js/flowListing.js" type="text/javascript"></script>
+    <script src="js/form.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+</body>
+
+</html>
+<!-- arrow-right -->

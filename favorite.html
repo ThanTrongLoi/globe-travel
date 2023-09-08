@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="golobe - travel agency, find stays, find flights, hotel, resort, 
+    tourism">
+    <meta name="keywords" content="golobe - travel, find stays, find flights, hotel, resort, 
+    tourism">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golobe - Travel Agency</title>
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a id="flights" href="flight.html" class="btn btn--none">
+                <div class="btn__icon">
+                    <img src="assets/icons/fill/airPlane.svg" alt="airPlane">
+                </div>
+                <span class="btn__text -semi-bold">find flight</span>
+            </a>
+
+
+            <a id="stays" href="hotel.html" class="btn btn--none active">
+                <div class="btn__icon">
+                    <img src="assets/icons/fill/bed.svg" alt="bed">
+                </div>
+                <span class="btn__text -semi-bold">find stays</span>
+            </a>
+        </div>
+        <a href="index.html" class="header-logo">
+            <img src="assets/images/Logo.png" alt="logo">
+        </a>
+        <div class="header-right">
+            <a href="authLogin.html" class="btn btn--none"><span class="btn__text -semi-bold">Login</span></a>
+            <a href="authSignup.html" class="btn btn--signup btn--flow -large"><span
+                    class="btn__text -white -semi-bold">Sign
+                    up</span></a>
+        </div>
+        <div class="header-account">
+            <a href="#" class="header-account__favorite" style="--clr:#112211">
+                <i class="fa-solid fa-heart"></i>
+                <span class="btn__text -semi-bold">Favourites</span></a>
+            <div class="header-account__user">
+                <div class="header-account__avt">
+                    <img src="assets/images/user.jpeg" alt="">
+                </div>
+                <span class="btn__text -semi-bold">John D.</span>
+            </div>
+            <div class="user-info">
+                <div class="user-info__heading">
+                    <div class="user-info__avatar">
+                        <img src="assets/images/user.jpeg" alt="user-avt">
+                    </div>
+                    <div class="user-info__content">
+                        <p class="user-info__name -semi-bold">John Doe.</p>
+                        <p class="user-info__status -regular">Online</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="user-info__account">
+                    <a href="account.html">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/User.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">My account</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/card.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Payments</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/setting.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Settings</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                </div>
+                <hr>
+                <div class="user-info__support">
+                    <a href="#">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/Support.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Support</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                    <button onclick="logout();">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/Logout.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Logout</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="flow-content" class="flow-content flow-content--favorite container">
+            <h1 class="flow-favorite__title -trade-gothic -bold">Favourites</h1>
+            <div id="myTabs" class="flow-list flow-list--favorite" style="--i:2">
+                <input type="radio" id="tabFlights" name="tabFavorite">
+                <label class="-semi-bold" for="tabFlights">Flights<br><span class="-regular">2 marked</span></label>
+                <div id="tab" class="flow-box--favorite">
+                    <div class="flow-card">
+                        <div class="flow-image">
+                            <img src="assets/images/emirates.png" alt="">
+                        </div>
+                        <div class="flow-flight">
+                            <div class="flight-heading">
+                                <div class="flow-review">
+                                    <div class="rating-item btn--outline"><span
+                                            class="rating-item__text -medium">4.2</span></div>
+                                    <p class="flight-review__main -medium"><strong>Very Good</strong> 54 reviews</p>
+                                </div>
+                                <div class="flow-price">
+                                    <p class="flow-price__des -medium">starting from</p>
+                                    <h2 class="flow-price__main -bold">$104</h2>
+                                </div>
+                            </div>
+                            <div class="flight-time">
+                                <div class="flight-check">
+                                    <input type="checkbox" name="time-1" id="time-1">
+                                    <label for="time-1">
+                                        <div class="flight-timeBox">
+                                            <h3 class="flight-time__main -semi-bold">12:00 pm - 01:28 pm</h3>
+                                            <p class="flight-time__des -regular">Emirates</p>
+                                        </div>
+                                        <span class="-semi-bold">non stop</span>
+                                        <div class="flight-timeBox">
+                                            <h3 class="flight-time__main -semi-bold">2h 28m</h3>
+                                            <p class="flight-time__des -regular">EWR-BNA</p>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="flight-check">
+                                    <input type="checkbox" name="time-2" id="time-2">
+                                    <label for="time-2">
+                                        <div class="flight-timeBox">
+                                            <h3 class="flight-time__main -semi-bold">12:00 pm - 01:28 pm</h3>
+                                            <p class="flight-time__des -regular">Emirates</p>
+                                        </div>
+                                        <span class="-semi-bold">non stop</span>
+                                        <div class="flight-timeBox">
+                                            <h3 class="flight-time__main -semi-bold">2h 28m</h3>
+                                            <p class="flight-time__des -regular">EWR-BNA</p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flow-button">
+                                <a href="" class="btn btn--outline -large">
+                                    <img src="assets/icons/outline/heart.svg" alt="">
+                                </a>
+                                <a href="flightDetail.html" class="btn btn--fill -large"><span
+                                        class="btn__text -semi-bold">View
+                                        Deals</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flow-card">
+                        <div class="flow-image">
+                            <img src="assets/images/dubai.png" alt="">
+                        </div>
+                        <div class="flow-flight">
+                            <div class="flight-heading">
+                                <div class="flow-review">
+                                    <div class="rating-item btn--outline"><span
+                                            class="rating-item__text -medium">4.2</span></div>
+                                    <p class="flight-review__main -medium"><strong>Very Good</strong> 54 reviews</p>
+                                </div>
+                                <div class="flow-price">
+                                    <p class="flow-price__des -medium">starting from</p>
+                                    <h2 class="flow-price__main -bold">$104</h2>
+                                </div>
+                            </div>
+                            <div class="flight-time">
+                                <div class="flight-check">
+                                    <input type="checkbox" name="time-3" id="time-3">
+                                    <label for="time-3">
+                                        <div class="flight-timeBox">
+                                            <h3 class="flight-time__main -semi-bold">12:00 pm - 01:28 pm</h3>
+                                            <p class="flight-time__des -regular">Emirates</p>
+                                        </div>
+                                        <span class="-semi-bold">non stop</span>
+                                        <div class="flight-timeBox">
+                                            <h3 class="flight-time__main -semi-bold">2h 28m</h3>
+                                            <p class="flight-time__des -regular">EWR-BNA</p>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="flight-check">
+                                    <input type="checkbox" name="time-4" id="time-4">
+                                    <label for="time-4">
+                                        <div class="flight-timeBox">
+                                            <h3 class="flight-time__main -semi-bold">12:00 pm - 01:28 pm</h3>
+                                            <p class="flight-time__des -regular">Emirates</p>
+                                        </div>
+                                        <span class="-semi-bold">non stop</span>
+                                        <div class="flight-timeBox">
+                                            <h3 class="flight-time__main -semi-bold">2h 28m</h3>
+                                            <p class="flight-time__des -regular">EWR-BNA</p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flow-button">
+                                <a href="" class="btn btn--outline -large">
+                                    <img src="assets/icons/outline/heart.svg" alt="">
+                                </a>
+                                <a href="flightDetail.html" class="btn btn--fill -large"><span
+                                        class="btn__text -semi-bold">View
+                                        Deals</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="radio" id="tabPlaces" name="tabFavorite" checked>
+                <label class="-semi-bold" for="tabPlaces">Places<br><span class="-regular">3 marked</span></label>
+                <div id="tab" class="flow-box flow-box--favorite">
+                    <div class="flow-card flow-card--hotel flow-card--favorite">
+                        <div class="flow-card__image flow-image--favorite">
+                            <img src="assets/images/hotel.jpeg" alt="">
+                        </div>
+                        <div class="flow-hotel flow-hotel--favorite">
+                            <div class="hotel-heading">
+                                <div class="hotel-content">
+                                    <h2 class="hotel-content__main -trade-gothic -bold">CVK Park Bosphorus Hotel
+                                        Istanbul</h2>
+                                    <p class="hotel-content__des -medium"><i
+                                            class="fa-solid fa-location-dot"></i>&nbsp;Gümüssuyu Mah. Inönü Cad.
+                                        No:8,
+                                        Istanbul 34437</p>
+                                    <div class="hotel-rating">
+                                        <div class="hotel-star">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <p class="hotel-rating__des -medium">5 Star Hotel</p>
+                                        </div>
+                                        <div class="hotel-amenity">
+                                            <div class="hotel-amenity__icon">
+                                                <img src="assets/icons/fill/Breatfast.svg" alt="#">
+                                            </div>
+                                            <h3 class="hotel-amenity__des -regular"><strong>20+</strong>Amenities
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <div class="flow-review">
+                                        <div class="rating-item btn--outline"><span
+                                                class="rating-item__text -medium">4.2</span></div>
+                                        <p class="flight-review__main -medium"><strong>Very Good</strong> 54 reviews
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flow-price">
+                                    <p class="flow-price__des -medium">starting from</p>
+                                    <h2 class="flow-price__main -bold">$240<small>/night</small></h2>
+                                    <p class="flow-price__des -medium">excl. tax</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flow-button">
+                                <a href="" class="btn btn--outline -large">
+                                    <img src="assets/icons/outline/heart.svg" alt="">
+                                </a>
+                                <a href="" class="btn btn--fill -large"><span class="btn__text -semi-bold">View
+                                        Deals</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flow-card flow-card--hotel flow-card--favorite">
+                        <div class="flow-card__image flow-image--favorite">
+                            <img src="assets/images/hotel2.jpeg" alt="">
+                        </div>
+                        <div class="flow-hotel flow-hotel--favorite">
+                            <div class="hotel-heading">
+                                <div class="hotel-content">
+                                    <h2 class="hotel-content__main -trade-gothic -bold">Eresin Hotels Sultanahmet -
+                                        Boutique Class</h2>
+                                    <p class="hotel-content__des -medium"><i
+                                            class="fa-solid fa-location-dot"></i>&nbsp;Kucukayasofya No. 40
+                                        Sultanahmet, Istanbul 34022</p>
+                                    <div class="hotel-rating">
+                                        <div class="hotel-star">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <p class="hotel-rating__des -medium">5 Star Hotel</p>
+                                        </div>
+                                        <div class="hotel-amenity">
+                                            <div class="hotel-amenity__icon">
+                                                <img src="assets/icons/fill/Breatfast.svg" alt="#">
+                                            </div>
+                                            <h3 class="hotel-amenity__des -regular"><strong>20+</strong>Amenities
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <div class="flow-review">
+                                        <div class="rating-item btn--outline"><span
+                                                class="rating-item__text -medium">4.2</span></div>
+                                        <p class="flight-review__main -medium"><strong>Very Good</strong> 54 reviews
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flow-price">
+                                    <p class="flow-price__des -medium">starting from</p>
+                                    <h2 class="flow-price__main -bold">$104<small>/night</small></h2>
+                                    <p class="flow-price__des -medium">excl. tax</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flow-button">
+                                <a href="" class="btn btn--outline -large">
+                                    <img src="assets/icons/outline/heart.svg" alt="">
+                                </a>
+                                <a href="" class="btn btn--fill -large"><span class="btn__text -semi-bold">View
+                                        Deals</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flow-card flow-card--hotel flow-card--favorite">
+                        <div class="flow-card__image flow-image--favorite">
+                            <img src="assets/images/hotel3.jpeg" alt="">
+                        </div>
+                        <div class="flow-hotel flow-hotel--favorite">
+                            <div class="hotel-heading">
+                                <div class="hotel-content">
+                                    <h2 class="hotel-content__main -trade-gothic -bold">Eresin Hotels Sultanahmet -
+                                        Boutique Class</h2>
+                                    <p class="hotel-content__des -medium"><i
+                                            class="fa-solid fa-location-dot"></i>&nbsp;Kucukayasofya No. 40
+                                        Sultanahmet, Istanbul 34022</p>
+                                    <div class="hotel-rating">
+                                        <div class="hotel-star">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <p class="hotel-rating__des -medium">5 Star Hotel</p>
+                                        </div>
+                                        <div class="hotel-amenity">
+                                            <div class="hotel-amenity__icon">
+                                                <img src="assets/icons/fill/Breatfast.svg" alt="#">
+                                            </div>
+                                            <h3 class="hotel-amenity__des -regular"><strong>20+</strong>Amenities
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <div class="flow-review">
+                                        <div class="rating-item btn--outline"><span
+                                                class="rating-item__text -medium">4.2</span></div>
+                                        <p class="flight-review__main -medium"><strong>Very Good</strong> 54 reviews
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flow-price">
+                                    <p class="flow-price__des -medium">starting from</p>
+                                    <h2 class="flow-price__main -bold">$240<small>/night</small></h2>
+                                    <p class="flow-price__des -medium">excl. tax</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flow-button">
+                                <a href="" class="btn btn--outline -large">
+                                    <img src="assets/icons/outline/heart.svg" alt="">
+                                </a>
+                                <a href="" class="btn btn--fill -large"><span class="btn__text -semi-bold">View
+                                        Deals</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <div class="footer-heading container">
+            <div class="footer-heading__content">
+                <h2 class="footer-heading__main -trade-gothic -bold">Subscribe<br>Newsletter</h2>
+                <h3 class="footer-heading__sub -trade-gothic-bold">The Travel</h3>
+                <p class="footer-heading__des -medium">Get inspired! Receive travel discounts, tips and behind the
+                    scenes stories.</p>
+                <form action="post">
+                    <input type="text" placeholder="Your email address">
+                    <a href="#" class="btn btn--subscribe"><span class="btn__text -semi-bold">subscribe</span></a>
+                </form>
+            </div>
+            <div class="footer-heading__image">
+                <img src="assets/icons/emojione-v1_open-mailbox-with-lowered-flag.png" alt="#">
+            </div>
+        </div>
+        <div class="footer-content container">
+            <div class="footer-content__icon">
+                <div class="footer-content__logo">
+                    <img src="assets/images/Logo2.png" alt="logo">
+                </div>
+                <div class="footer-content__social">
+                    <img src="assets/icons/vector/akar-icons_facebook-fill.png" alt="facebook">
+                    <img src="assets/icons/vector/akar-icons_twitter-fill.png" alt="twitter">
+                    <img src="assets/icons/vector/akar-icons_youtube-fill.png" alt="youtube">
+                    <img src="assets/icons/vector/ant-design_instagram-filled.png" alt="instagram">
+                </div>
+            </div>
+            <div class="footer-content__menu">
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Our Destinations</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Canada</a></li>
+                        <li><a href="#" class="-medium">Alaksa</a></li>
+                        <li><a href="#" class="-medium">France</a></li>
+                        <li><a href="#" class="-medium">Iceland</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Our Activities</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Northern Lights</a></li>
+                        <li><a href="#" class="-medium">Cruising & sailing</a></li>
+                        <li><a href="#" class="-medium">Multi-activities</a></li>
+                        <li><a href="#" class="-medium">Kayaing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Travel Blogs</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Bali Travel Guide</a></li>
+                        <li><a href="#" class="-medium">Sri Lanks Travel Guide</a></li>
+                        <li><a href="#" class="-medium">Peru Travel Guide</a></li>
+                        <li><a href="#" class="-medium">Bali Travel Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">About Us</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Our Story</a></li>
+                        <li><a href="#" class="-medium">Work with us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Contact Us</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Our Story</a></li>
+                        <li><a href="#" class="-medium">Work with us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+</body>
+
+</html>
+<!-- arrow-right -->

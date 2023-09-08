@@ -1,0 +1,315 @@
+.hotel {
+    &-image {
+        &-list {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: .8rem;
+            border-radius: 1.2rem;
+            margin-top: 3.2rem;
+            overflow: hidden;
+            position: relative;
+
+            &__item {
+                width: 30.2rem;
+                height: 27.1rem;
+                overflow: hidden;
+
+                &>img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    @include transition-ease();
+                }
+
+                &:first-child {
+                    width: 100%;
+                    height: 100%;
+                    grid-column: span 2;
+                    grid-row: span 2;
+                }
+
+                &:hover>img {
+                    transform: scale(1.2);
+                }
+            }
+
+            &>a {
+                position: absolute;
+                bottom: 1.6rem;
+                right: 1.6rem;
+                // text-transform: lowercase;
+            }
+        }
+
+    }
+
+    &-detail {
+        &-line {
+            width: 1232px;
+            margin: 6.4rem 0;
+        }
+    }
+
+    &__title {
+        font-size: 2em;
+        @include style-height();
+    }
+
+    &-overview {
+        align-items: flex-start;
+
+        &__des {
+            font-size: 1.6em;
+            opacity: 75%;
+            @include style-height();
+            margin: 1.6rem 0 3.2rem;
+        }
+
+        &-box {
+            display: flex;
+            flex-wrap: wrap;
+            // grid-template-columns: repeat(5, minmax(0,1fr));
+            align-items: center;
+            gap: 1.6rem;
+        }
+
+        &-item {
+            width: 16rem;
+            height: 14.5rem;
+            padding: 1.6rem 0 1.6rem 1.6rem;
+            border-radius: 1.2rem;
+            border: 1px solid $primary-color;
+
+            &:first-child {
+                width: 16.6rem;
+                border: none;
+                background-color: $primary-color;
+            }
+
+            &__main {
+                font-size: 3.2em;
+                @include style-height();
+                margin-bottom: 3.2rem;
+            }
+
+            &__sub {
+                font-size: 1.6em;
+                @include style-height();
+            }
+
+            &__des {
+                font-size: 1.4em;
+                @include style-height();
+            }
+
+            &__image {
+                width: 3.2rem;
+                height: 3.2rem;
+                overflow: hidden;
+                margin-bottom: 6.1rem;
+
+                &>img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    &-rooms {
+        align-items: flex-start;
+
+    }
+
+    &-room {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgba(17, 34, 17, 25%);
+        padding-bottom: 1.6rem;
+        margin-bottom: 1.6rem;
+
+        &:nth-child(2) {
+            margin-top: 3.2rem;
+        }
+
+        &:last-child {
+            border: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        &__image {
+            width: 4.8rem;
+            height: 4.8rem;
+            border-radius: .4rem;
+            overflow: hidden;
+            margin-right: 1.6rem;
+
+            &>img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__main {
+            width: 72%;
+            font-size: 1.6em;
+            @include style-height();
+        }
+
+        &__price {
+            font-size: 2em;
+            @include style-height();
+
+            &>small {
+                font-size: 1.2rem;
+                margin-right: 6.4rem;
+            }
+        }
+
+        &>a {
+            padding: 0 3.85rem;
+        }
+
+    }
+
+    &-map {
+        align-items: flex-start;
+
+        &-heading {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 3.2rem;
+        }
+    }
+
+    &-amenities {
+        align-items: flex-start;
+    }
+
+    &-amenity-detail {
+        margin-top: 3.2rem;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+
+
+        &__icon {
+            display: flex;
+            align-items: center;
+            gap: 0 .8rem;
+            margin-bottom: 2.4rem;
+        }
+
+        &__sub {
+            font-size: 1.6em;
+            color: #FF8682;
+            margin-bottom: 2rem;
+            @include style-height();
+            cursor: pointer;
+        }
+    }
+
+&-reviews {
+    margin-bottom: 12rem;
+
+    &-heading {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 2.4rem;
+    }
+
+    &-rate {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 0 1.6rem;
+    }
+
+    &__main {
+        display: inline-block;
+        font-size: 5em;
+        @include style-height();
+    }
+
+    &__sub {
+        display: inline-block;
+        font-size: 2em;
+        @include style-height();
+    }
+
+    &__des {
+        font-size: 1.4rem;
+        margin-top: .8rem;
+    }
+
+    &__line {
+        margin: 2.4rem 0;
+        width: 100%;
+        opacity: 25%;
+    }
+
+    &-redirect {
+        &>i {
+            font-size: 1.4em;
+            @include style-height();
+            cursor: pointer;
+        }
+
+        &>span {
+            margin: 0 2.4rem;
+        }
+    }
+}
+
+&-review {
+    display: flex;
+    gap: 0 1.6rem;
+
+    &__image {
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 50%;
+        overflow: hidden;
+
+        &>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &-content {
+        width: 95%;
+
+        &__main {
+            font-size: 1.4em;
+            @include style-height();
+
+            &:first-child {
+                margin-bottom: 0.8rem;
+            }
+        }
+    }
+
+    &__icon {
+        width: 2rem;
+        height: 2rem;
+        overflow: hidden;
+        filter: invert(8%) sepia(11%) saturate(2525%) hue-rotate(71deg) brightness(102%) contrast(93%);
+
+        &>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+}

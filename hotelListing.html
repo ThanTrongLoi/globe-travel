@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="golobe - travel agency, find stays, find flights, hotel, resort, 
+    tourism">
+    <meta name="keywords" content="golobe - travel, find stays, find flights, hotel, resort, 
+    tourism">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golobe - Travel Agency</title>
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a id="flights" href="flight.html" class="btn btn--none">
+                <div class="btn__icon">
+                    <img src="assets/icons/fill/airPlane.svg" alt="airPlane">
+                </div>
+                <span class="btn__text -semi-bold">find flight</span>
+            </a>
+
+
+            <a id="stays" href="hotel.html" class="btn btn--none">
+                <div class="btn__icon">
+                    <img src="assets/icons/fill/bed.svg" alt="bed">
+                </div>
+                <span class="btn__text -semi-bold">find stays</span>
+            </a>
+        </div>
+        <a href="index.html" class="header-logo">
+            <img src="assets/images/Logo.png" alt="logo">
+        </a>
+        <div class="header-right">
+            <a href="authLogin.html" class="btn btn--none"><span class="btn__text -semi-bold">Login</span></a>
+            <a href="authSignup.html" class="btn btn--signup btn--flow -large"><span
+                    class="btn__text -white -semi-bold">Sign
+                    up</span></a>
+        </div>
+        <div class="header-account">
+            <a href="favorite.html" class="header-account__favorite" style="--clr:#112211">
+                <i class="fa-solid fa-heart"></i>
+                <span class="btn__text -semi-bold">Favourites</span></a>
+            <div class="header-account__user">
+                <div class="header-account__avt">
+                    <img src="assets/images/user.jpeg" alt="">
+                </div>
+                <span class="btn__text -semi-bold">John D.</span>
+            </div>
+            <div class="user-info">
+                <div class="user-info__heading">
+                    <div class="user-info__avatar">
+                        <img src="assets/images/user.jpeg" alt="user-avt">
+                    </div>
+                    <div class="user-info__content">
+                        <p class="user-info__name -semi-bold">John Doe.</p>
+                        <p class="user-info__status -regular">Online</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="user-info__account">
+                    <a href="account.html">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/User.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">My account</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/card.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Payments</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/setting.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Settings</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                </div>
+                <hr>
+                <div class="user-info__support">
+                    <a href="#">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/Support.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Support</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                    <button onclick="logout();">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/Logout.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Logout</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <form class="flow-form container" method="post" action="#">
+            <!-- <fieldset class="hero-search__form"> -->
+            <div class="hero-search__input hero-input--flight">
+                <input id="address" name="address" type="text" value="Istanbul, Turkey">
+                <label class="-regular" for="address">Enter Destination</label>
+                <div class="btn__icon hero-search__icon">
+                    <img src="assets/icons/vector/ion_swap-horizontal.svg" alt="">
+                </div>
+            </div>
+            <div class="hero-search__input hero-input--hotel">
+                <div class="btn__icon hero-search__icon">
+                    <img src="assets/icons/fill/calendar.svg" alt="">
+                </div>
+                <input type="date" name="check-in" id="check-in">
+                <label class="-regular" for="check-in">Check In</label>
+                
+            </div>
+            <div class="hero-search__input hero-input--hotel">
+                <input id="check-out" name="check-out" type="date">
+                <label class="-regular" for="check-out">Check Out</label>
+                <div class="btn__icon hero-search__icon">
+                    <img src="assets/icons/fill/calendar.svg" alt="">
+                </div>
+            </div>
+            <!-- <div class="hero-search__input hero-input--hotel">
+                <input id="pass-class" type="text" value="1 Passenger, Economy">
+                <label class="-regular" for="pass-class">Passenger - Class</label>
+            </div> -->
+            <div class="drop-down drop-down--hotel">
+                <p class="btn__text -regular">Rooms & Guests</p>
+                <span id="room" class="drop-down__main -regular">1</span>
+                &nbsp;&nbsp;<span class="drop-down__main -regular">room,</span>
+                &nbsp;&nbsp;
+                <span id="guest" class="drop-down__main -regular">1</span>
+                &nbsp;&nbsp;<span class="drop-down__main -regular">guests</span>
+                <div class="drop-down-item">
+                    <div class="drop-down-item__content">
+                        <article class="count-guest">
+                            <span class="drop-down__main -regular">Room</span>
+                            <div  class="count">
+                                <i id="minusRoom" class="fa-solid fa-minus"></i>
+                                <span id="count-room" class="drop-down__main -regular">1</span>
+                                <i id="plusRoom" class="fa-solid fa-plus"></i>
+                            </div>
+                        </article>
+                        <article>
+                            <span class="drop-down__main -regular">Guests</span>
+                            <div class="count">
+                                <i id="minuGuest" class="fa-solid fa-minus"></i>
+                                <span id="count-guest" class="drop-down__main -regular">1</span>
+                                <i id="plusGuest" class="fa-solid fa-plus"></i>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="drop-down-icon">
+                    <img src="assets/icons/vector/chevron_down.svg" alt="icon-down">
+                </div>
+            </div>
+            <a href="#" class="btn btn--fill"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <!-- </fieldset> -->
+        </form>
+        <span class="flow-filter__icon -trade-gothic -semi-bold">Filters <i class="fa-solid fa-filter"></i></span>
+        <section id="flow-content" class="flow-content container">
+                <div class="flow-filter">
+                    <i id="close-filter" class="fa-solid fa-xmark"></i>
+                    <h2 class="filter__title -semi-bold">Filters</h2>
+                    <div class="filter-price">
+                        <h3 class="filter__main -semi-bold">Price</h3>
+                        <div class="filter-icon">
+                            <i class="fa-solid fa-chevron-up"></i>
+                        </div>
+                        <div id="price-slider" class="flow-slider">
+                            <div class="flow-progress"></div>
+                        </div>
+                        <div id="price-field" class="flow-range">
+                            <input type="range" name="range-min" id="range-min" class="flow-range__min" min="50"
+                                max="1200" value="0">
+                            <label class="range-min -medium" for="range-min">$50</label>
+                            <input type="range" name="range-max" id="range-max" class="flow-range__max" min="50"
+                                max="1200" value="1200">
+                            <label class="range-max -medium" for="range-max">$1200</label>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="filter-rating">
+                        <h3 class="filter__main -semi-bold">Rating</h3>
+                        <div class="rating-box">
+                            <div class="rating-item btn--outline">
+                                <span class="rating-item__text -medium">0+</span>
+                            </div>
+                            <div class="rating-item btn--outline">
+                                <span class="rating-item__text -medium">1+</span>
+                            </div>
+                            <div class="rating-item btn--outline">
+                                <span class="rating-item__text -medium">2+</span>
+                            </div>
+                            <div class="rating-item btn--outline">
+                                <span class="rating-item__text -medium">3+</span>
+                            </div>
+                            <div class="rating-item btn--outline">
+                                <span class="rating-item__text -medium">4+</span>
+                            </div>
+                        </div>
+                        <div class="filter-icon">
+                            <i class="fa-solid fa-chevron-up"></i>
+                        </div>
+                    </div>
+                    <hr>
+                    <fieldset class="filter-checks">
+                        <h3 class="filter__main -semi-bold">Freebies</h3>
+                        <div class="filter-check">
+                            <input id="breakfast" type="checkbox" required name="breakfast" />
+                            <label for="breakfast" class="btn__text -medium">Free breakfast</label>
+                        </div>
+                        <div class="filter-check">
+                            <input id="parking" type="checkbox" required name="parking" />
+                            <label for="parking" class="btn__text -medium">Free parking</label>
+                        </div>
+                        <div class="filter-check">
+                            <input id="internet" type="checkbox" required name="internet" />
+                            <label for="internet" class="btn__text -medium">Free internet</label>
+                        </div>
+                        <div class="filter-check">
+                            <input id="airport-shuttle" type="checkbox" required name="airport-shuttle" />
+                            <label for="airport-shuttle" class="btn__text -medium">Free airport shuttle</label>
+                        </div>
+                        <div class="filter-check">
+                            <input id="cancellation" type="checkbox" required name="cancellation" />
+                            <label for="cancellation" class="btn__text -medium">Free cancellation</label>
+                        </div>
+                        <div class="filter-icon">
+                            <i class="fa-solid fa-chevron-up"></i>
+                        </div>
+                    </fieldset>
+                    <hr>
+                    <fieldset class="filter-checks">
+                        <h3 class="filter__main -semi-bold">Amenities</h3>
+                        <div class="filter-check">
+                            <input id="front-desk" type="checkbox" required name="front-desk" />
+                            <label for="front-desk" class="btn__text -medium">24hr front desk</label>
+                        </div>
+                        <div class="filter-check">
+                            <input id="Air-conditioned" type="checkbox" required name="Air-conditioned" />
+                            <label for="Air-conditioned" class="btn__text -medium">Air-conditioned</label>
+                        </div>
+                        <div class="filter-check">
+                            <input id="Fitness" type="checkbox" required name="Fitness" />
+                            <label for="Fitness" class="btn__text -medium">Fitness</label>
+                        </div>
+                        <div class="filter-check">
+                            <input id="Pool" type="checkbox" required name="Pool" />
+                            <label for="Pool" class="btn__text -medium">Pool</label>
+                        </div>
+                        <span class="filter-checks__more btn__text -bold">+24 more</span>
+                        <div class="filter-icon">
+                            <i class="fa-solid fa-chevron-up"></i>
+                        </div>
+                    </fieldset>
+                    
+                </div>
+                <div class="flow-list">
+                    <div id="myTabs" style="--i:3">
+                        <input type="radio" id="tabHotel" name="tabListHotel" checked>
+                        <label class="-semi-bold" for="tabHotel">
+                            Hotels
+                            <br>
+                            <span class="-regular">257 places</span></label>
+                        <div id="tab" class="flow-box">
+                            <div class="flow-quantity">
+                                <h3 class="-semi-bold">Showing 4 of <span>257 places</span></h3>
+                                <p>Sort by <strong>Recommended</strong>&nbsp;&nbsp;<i class="fa-solid fa-chevron-down"></i></p>
+                            </div>
+                            <div class="flow-card flow-card--hotel">
+                                <div class="flow-card__image">
+                                    <img src="assets/images/hotel.jpeg" alt="">
+                                </div>
+                                <div class="flow-hotel">
+                                    <div class="hotel-heading">
+                                        <div class="hotel-content">
+                                            <h2 class="hotel-content__main -trade-gothic -bold">CVK Park Bosphorus Hotel
+                                                Istanbul</h2>
+                                            <p class="hotel-content__des -medium"><i
+                                                    class="fa-solid fa-location-dot"></i>&nbsp;Gümüssuyu Mah. Inönü Cad.
+                                                No:8,
+                                                Istanbul 34437</p>
+                                            <div class="hotel-rating">
+                                                <div class="hotel-star">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <p class="hotel-rating__des -medium">5 Star Hotel</p>
+                                                </div>
+                                                <div class="hotel-amenity">
+                                                    <div class="hotel-amenity__icon">
+                                                        <img src="assets/icons/fill/Breatfast.svg" alt="#">
+                                                    </div>
+                                                    <h3 class="hotel-amenity__des -regular"><strong>20+</strong>Amenities
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                            <div class="flow-review">
+                                                <div class="rating-item btn--outline"><span
+                                                        class="rating-item__text -medium">4.2</span></div>
+                                                <p class="flight-review__main -medium"><strong>Very Good</strong> 54 reviews
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="flow-price">
+                                            <p class="flow-price__des -medium">starting from</p>
+                                            <h2 class="flow-price__main -bold">$240<small>/night</small></h2>
+                                            <p class="flow-price__des -medium">excl. tax</p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="flow-button">
+                                        <a href="#" class="btn btn--outline -large">
+                                            <img src="assets/icons/outline/heart.svg" alt="">
+                                        </a>
+                                        <a href="hotelDetail.html" class="btn btn--fill -large"><span class="btn__text -semi-bold">View
+                                                Deals</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flow-card flow-card--hotel">
+                                <div class="flow-card__image">
+                                    <img src="assets/images/hotel2.jpeg" alt="">
+                                </div>
+                                <div class="flow-hotel">
+                                    <div class="hotel-heading">
+                                        <div class="hotel-content">
+                                            <h2 class="hotel-content__main -trade-gothic -bold">Eresin Hotels Sultanahmet -
+                                                Boutique Class</h2>
+                                            <p class="hotel-content__des -medium"><i
+                                                    class="fa-solid fa-location-dot"></i>&nbsp;Kucukayasofya No. 40
+                                                Sultanahmet, Istanbul 34022</p>
+                                            <div class="hotel-rating">
+                                                <div class="hotel-star">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <p class="hotel-rating__des -medium">5 Star Hotel</p>
+                                                </div>
+                                                <div class="hotel-amenity">
+                                                    <div class="hotel-amenity__icon">
+                                                        <img src="assets/icons/fill/Breatfast.svg" alt="#">
+                                                    </div>
+                                                    <h3 class="hotel-amenity__des -regular"><strong>20+</strong>Amenities
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                            <div class="flow-review">
+                                                <div class="rating-item btn--outline"><span
+                                                        class="rating-item__text -medium">4.2</span></div>
+                                                <p class="flight-review__main -medium"><strong>Very Good</strong> 54 reviews
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="flow-price">
+                                            <p class="flow-price__des -medium">starting from</p>
+                                            <h2 class="flow-price__main -bold">$104<small>/night</small></h2>
+                                            <p class="flow-price__des -medium">excl. tax</p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="flow-button">
+                                        <a href="" class="btn btn--outline -large">
+                                            <img src="assets/icons/outline/heart.svg" alt="">
+                                        </a>
+                                        <a href="hotelDetail.html" class="btn btn--fill -large"><span class="btn__text -semi-bold">View
+                                                Deals</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flow-card flow-card--hotel">
+                                <div class="flow-card__image">
+                                    <img src="assets/images/hotel3.jpeg" alt="">
+                                </div>
+                                <div class="flow-hotel">
+                                    <div class="hotel-heading">
+                                        <div class="hotel-content">
+                                            <h2 class="hotel-content__main -trade-gothic -bold">Eresin Hotels Sultanahmet -
+                                                Boutique Class</h2>
+                                            <p class="hotel-content__des -medium"><i
+                                                    class="fa-solid fa-location-dot"></i>&nbsp;Kucukayasofya No. 40
+                                                Sultanahmet, Istanbul 34022</p>
+                                            <div class="hotel-rating">
+                                                <div class="hotel-star">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <p class="hotel-rating__des -medium">5 Star Hotel</p>
+                                                </div>
+                                                <div class="hotel-amenity">
+                                                    <div class="hotel-amenity__icon">
+                                                        <img src="assets/icons/fill/Breatfast.svg" alt="#">
+                                                    </div>
+                                                    <h3 class="hotel-amenity__des -regular"><strong>20+</strong>Amenities
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                            <div class="flow-review">
+                                                <div class="rating-item btn--outline"><span
+                                                        class="rating-item__text -medium">4.2</span></div>
+                                                <p class="flight-review__main -medium"><strong>Very Good</strong> 54 reviews
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="flow-price">
+                                            <p class="flow-price__des -medium">starting from</p>
+                                            <h2 class="flow-price__main -bold">$240<small>/night</small></h2>
+                                            <p class="flow-price__des -medium">excl. tax</p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="flow-button">
+                                        <a href="" class="btn btn--outline -large">
+                                            <img src="assets/icons/outline/heart.svg" alt="">
+                                        </a>
+                                        <a href="hotelDetail.html" class="btn btn--fill -large"><span class="btn__text -semi-bold">View
+                                                Deals</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flow-card flow-card--hotel">
+                                <div class="flow-card__image">
+                                    <img src="assets/images/hotel4.jpeg" alt="">
+                                </div>
+                                <div class="flow-hotel">
+                                    <div class="hotel-heading">
+                                        <div class="hotel-content">
+                                            <h2 class="hotel-content__main -trade-gothic -bold">Eresin Hotels Sultanahmet -
+                                                Boutique Class</h2>
+                                            <p class="hotel-content__des -medium"><i
+                                                    class="fa-solid fa-location-dot"></i>&nbsp;Gümüssuyu Mah. Inönü Cad.
+                                                No:8,
+                                                Istanbul 34437</p>
+                                            <div class="hotel-rating">
+                                                <div class="hotel-star">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <p class="hotel-rating__des -medium">5 Star Hotel</p>
+                                                </div>
+                                                <div class="hotel-amenity">
+                                                    <div class="hotel-amenity__icon">
+                                                        <img src="assets/icons/fill/Breatfast.svg" alt="#">
+                                                    </div>
+                                                    <h3 class="hotel-amenity__des -regular"><strong>20+</strong>Amenities
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                            <div class="flow-review">
+                                                <div class="rating-item btn--outline"><span
+                                                        class="rating-item__text -medium">4.2</span></div>
+                                                <p class="flight-review__main -medium"><strong>Very Good</strong> 54 reviews
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="flow-price">
+                                            <p class="flow-price__des -medium">starting from</p>
+                                            <h2 class="flow-price__main -bold">$240<small>/night</small></h2>
+                                            <p class="flow-price__des -medium">excl. tax</p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="flow-button">
+                                        <a href="" class="btn btn--outline -large">
+                                            <img src="assets/icons/outline/heart.svg" alt="">
+                                        </a>
+                                        <a href="hotelDetail.html" class="btn btn--fill -large"><span class="btn__text -semi-bold">View
+                                                Deals</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="radio" id="tabMotel" name="tabListHotel">
+                        <label class="-semi-bold" for="tabMotel">
+                            Motels
+                            <br>
+                            <span class="-regular">51 places</span></label>
+                        <div id="tab" class="flow-box" style="background-color: red;">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit possimus quisquam in quam commodi
+                            voluptatibus doloremque sit placeat dignissimos recusandae, deserunt ducimus officia tempore
+                            iste a quibusdam ratione sunt qui.
+                            Atque sequi eligendi, a suscipit eius nesciunt? Tempore laboriosam tempora voluptatibus pariatur
+                            perferendis atque exercitationem ex asperiores provident expedita nostrum enim, velit dolorem,
+                            cum error modi delectus earum iure quaerat.
+                            Vitae at quas sed possimus illo omnis expedita fugiat excepturi corporis repudiandae? Assumenda
+                            cupiditate cumque enim voluptas sequi fugit repellat provident nihil possimus placeat. Similique
+                            reiciendis qui illum accusantium quidem!
+                            Hic eius explicabo fugiat. Temporibus sit eaque enim natus molestiae hic harum possimus quasi et
+                            pariatur illo magnam praesentium labore tempora, explicabo rerum? Libero sit culpa deserunt,
+                            esse inventore numquam.
+                            Sunt numquam necessitatibus deleniti autem ad quisquam unde, nostrum ratione impedit repudiandae
+                            maxime itaque modi corrupti incidunt sit possimus minima. Omnis accusamus aperiam expedita iusto
+                            cumque nesciunt itaque eum libero.
+                            Repellendus, fuga architecto iure natus autem ratione veritatis optio, omnis a nobis molestiae
+                            voluptatibus. Quas optio delectus, culpa voluptate non doloribus porro quibusdam ad eius?
+                            Reprehenderit cupiditate ipsa totam accusamus?
+                            Suscipit ab dolor eos tempore ipsa laboriosam amet nisi aperiam in labore, repudiandae
+                            voluptatibus praesentium ea delectus iusto cumque accusamus porro ut voluptate dicta soluta.
+                            Odio nesciunt in adipisci exercitationem.
+                            Repellendus, sequi, laboriosam temporibus maiores velit quaerat, magnam excepturi corporis
+                            quidem dolorum eum perferendis! Perferendis quae odio voluptatum unde voluptatem excepturi,
+                            veritatis delectus. Quia soluta delectus quos repellat beatae perferendis?
+                            Saepe assumenda ad voluptas, illum qui magnam doloremque nisi, quas molestiae a ut officiis
+                            blanditiis explicabo! Aliquid quos veniam ullam, suscipit sapiente id sunt pariatur accusantium,
+                            cum, illo nulla quam.
+                            Voluptate, adipisci animi, itaque officia nulla fugiat illum vitae cupiditate earum consectetur
+                            alias, iusto aperiam recusandae perferendis assumenda quaerat. Aliquam, maiores tempora debitis
+                            ipsum iure enim delectus fugit quasi est.
+                        </div>
+                        <input type="radio" id="tabResort" name="tabListHotel">
+                        <label class="-semi-bold" for="tabResort">
+                            Resorts
+                            <br><span class="-regular">72 places places</span></label>
+                        <div id="tab" class="flow-box" style="background-color: yellow;">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit possimus quisquam in quam commodi
+                            voluptatibus doloremque sit placeat dignissimos recusandae, deserunt ducimus officia tempore
+                            iste a quibusdam ratione sunt qui.
+                            Atque sequi eligendi, a suscipit eius nesciunt? Tempore laboriosam tempora voluptatibus pariatur
+                            perferendis atque exercitationem ex asperiores provident expedita nostrum enim, velit dolorem,
+                            cum error modi delectus earum iure quaerat.
+                            Vitae at quas sed possimus illo omnis expedita fugiat excepturi corporis repudiandae? Assumenda
+                            cupiditate cumque enim voluptas sequi fugit repellat provident nihil possimus placeat. Similique
+                            reiciendis qui illum accusantium quidem!
+                            Hic eius explicabo fugiat. Temporibus sit eaque enim natus molestiae hic harum possimus quasi et
+                            pariatur illo magnam praesentium labore tempora, explicabo rerum? Libero sit culpa deserunt,
+                            esse inventore numquam.
+                            Sunt numquam necessitatibus deleniti autem ad quisquam unde, nostrum ratione impedit repudiandae
+                            maxime itaque modi corrupti incidunt sit possimus minima. Omnis accusamus aperiam expedita iusto
+                            cumque nesciunt itaque eum libero.
+                            Repellendus, fuga architecto iure natus autem ratione veritatis optio, omnis a nobis molestiae
+                            voluptatibus. Quas optio delectus, culpa voluptate non doloribus porro quibusdam ad eius?
+                            Reprehenderit cupiditate ipsa totam accusamus?
+                            Suscipit ab dolor eos tempore ipsa laboriosam amet nisi aperiam in labore, repudiandae
+                            voluptatibus praesentium ea delectus iusto cumque accusamus porro ut voluptate dicta soluta.
+                            Odio nesciunt in adipisci exercitationem.
+                            Repellendus, sequi, laboriosam temporibus maiores velit quaerat, magnam excepturi corporis
+                            quidem dolorum eum perferendis! Perferendis quae odio voluptatum unde voluptatem excepturi,
+                            veritatis delectus. Quia soluta delectus quos repellat beatae perferendis?
+                            Saepe assumenda ad voluptas, illum qui magnam doloremque nisi, quas molestiae a ut officiis
+                            blanditiis explicabo! Aliquid quos veniam ullam, suscipit sapiente id sunt pariatur accusantium,
+                            cum, illo nulla quam.
+                            Voluptate, adipisci animi, itaque officia nulla fugiat illum vitae cupiditate earum consectetur
+                            alias, iusto aperiam recusandae perferendis assumenda quaerat. Aliquam, maiores tempora debitis
+                            ipsum iure enim delectus fugit quasi est.
+                        </div>
+                    </div>
+                    <a href="#" class="btn flight-show -large" style="order: 2;"><span class="btn__text -semi-bold -white">Show more
+                            results</span></a>
+                </div>
+                
+        </section>
+    </main>
+    <footer>
+        <div class="footer-heading container">
+            <div class="footer-heading__content">
+                <h2 class="footer-heading__main -trade-gothic -bold">Subscribe<br>Newsletter</h2>
+                <h3 class="footer-heading__sub -trade-gothic-bold">The Travel</h3>
+                <p class="footer-heading__des -medium">Get inspired! Receive travel discounts, tips and behind the
+                    scenes stories.</p>
+                <form action="post">
+                    <input type="text" placeholder="Your email address">
+                    <a href="#" class="btn btn--subscribe"><span class="btn__text -semi-bold">subscribe</span></a>
+                </form>
+            </div>
+            <div class="footer-heading__image">
+                <img src="assets/icons/emojione-v1_open-mailbox-with-lowered-flag.png" alt="#">
+            </div>
+        </div>
+        <div class="footer-content container">
+            <div class="footer-content__icon">
+                <div class="footer-content__logo">
+                    <img src="assets/images/Logo2.png" alt="logo">
+                </div>
+                <div class="footer-content__social">
+                    <img src="assets/icons/vector/akar-icons_facebook-fill.png" alt="facebook">
+                    <img src="assets/icons/vector/akar-icons_twitter-fill.png" alt="twitter">
+                    <img src="assets/icons/vector/akar-icons_youtube-fill.png" alt="youtube">
+                    <img src="assets/icons/vector/ant-design_instagram-filled.png" alt="instagram">
+                </div>
+            </div>
+            <div class="footer-content__menu">
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Our Destinations</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Canada</a></li>
+                        <li><a href="#" class="-medium">Alaksa</a></li>
+                        <li><a href="#" class="-medium">France</a></li>
+                        <li><a href="#" class="-medium">Iceland</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Our Activities</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Northern Lights</a></li>
+                        <li><a href="#" class="-medium">Cruising & sailing</a></li>
+                        <li><a href="#" class="-medium">Multi-activities</a></li>
+                        <li><a href="#" class="-medium">Kayaing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Travel Blogs</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Bali Travel Guide</a></li>
+                        <li><a href="#" class="-medium">Sri Lanks Travel Guide</a></li>
+                        <li><a href="#" class="-medium">Peru Travel Guide</a></li>
+                        <li><a href="#" class="-medium">Bali Travel Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">About Us</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Our Story</a></li>
+                        <li><a href="#" class="-medium">Work with us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Contact Us</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Our Story</a></li>
+                        <li><a href="#" class="-medium">Work with us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="js/flowListing.js" type="text/javascript"></script>
+    <script src="js/form.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+</body>
+
+</html>
+<!-- arrow-right -->

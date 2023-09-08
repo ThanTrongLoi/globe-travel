@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="golobe - travel agency, find stays, find flights, hotel, resort, 
+    tourism">
+    <meta name="keywords" content="golobe - travel, find stays, find flights, hotel, resort, 
+    tourism">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golobe - Travel Agency</title>
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a id="flights" href="flight.html" class="btn btn--none">
+                <div class="btn__icon">
+                    <img src="assets/icons/fill/airPlane.svg" alt="airPlane">
+                </div>
+                <span class="btn__text -semi-bold">find flight</span>
+            </a>
+
+
+            <a id="stays" href="#" class="btn btn--none">
+                <div class="btn__icon">
+                    <img src="assets/icons/fill/bed.svg" alt="bed">
+                </div>
+                <span class="btn__text -semi-bold">find stays</span>
+            </a>
+        </div>
+        <a href="index.html" class="header-logo">
+            <img src="assets/images/Logo.png" alt="logo">
+        </a>
+        <div class="header-right">
+            <a href="authLogin.html" class="btn btn--none"><span class="btn__text -semi-bold">Login</span></a>
+            <a href="authSignup.html" class="btn btn--signup btn--flow -large"><span class="btn__text -white -semi-bold">Sign
+                    up</span></a>
+        </div>
+        <div class="header-account">
+            <a href="favorite.html" class="header-account__favorite" style="--clr:#112211">
+                <i class="fa-solid fa-heart"></i>
+                <span class="btn__text -semi-bold">Favourites</span></a>
+            <div class="header-account__user">
+                <div class="header-account__avt">
+                    <img src="assets/images/user.jpeg" alt="">
+                </div>
+                <span class="btn__text -semi-bold">John D.</span>
+            </div>
+
+            <div class="user-info">
+                <div class="user-info__heading">
+                    <div class="user-info__avatar">
+                        <img src="assets/images/user.jpeg" alt="user-avt">
+                    </div>
+                    <div class="user-info__content">
+                        <p class="user-info__name -semi-bold">John Doe.</p>
+                        <p class="user-info__status -regular">Online</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="user-info__account">
+                    <a href="account.html">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/User.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">My account</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/card.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Payments</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/setting.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Settings</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                </div>
+                <hr>
+                <div class="user-info__support">
+                    <a href="#">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/Support.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Support</span>
+                        <div class="user-info__icon">
+                            <img src="assets/icons/vector/chevron_forward.svg" alt="">
+                        </div>
+                    </a>
+                    <button onclick="logout();">
+                        <div class="user-info__icon">
+                            <img src="assets/icons/fill/Logout.svg" alt="">
+                        </div>
+                        <span class="user-info__title btn__text -medium">Logout</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="hero" class="hero hero--hotel">
+        <div class="hero-heading container">
+            <h1 class="flow-heading__main -trade-gothic -white -bold">Make your travel<br> whishlist, we’ll do<br> the
+                rest</h1>
+            <p class="hero-heading__des -medium -white">Special offers to suit your plan</p>
+        </div>
+        <div class="hero-search container">
+            <h3 class="hero-search__title ">Where are you flying?</h3>
+            <form onsubmit="validateFormStay()">
+                <fieldset class="hero-search__form hero-search--hotel">
+                    <div id="input-group" class="hero-search__input hero-input--hotel">
+                        <input id="address" name="address" type="text" placeholder="Istanbul, Turkey">
+                        <label class="-regular" for="address">Enter Destination</label>
+                        
+                    </div>
+                    <div id="input-group" class="hero-search__input hero-input--hotel">
+                        <input type="date" name="check-in" id="check-in">
+                        <label class="-regular" for="check-in">Check In</label>
+                        
+                    </div>
+                    <div id="input-group" class="hero-search__input hero-input--hotel">
+                        <input id="check-out" name="check-out" type="date">
+                        <label class="-regular" for="check-out">Check Out</label>
+                    </div>
+                    <div class="drop-down drop-down--hotel">
+                        <p class="btn__text -regular">Rooms & Guests</p>
+                        <span id="room" class="drop-down__main -regular">1</span>
+                        &nbsp;&nbsp;<span class="drop-down__main -regular">room,</span>
+                        &nbsp;&nbsp;
+                        <span id="guest" class="drop-down__main -regular">1</span>
+                        &nbsp;&nbsp;<span class="drop-down__main -regular">guests</span>
+                        <div class="drop-down-item">
+                            <div class="drop-down-item__content">
+                                <article class="count-guest">
+                                    <span class="drop-down__main -regular">Room</span>
+                                    <div  class="count">
+                                        <i id="minusRoom" class="fa-solid fa-minus"></i>
+                                        <span id="count-room" class="drop-down__main -regular">1</span>
+                                        <i id="plusRoom" class="fa-solid fa-plus"></i>
+                                    </div>
+                                </article>
+                                <article>
+                                    <span class="drop-down__main -regular">Guests</span>
+                                    <div class="count">
+                                        <i id="minuGuest" class="fa-solid fa-minus"></i>
+                                        <span id="count-guest" class="drop-down__main -regular">1</span>
+                                        <i id="plusGuest" class="fa-solid fa-plus"></i>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="drop-down-icon">
+                            <img src="assets/icons/vector/chevron_down.svg" alt="icon-down">
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <div class="hero-search__button">
+                    <a href="#" class="btn btn--none -large">
+                        <!-- <div class="btn__icon -filter-white">
+                            <img src="assets/icons/fill/bed.svg" alt="bed">
+                        </div> -->
+                        <span class="btn__text -medium -text--effect">+ Add Promo Code</span>
+                    </a>
+                    <button class="btn btn--fill -large" type="submit">
+                        <div class="btn__icon -filter-black-green">
+                            <img src="assets/icons/fill/buliding.svg" alt="bed">
+                        </div>
+                        <span class="-medium -text--effect">Show Places</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section id="recent">
+        <div class="recent container">
+            <h3 class="heading-title__sub -semi-bold -">Your recent searches</h3>
+            <div class="plan-place plan-place--hotel">
+                <a href="#" class="plan-place__card plan--hotel">
+                    <div class="plan-place__image">
+                        <img src="assets/images/ld-trip1.jpeg" alt="trip1">
+                    </div>
+                    <div class="plan-place__content">
+                        <h5 class="plan-place__name name--hotel -semi-bold">Istanbul, Turkey</h5>
+                        <p class="plan-place__des des--hotel -regular">325 places</p>
+                    </div>
+                </a>
+                <a href="#" class="plan-place__card plan--hotel">
+                    <div class="plan-place__image">
+                        <img src="assets/images/ld-trip2.jpeg" alt="trip1">
+                    </div>
+                    <div class="plan-place__content">
+                        <h5 class="plan-place__name name--hotel -semi-bold">Sydney, Australia</h5>
+                        <p class="plan-place__des des--hotel -regular">325 places</p>
+                    </div>
+                </a>
+                <a href="#" class="plan-place__card plan--hotel">
+                    <div class="plan-place__image">
+                        <img src="assets/images/ld-trip3.jpeg" alt="trip1">
+                    </div>
+                    <div class="plan-place__content">
+                        <h5 class="plan-place__name name--hotel -semi-bold">Baku, Azerbaijan</h5>
+                        <p class="plan-place__des des--hotel -regular">325 places</p>
+                    </div>
+                </a>
+                <a href="#" class="plan-place__card plan--hotel">
+                    <div class="plan-place__image">
+                        <img src="assets/images/ld-trip4.jpeg" alt="trip1">
+                    </div>
+                    <div class="plan-place__content">
+                        <h5 class="plan-place__name name--hotel -semi-bold">Malé, Maldives</h5>
+                        <p class="plan-place__des des--hotel -regular">325 places</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        </div>
+        
+    </section>
+    <section id="travel-one">
+        <div class="travel-one container">
+            <div class="heading">
+                <div class="heading-title">
+                    <h3 class="heading-title__sub -semi-bold -">Fall into travel</h3>
+                    <p class="heading-title__des -regular">Going somewhere to celebrate this season? Whether you’re
+                        going home or somewhere to roam, we’ve got<br> the travel tools to get you to your destination.
+                    </p>
+                </div>
+                <div class="heading-button">
+                    <a href="#" class="btn btn--outline -mediumH"><span class="btn__text">See All</span></a>
+                </div>
+            </div>
+            <div class="travel-one-box">
+                <div class="travel-one-card">
+                    <div class="travel-one-card__image">
+                        <img src="assets/images/plan1.jpeg" alt="">
+                    </div>
+                    <div class="travel-one-item">
+                        <div class="travel-one-content">
+                            <div class="travel-one-item__content">
+                                <h2 class="travel-one__main -white -semi-bold">Melbourne</h2>
+                                <p class="travel-one__des -white -regular">An amazing journey</p>
+                            </div>
+                            <h2 class="travel-one__main -white -semi-bold">$ 700</h2>
+                        </div>
+                        <a href="#" class="btn btn--fill -large"><span class="btn__text -medium">Book Flight</span></a>
+                    </div>
+                </div>
+                <div class="travel-one-card">
+                    <div class="travel-one-card__image">
+                        <img src="assets/images/plan2.jpeg" alt="">
+                    </div>
+                    <div class="travel-one-item">
+                        <div class="travel-one-content">
+                            <div class="travel-one-item__content">
+                                <h2 class="travel-one__main -white -semi-bold">Paris</h2>
+                                <p class="travel-one__des -white -regular">A Paris Adventure</p>
+                            </div>
+                            <h2 class="travel-one__main -white -semi-bold">$ 600</h2>
+                        </div>
+                        <a href="#" class="btn btn--fill -large"><span class="btn__text -medium">Book Flight</span></a>
+                    </div>
+                </div>
+                <div class="travel-one-card">
+                    <div class="travel-one-card__image">
+                        <img src="assets/images/plan10.jpeg" alt="">
+                    </div>
+                    <div class="travel-one-item">
+                        <div class="travel-one-content">
+                            <div class="travel-one-item__content">
+                                <h2 class="travel-one__main -white -semi-bold">London</h2>
+                                <p class="travel-one__des -white -regular">London eye adventure</p>
+                            </div>
+                            <h2 class="travel-one__main -white -semi-bold">$ 350</h2>
+                        </div>
+                        <a href="#" class="btn btn--fill -large"><span class="btn__text -medium">Book Flight</span></a>
+                    </div>
+                </div>
+                <div class="travel-one-card">
+                    <div class="travel-one-card__image">
+                        <img src="assets/images/plan3.jpeg" alt="">
+                    </div>
+                    <div class="travel-one-item">
+                        <div class="travel-one-content">
+                            <div class="travel-one-item__content">
+                                <h2 class="travel-one__main -white -semi-bold">Columbia</h2>
+                                <p class="travel-one__des -white -regular">Amazing streets</p>
+                            </div>
+                            <h2 class="travel-one__main -white -semi-bold">$ 700</h2>
+                        </div>
+                        <a href="#" class="btn btn--fill -large"><span class="btn__text -medium">Book Flight</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="travel-two">
+        <div class="travel-two container">
+            <div class="heading">
+                <div class="heading-title">
+                    <h3 class="heading-title__sub -semi-bold -">Fall into travel</h3>
+                    <p class="heading-title__des -regular">Going somewhere to celebrate this season? Whether you’re
+                        going home or somewhere to roam, we’ve got the travel tools to get you to your<br> destination.
+                    </p>
+                </div>
+                <div class="heading-button">
+                    <a href="#" class="btn btn--outline -mediumH"><span class="btn__text">See All</span></a>
+                </div>
+            </div>
+            <div class="travel-two-box">
+                <div class="travel-two-content">
+                    <div class="travel-two-content__heading">
+                        <h2 class="travel-two-content__main -trade-gothic -bold">Backpacking Sri Lanka</h2>
+                        <span class="travel-two-content__price -trade-gothic -regular">
+                            From <h3 class="-semi-bold">$700</h3>
+                        </span>
+                    </div>
+                    <p class="travel-two-content__des -regular">
+                        Traveling is a unique experience as it's the best way to unplug from the pushes and pulls of
+                        daily life. It helps us to forget about our problems, frustrations, and fears at home. During
+                        our journey, we experience life in different ways. We explore new places, cultures, cuisines,
+                        traditions, and ways of living.
+                    </p>
+                    <a href="#" class="btn travel-two--btn -large"><span class="btn__text -medium">Book Flight</span></a>
+                </div>
+                <div class="travel-two-image">
+                    <div class="travel-two-image__image">
+                        <img src="assets/images/plan4.jpeg" alt="">
+                    </div>
+                    <div class="travel-two-image__image">
+                        <img src="assets/images/plan5.jpeg" alt="">
+                    </div>
+                    <div class="travel-two-image__image">
+                        <img src="assets/images/plan6.jpeg" alt="">
+                    </div>
+                    <div class="travel-two-image__image">
+                        <img src="assets/images/plan7.jpeg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-heading container">
+            <div class="footer-heading__content">
+                <h2 class="footer-heading__main -trade-gothic -bold">Subscribe<br>Newsletter</h2>
+                <h3 class="footer-heading__sub -trade-gothic-bold">The Travel</h3>
+                <p class="footer-heading__des -medium">Get inspired! Receive travel discounts, tips and behind the
+                    scenes stories.</p>
+                <form action="post">
+                    <input type="text" placeholder="Your email address">
+                    <a href="#" class="btn btn--subscribe"><span class="btn__text -semi-bold">subscribe</span></a>
+                </form>
+            </div>
+            <div class="footer-heading__image">
+                <img src="assets/icons/emojione-v1_open-mailbox-with-lowered-flag.png" alt="#">
+            </div>
+        </div>
+        <div class="footer-content container">
+            <div class="footer-content__icon">
+                <div class="footer-content__logo">
+                    <img src="assets/images/Logo2.png" alt="logo">
+                </div>
+                <div class="footer-content__social">
+                    <img src="assets/icons/vector/akar-icons_facebook-fill.png" alt="facebook">
+                    <img src="assets/icons/vector/akar-icons_twitter-fill.png" alt="twitter">
+                    <img src="assets/icons/vector/akar-icons_youtube-fill.png" alt="youtube">
+                    <img src="assets/icons/vector/ant-design_instagram-filled.png" alt="instagram">
+                </div>
+            </div>
+            <div class="footer-content__menu">
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Our Destinations</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Canada</a></li>
+                        <li><a href="#" class="-medium">Alaksa</a></li>
+                        <li><a href="#" class="-medium">France</a></li>
+                        <li><a href="#" class="-medium">Iceland</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Our Activities</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Northern Lights</a></li>
+                        <li><a href="#" class="-medium">Cruising & sailing</a></li>
+                        <li><a href="#" class="-medium">Multi-activities</a></li>
+                        <li><a href="#" class="-medium">Kayaing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Travel Blogs</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Bali Travel Guide</a></li>
+                        <li><a href="#" class="-medium">Sri Lanks Travel Guide</a></li>
+                        <li><a href="#" class="-medium">Peru Travel Guide</a></li>
+                        <li><a href="#" class="-medium">Bali Travel Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">About Us</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Our Story</a></li>
+                        <li><a href="#" class="-medium">Work with us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content__list">
+                    <h3 class="footer-content__title -trade-gothic -bold">Contact Us</h3>
+                    <ul>
+                        <li><a href="#" class="-medium">Our Story</a></li>
+                        <li><a href="#" class="-medium">Work with us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="js/form.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+</body>
+
+</html>
+<!-- arrow-right -->
