@@ -406,9 +406,9 @@ const validateFormFlight = () => {
     if (departReturn.val().trim() == '') {
         setError(departReturn)
     }
-    // else {
-    //     window.location.href = "flightListing.html"
-    // }
+    else {
+        window.location.href = "flightListing.html"
+    }
 } 
 const validateFormStay = (e) => {
     const address = $('#address')
