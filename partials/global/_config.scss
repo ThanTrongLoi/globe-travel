@@ -23,7 +23,7 @@ $scroll-green: #d4fff0;
         @return (linear-gradient(to bottom,
                 rgba(0, 0, 0, 60%),
                 rgba(0, 0, 0, 0)),
-            url('assets/images/ld-banner.png'));
+            url('./assets/images/ld-banner.png'));
     } @else if ($page == "flight") {
         @return (linear-gradient(90deg,
         rgba(0, 35, 77, 63%),
