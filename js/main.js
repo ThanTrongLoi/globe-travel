@@ -61,7 +61,9 @@ $(document).ready(function () {
     })
     const isFlight = localStorage.getItem('isFlight');
     const isStay = localStorage.getItem('isStay')
-    if(window.location.href.slice(window.location.href.lastIndexOf('/') + 1) != "index.html" ){
+    const link = window.location.href.slice(window.location.href.lastIndexOf('/') + 1)
+    console.log(link)
+    if( link != "index.html" ||  link != "/"){
         if(isFlight){
             $('#stays').removeClass('header-active')
             $('#flights').addClass('header-active')

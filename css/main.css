@@ -26,8 +26,8 @@
   position: relative;
 }
 .hero--ld {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0))), url("../../assets/images/ld-banner.png");
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url("../../assets/images/ld-banner.png");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0))), url("../assets/images/ld-banner.png");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url("../assets/images/ld-banner.png");
   margin: 3rem 3rem 0;
   height: 65vh;
   border-radius: 2.4rem;
@@ -103,7 +103,7 @@
   padding: 1.8rem 1.6rem;
 }
 .hero-search__input input[id=address] {
-  background: url("../../assets/icons/fill/bed.svg");
+  background: url("../assets/icons/fill/bed.svg");
   background-repeat: no-repeat;
   background-position: 2%;
   padding-left: 4rem;
@@ -400,28 +400,28 @@
 
 @font-face {
   font-family: "TradeGothic LT Extended";
-  src: url("../../assets/fonts/TradeGothicLT-Extended.woff2") format("woff2"), url("../../assets/fonts/TradeGothicLT-Extended.woff") format("woff");
+  src: url("../assets/fonts/TradeGothicLT-Extended.woff2") format("woff2"), url("../assets/fonts/TradeGothicLT-Extended.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "TradeGothic LT";
-  src: url("../../assets/fonts/TradeGothicLT.woff2") format("woff2"), url("../../assets/fonts/TradeGothicLT.woff") format("woff");
+  src: url("../assets/fonts/TradeGothicLT.woff2") format("woff2"), url("../assets/fonts/TradeGothicLT.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "TradeGothic LT";
-  src: url("../../assets/fonts/TradeGothicLT-Bold.woff2") format("woff2"), url("../../assets/fonts/TradeGothicLT-Bold.woff") format("woff");
+  src: url("../assets/fonts/TradeGothicLT-Bold.woff2") format("woff2"), url("../assets/fonts/TradeGothicLT-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "TradeGothic LT";
-  src: url("../../assets/fonts/TradeGothicLT-Light.woff2") format("woff2"), url("../../assets/fonts/TradeGothicLT-Light.woff") format("woff");
+  src: url("../assets/fonts/TradeGothicLT-Light.woff2") format("woff2"), url("../assets/fonts/TradeGothicLT-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -866,7 +866,7 @@ input[type=range]::-webkit-slider-thumb {
 
 input[type=date] {
   z-index: 100;
-  background: url("../../assets/icons/fill/calendar.svg");
+  background: url("../assets/icons/fill/calendar.svg");
   background-repeat: no-repeat;
   background-position: 95%;
   padding: 1.65rem 1.6rem;
@@ -897,7 +897,7 @@ input[type=file] {
 }
 .select-container--hotel {
   min-width: 24rem;
-  background: url("../../assets/icons/fill/User.svg");
+  background: url("../assets/icons/fill/User.svg");
   background-repeat: no-repeat;
   background-position: 5%;
 }
@@ -966,12 +966,12 @@ input[type=file] {
 }
 .drop-down--trip {
   max-width: 14rem;
-  background-image: url("../../assets/icons/vector/chevron_down.svg");
+  background-image: url("../assets/icons/vector/chevron_down.svg");
   background-repeat: no-repeat;
   background-position: 90%;
 }
 .drop-down--hotel {
-  background-image: url("../../assets/icons/fill/User.svg");
+  background-image: url("../assets/icons/fill/User.svg");
   background-repeat: no-repeat;
   background-position: 5%;
   padding-left: 4rem;
@@ -1190,7 +1190,7 @@ button {
 }
 #myTabs > .tab-label {
   display: inline-block;
-  background: url("../../assets/icons/fill/airPlane.svg") no-repeat left center;
+  background: url("../assets/icons/fill/airPlane.svg") no-repeat left center;
   height: 4.8rem;
   margin-bottom: 4.8rem;
   border: none;
@@ -1204,7 +1204,7 @@ button {
   bottom: -1.5rem;
 }
 #myTabs > .tab-label:nth-last-child(2) {
-  background: url("../../assets/icons/fill/bed.svg") no-repeat left center;
+  background: url("../assets/icons/fill/bed.svg") no-repeat left center;
   margin-left: 3.2rem;
 }
 #myTabs > #tab {
@@ -1348,7 +1348,7 @@ header {
 .header-account__avt::after {
   content: "";
   position: absolute;
-  content: url("../../assets/icons/vector/circle-down.svg");
+  content: url("../assets/icons/vector/circle-down.svg");
   bottom: 0;
   right: 0;
   z-index: 100;
@@ -1921,7 +1921,7 @@ main {
 }
 
 .hero__account {
-  background-image: url("../../assets/images/acc-banner.png");
+  background-image: url("../assets/images/acc-banner.png");
   height: 35rem;
   width: 100%;
   border-radius: 1.2rem;
@@ -2450,16 +2450,16 @@ main {
 }
 
 .hero--flight {
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 35, 77, 0.63)), color-stop(rgba(0, 35, 77, 0.14)), to(rgba(0, 35, 77, 0))), url("../../assets/images/flight-banner.png");
-  background-image: linear-gradient(90deg, rgba(0, 35, 77, 0.63), rgba(0, 35, 77, 0.14), rgba(0, 35, 77, 0)), url("../../assets/images/flight-banner.png");
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 35, 77, 0.63)), color-stop(rgba(0, 35, 77, 0.14)), to(rgba(0, 35, 77, 0))), url("../assets/images/flight-banner.png");
+  background-image: linear-gradient(90deg, rgba(0, 35, 77, 0.63), rgba(0, 35, 77, 0.14), rgba(0, 35, 77, 0)), url("../assets/images/flight-banner.png");
   height: 50vh;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
 .hero--hotel {
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 35, 77, 0.63)), color-stop(rgba(0, 35, 77, 0.14)), to(rgba(0, 35, 77, 0))), url("../../assets/images/hotel-banner.png");
-  background-image: linear-gradient(90deg, rgba(0, 35, 77, 0.63), rgba(0, 35, 77, 0.14), rgba(0, 35, 77, 0)), url("../../assets/images/hotel-banner.png");
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 35, 77, 0.63)), color-stop(rgba(0, 35, 77, 0.14)), to(rgba(0, 35, 77, 0))), url("../assets/images/hotel-banner.png");
+  background-image: linear-gradient(90deg, rgba(0, 35, 77, 0.63), rgba(0, 35, 77, 0.14), rgba(0, 35, 77, 0)), url("../assets/images/hotel-banner.png");
   height: 50vh;
   -webkit-box-pack: start;
       -ms-flex-pack: start;

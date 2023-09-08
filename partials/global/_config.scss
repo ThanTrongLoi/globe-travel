@@ -1,0 +1,45 @@
+$primary-color: #8DD3BB;
+$black-green: #112211;
+$light-green: #9BE0C8;
+$medium-green: #82CBB2;
+$neutrals-gray: #D2D1D3;
+$white: #ffffff;
+$black: #000000;
+$place: #1C1B1F;
+
+
+$scroll-green: #d4fff0;
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@function set-background-image($page){
+    @if($page == "ld"){
+        @return (linear-gradient(to bottom,
+                rgba(0, 0, 0, 60%),
+                rgba(0, 0, 0, 0)),
+            url('../assets/images/ld-banner.png'));
+    } @else if ($page == "flight") {
+        @return (linear-gradient(90deg,
+        rgba(0, 35, 77, 63%),
+        rgba(0, 35, 77, 14%),
+        rgba(0, 35, 77, 0)),
+        url('../assets/images/flight-banner.png'));
+    } @else if ($page == "hotel"){
+        @return (linear-gradient(90deg,
+        rgba(0, 35, 77, 63%),
+        rgba(0, 35, 77, 14%),
+        rgba(0, 35, 77, 0)),
+        url('../assets/images/hotel-banner.png'));
+    } @else if ($page == "account"){
+        @return (
+        url('../assets/images/acc-banner.png')); //account
+    } @else {
+        @error "Unknown address image"
+    }
+}
