@@ -10,10 +10,6 @@
 
     &--ld {
         background-image: set-background-image("ld");
-        // background-image: linear-gradient(to bottom,
-        //         rgba(0, 0, 0, 60%),
-        //         rgba(0, 0, 0, 0)),
-        //     url('../../assets/images/ld-banner.png');
         margin: 3rem 3rem 0;
         // width: 96%;
         height: 65vh;
@@ -93,7 +89,7 @@
             }
 
             input[id=address] {
-                background: url('../../assets/icons/fill/bed.svg');
+                background: url('assets/icons/fill/bed.svg');
                 background-repeat: no-repeat;
                 background-position: 2%;
                 padding-left: 4rem;

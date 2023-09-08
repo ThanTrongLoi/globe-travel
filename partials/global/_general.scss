@@ -2,8 +2,8 @@
 
 @font-face {
     font-family: 'TradeGothic LT Extended';
-    src: url('../../assets/fonts/TradeGothicLT-Extended.woff2') format('woff2'),
-        url('../../assets/fonts/TradeGothicLT-Extended.woff') format('woff');
+    src: url('assets/fonts/TradeGothicLT-Extended.woff2') format('woff2'),
+        url('assets/fonts/TradeGothicLT-Extended.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -11,8 +11,8 @@
 
 @font-face {
     font-family: 'TradeGothic LT';
-    src: url('../../assets/fonts/TradeGothicLT.woff2') format('woff2'),
-        url('../../assets/fonts/TradeGothicLT.woff') format('woff');
+    src: url('assets/fonts/TradeGothicLT.woff2') format('woff2'),
+        url('assets/fonts/TradeGothicLT.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -20,8 +20,8 @@
 
 @font-face {
     font-family: 'TradeGothic LT';
-    src: url('../../assets/fonts/TradeGothicLT-Bold.woff2') format('woff2'),
-        url('../../assets/fonts/TradeGothicLT-Bold.woff') format('woff');
+    src: url('assets/fonts/TradeGothicLT-Bold.woff2') format('woff2'),
+        url('assets/fonts/TradeGothicLT-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -29,8 +29,8 @@
 
 @font-face {
     font-family: 'TradeGothic LT';
-    src: url('../../assets/fonts/TradeGothicLT-Light.woff2') format('woff2'),
-        url('../../assets/fonts/TradeGothicLT-Light.woff') format('woff');
+    src: url('assets/fonts/TradeGothicLT-Light.woff2') format('woff2'),
+        url('assets/fonts/TradeGothicLT-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -401,7 +401,7 @@ input[type=range]::-webkit-slider-thumb {
 
 input[type="date"] {
     z-index: 100;
-    background: url('../../assets/icons/fill/calendar.svg');
+    background: url('assets/icons/fill/calendar.svg');
     background-repeat: no-repeat;
     // background-size: 30px;
     background-position: 95%;
@@ -431,7 +431,7 @@ input[type="file"] {
 
         &--hotel {
             min-width: 24rem;
-            background: url('../../assets/icons/fill/User.svg');
+            background: url('assets/icons/fill/User.svg');
             background-repeat: no-repeat;
             background-position: 5%;
 
@@ -503,13 +503,13 @@ input[type="file"] {
 
     &--trip {
         max-width: 14rem;
-        background-image: url('../../assets/icons/vector/chevron_down.svg');
+        background-image: url('assets/icons/vector/chevron_down.svg');
         background-repeat: no-repeat;
         background-position: 90%;
     }
 
     &--hotel {
-        background-image: url('../../assets/icons/fill/User.svg');
+        background-image: url('assets/icons/fill/User.svg');
         background-repeat: no-repeat;
         background-position: 5%;
         padding-left: 4rem;
@@ -723,7 +723,7 @@ button {
     &>.tab-label {
         display: inline-block;
         // align-items: center;
-        background: url("../../assets/icons/fill/airPlane.svg") no-repeat left center;
+        background: url("assets/icons/fill/airPlane.svg") no-repeat left center;
         // background-position: center;
         // width: 10rem;
         height: 4.8rem;
@@ -739,7 +739,7 @@ button {
         }
 
         &:nth-last-child(2) {
-            background: url("../../assets/icons/fill/bed.svg") no-repeat left center;
+            background: url("assets/icons/fill/bed.svg") no-repeat left center;
             margin-left: 3.2rem;
         }
     }
