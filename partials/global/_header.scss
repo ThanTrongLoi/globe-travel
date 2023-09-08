@@ -87,7 +87,7 @@ header {
             }
 
             @include pseudo(after) {
-                content: url('assets/icons/vector/circle-down.svg');
+                content: url('/assets/icons/vector/circle-down.svg');
                 bottom: 0;
                 right: 0;
                 z-index: 100;
