@@ -393,7 +393,7 @@ const validateFormFlight = () => {
         setError(departReturn)
         console.log('error time')
     }
-    else {
+    if(location.val().trim() != '' && departReturn.val().trim() != '') {
         window.location.href = "flightListing.html"
     }
 }
@@ -409,7 +409,8 @@ const validateFormStay = (e) => {
     }
     if (checkOut.val().trim() == '') {
         setError(checkOut)
-    } else {
+    } 
+    if(address.val().trim() != '' && checkIn.val().trim() != '' && checkOut.val().trim() != '') {
         window.location.href = "hotelListing.html"
     }
 } 
