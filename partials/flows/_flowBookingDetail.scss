@@ -1,0 +1,386 @@
+.booking-detail {
+    width: 100%;
+    position: relative;
+    margin-bottom: 12rem;
+}
+
+.detail {
+    &-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &-title {
+        &__main {
+            font-size: 2.4em;
+            @include style-height();
+            margin-bottom: 1.6rem;
+        }
+
+        &__sub {
+            font-size: 1.4em;
+            color: rgba(17, 34, 17, 75%);
+            @include style-height();
+
+            &>i {
+                color: $black-green;
+            }
+        }
+    }
+
+    &-price {
+        &__main {
+            text-align: right;
+            font-size: 3.2em;
+            @include style-height();
+            margin-bottom: 1.6rem;
+        }
+
+        &--hotel {
+            color: #FF8682;
+        }
+    }
+
+    &-button {
+        display: flex;
+        align-items: center;
+        gap: 0 1.5rem;
+
+        &>a {
+            &:first-child {
+                width: 4.8rem;
+            }
+
+            &:last-child {
+                width: 15rem;
+            }
+        }
+    }
+
+    &-content {
+        &__main {
+            font-size: 2.4em;
+            @include style-height();
+        }
+
+        &__sub {
+            font-size: 2em;
+            @include style-height();
+            margin-bottom: 1.6rem;
+        }
+
+        &__des {
+            font-size: 1.4em;
+            line-height: 2rem;
+            letter-spacing: normal;
+        }
+    }
+
+    &-list {
+        padding-left: 2rem;
+        margin-bottom: 3.4rem;
+
+        &>li {
+            list-style: disc;
+            margin-bottom: 1.6rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &-info {
+        display: flex;
+        margin: 4rem 0 6.4rem;
+    }
+
+    &-times {
+        width: 24.6rem;
+        background-color: #ebf6f2;
+        padding: 2.4rem;
+        border-top-left-radius: 1.6rem;
+        border-bottom-left-radius: 1.6rem;
+        border: 1px solid #EAEAEA;
+        border-right-width: 0;
+    }
+
+    &-time {
+        margin-bottom: 1.6rem;
+
+        &:last-child {
+            margin-bottom: 0;
+            margin-top: 1.6rem;
+        }
+
+        &__main {
+            font-size: 3.2em;
+            @include style-height();
+            margin-bottom: 0.4rem;
+        }
+
+        &__des {
+            font-size: 1.2em;
+            opacity: 60%;
+        }
+
+        &__line {
+            display: block;
+            width: .5px;
+            height: 16px;
+            background-color: $black-green;
+            opacity: 25%;
+            transform: translateX(1.15rem) rotate(180deg);
+            margin-bottom: 3rem;
+            position: relative;
+
+
+            @include pseudo(before) {
+                width: 100%;
+                height: 100%;
+                background-color: $black-green;
+                left: -5.5px;
+                top: -13px;
+                transform: rotate(135deg);
+            }
+
+            @include pseudo(after) {
+                width: 100%;
+                height: 100%;
+                background-color: $black-green;
+                right: -5.5px;
+                top: -13px;
+                transform: rotate(225deg);
+            }
+
+            &:nth-child(2) {
+                background-color: $black-green;
+                transform: translateX(1.15rem);
+                margin-bottom: 0;
+                margin-top: 3rem;
+            }
+        }
+
+        &__icon {
+            width: 2.4rem;
+            height: 2.4rem;
+            overflow: hidden;
+            transform: rotate(90deg);
+            filter: invert(8%) sepia(11%) saturate(2525%) hue-rotate(71deg) brightness(102%) contrast(93%);
+            opacity: 20%;
+            margin: .8rem 0;
+
+            &>img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &--icon {
+            transform: rotate(0);
+        }
+    }
+
+    &-card {
+        width: 61rem;
+        border-top-right-radius: 1.6rem;
+        border-bottom-right-radius: 1.6rem;
+        border: 1px solid #EAEAEA;
+        border-left-width: 0;
+        overflow: hidden;
+    }
+
+    &-location {
+        width: 37.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2.4rem;
+        border-radius: 1.6rem;
+        border: 1px solid #EAEAEA;
+        position: relative;
+
+        &>img {
+            z-index: 1;
+        }
+
+        &--image {
+            width: 16.1rem;
+            height: 16.1rem;
+            object-fit: cover;
+        }
+    }
+}
+
+.card {
+    &-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $primary-color;
+        padding: 2.4rem;
+    }
+
+    &-user {
+        display: flex;
+        align-items: center;
+        gap: 0 1.6rem;
+
+        &__avatar {
+            width: 4.8rem;
+            height: 4.8rem;
+            overflow: hidden;
+            border-radius: 50%;
+
+            &>img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &-content {
+        &__name {
+            font-size: 2em;
+            @include style-height();
+        }
+        &__des,
+        &__sub {
+            font-size: 1.4em;
+            @include style-height();
+        }
+        &__sub {
+            width: 22.8rem;
+            text-align: right;
+        }
+    }
+
+    &-info {
+        padding: 2.4rem;
+        display: flex;
+        align-items: center;
+        gap: 0 3.2rem;
+
+        &__main {
+            font-size: 1.2em;
+            @include style-height();
+        }
+
+        &__sub {
+            font-size: 1.4em;
+            opacity: 60%;
+            @include style-height();
+        }
+        &--main {
+            font-size: 1.6em;
+            @include style-height();
+        }
+        &--sub {
+            font-size: 1.2em;
+            opacity: 60%;
+            @include style-height();
+        }
+    }
+
+    &-barcode {
+        display: flex;
+        justify-content: space-between;
+
+        &__main {
+            display: block;
+            font-size: 3.2em;
+            @include style-height();
+            margin-top: 4.05rem;
+            margin-left: 3rem;
+        }
+
+        &__des {
+            display: block;
+            font-size: 1.2rem;
+            @include style-height();
+        }
+
+        &__image {
+            margin-top: 4.9rem;
+        }
+    }
+}
+
+.location {
+    &-item {
+        display: flex;
+        align-items: center;
+        gap: 0 .8rem;
+        padding: .4rem .8rem .4rem .4rem;
+        background-color: $white;
+        border-radius: .4rem;
+        box-shadow: 0 2px 7px rgba(17, 34, 17, 6%);
+        @include transition-ease();
+        user-select: none;
+        z-index: 3;
+
+        &__image {
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: .2rem;
+            overflow: hidden;
+
+            &>img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+
+        @include pseudo(before){
+            top: -6px;
+            left: 24%;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 12px solid $white;
+            border-radius: .7px;
+            box-shadow: 0 2px 7px rgba(17, 34, 17, 6%);
+            z-index: -1;
+        }
+
+        &:last-child::before {
+            top: 80%;
+            left: 60%;
+            border-bottom: 12px solid $white;
+            transform: rotate(180deg);
+        }
+
+        &:hover {
+            box-shadow: 0 4px 16px rgba(17, 34, 17, 6%),
+            0 4px 18px rgba(17, 34, 17, 20%),
+            0 4px 20px rgba(17, 34, 17, 40%);
+            transform: scale(1.2);
+        }
+
+    }
+
+    &-content {
+        &__main {
+            font-size: 0.8em;
+            @include style-height();
+        }
+
+        &__des {
+            font-size: 0.4em;
+            @include style-height();
+        }
+    }
+}
+.-item-01 {
+    position: absolute;
+    bottom: 6rem;
+    left: 4rem;
+}
+.-item-02 {
+    position: absolute;
+    top: 4.5rem;
+    right: 4rem;
+}
