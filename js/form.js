@@ -36,7 +36,7 @@ $(document).ready(function () {
     } else {
         pathSlice = windowPathName.slice(windowPathName.lastIndexOf('/') + 1)
     }
-    console.log(pathSlice)
+    // console.log(pathSlice)   
 
     form.on('submit', function (e) {
         e.preventDefault();
