@@ -4812,6 +4812,9 @@ body::-webkit-scrollbar {
   .account__banner {
     width: 100%;
   }
+  input[type=date] {
+    background-position: 98%;
+  }
   .auth {
     gap: 0 5rem;
   }

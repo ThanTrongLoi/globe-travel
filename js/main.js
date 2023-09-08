@@ -24,15 +24,15 @@ $(document).ready(function () {
     }
     headerUser.find('.header-account__user').on('click', function () {
         headerUser.find('.user-info').addClass('user-info--active')
-    
+
     })
     $(window).mouseup(function (event) {
         // console.log(event)
-            var pol = headerUser.find('.user-info')
-            if (event.target != pol && event.target.parentElement != pol) {
-                pol.removeClass('user-info--active')
-            }
-        
+        var pol = headerUser.find('.user-info')
+        if (event.target != pol && event.target.parentElement != pol) {
+            pol.removeClass('user-info--active')
+        }
+
     })
     // $(window).on('load', function () {
     // })
@@ -47,14 +47,14 @@ $(document).ready(function () {
 
     const btnsHeader = $('.header-left a')
 
-    btnsHeader.each(function(){
-        $(this).click(function(e){
-            if($(this).attr("id") == "flights"){
-                localStorage.setItem('isFlight','true')
+    btnsHeader.each(function () {
+        $(this).click(function (e) {
+            if ($(this).attr("id") == "flights") {
+                localStorage.setItem('isFlight', 'true')
                 localStorage.removeItem('isStay')
-                
-            }else {
-                localStorage.setItem('isStay','true')
+
+            } else {
+                localStorage.setItem('isStay', 'true')
                 localStorage.removeItem('isFlight')
             }
         })
@@ -63,19 +63,29 @@ $(document).ready(function () {
     const isStay = localStorage.getItem('isStay')
     const link = window.location.href.slice(window.location.href.lastIndexOf('/') + 1)
     // console.log(link)
-    if( link != "index.html" ||  link != "/"){
-        if(isFlight){
+    if (link != "index.html" || link != "/") {
+        if (isFlight) {
             $('#stays').removeClass('header-active')
             $('#flights').addClass('header-active')
         }
-        if(isStay){
+        if (isStay) {
             $('#flights').removeClass('header-active')
             $('#stays').addClass('header-active')
         }
     }
+    if (link == "index.html" || link == "" || link == "#" ) {
+        localStorage.removeItem('isStay')
+        localStorage.removeItem('isStay')
+        timeout = setTimeout(function () {
+            window.location.reload()
+        }, 1000)
+        clearInterval(timeout)
+        $('#stays').removeClass('header-active')
+        $('#flights').removeClass('header-active')
+    }
 });
 
-function logout(){
+function logout() {
     localStorage.removeItem('isUser')
     alert('Logout Success')
     document.location.reload(true)
