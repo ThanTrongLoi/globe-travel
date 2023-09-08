@@ -88,7 +88,7 @@ $(document).ready(function () {
 
     const filterIcons = $('.filter-icon')
     filterIcons.each(function () {
-        console.log($(this).parent())
+        // console.log($(this).parent())
         $(this).click(function () {
             $(this).parent().children().not('.filter__main, .filter-icon').toggle('slow')
         })

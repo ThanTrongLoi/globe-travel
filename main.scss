@@ -618,6 +618,12 @@ body::-webkit-scrollbar {
         }
     }
 
+    button {
+        &[id=search]{
+            width: 100%;
+        }
+    }
+
     // ================== login
 
     .auth {

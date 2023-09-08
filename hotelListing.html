@@ -117,34 +117,24 @@
         </div>
     </header>
     <main>
-        <form class="flow-form container" method="post" action="#">
+        <form class="flow-form container" onsubmit="validateFormStay()">
             <!-- <fieldset class="hero-search__form"> -->
-            <div class="hero-search__input hero-input--flight">
-                <input id="address" name="address" type="text" value="Istanbul, Turkey">
+            <div id="input-group" class="hero-search__input hero-input--flight">
+                <input id="address" name="address" type="text" placeholder="Istanbul, Turkey">
                 <label class="-regular" for="address">Enter Destination</label>
                 <div class="btn__icon hero-search__icon">
                     <img src="assets/icons/vector/ion_swap-horizontal.svg" alt="">
                 </div>
             </div>
-            <div class="hero-search__input hero-input--hotel">
-                <div class="btn__icon hero-search__icon">
-                    <img src="assets/icons/fill/calendar.svg" alt="">
-                </div>
+            <div id="input-group" class="hero-search__input hero-input--hotel">
                 <input type="date" name="check-in" id="check-in">
                 <label class="-regular" for="check-in">Check In</label>
                 
             </div>
-            <div class="hero-search__input hero-input--hotel">
+            <div id="input-group" class="hero-search__input hero-input--hotel">
                 <input id="check-out" name="check-out" type="date">
                 <label class="-regular" for="check-out">Check Out</label>
-                <div class="btn__icon hero-search__icon">
-                    <img src="assets/icons/fill/calendar.svg" alt="">
-                </div>
             </div>
-            <!-- <div class="hero-search__input hero-input--hotel">
-                <input id="pass-class" type="text" value="1 Passenger, Economy">
-                <label class="-regular" for="pass-class">Passenger - Class</label>
-            </div> -->
             <div class="drop-down drop-down--hotel">
                 <p class="btn__text -regular">Rooms & Guests</p>
                 <span id="room" class="drop-down__main -regular">1</span>
@@ -176,8 +166,8 @@
                     <img src="assets/icons/vector/chevron_down.svg" alt="icon-down">
                 </div>
             </div>
-            <a href="#" class="btn btn--fill"><i class="fa-solid fa-magnifying-glass"></i></a>
-            <!-- </fieldset> -->
+            <button id="search" class="btn btn--fill"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <!-- </fieldset> -->
         </form>
         <span class="flow-filter__icon -trade-gothic -semi-bold">Filters <i class="fa-solid fa-filter"></i></span>
         <section id="flow-content" class="flow-content container">

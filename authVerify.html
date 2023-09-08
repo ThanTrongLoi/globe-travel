@@ -31,7 +31,7 @@
                     <h2 class="auth-form__main -trade-gothic -bold">Verify code</h2>
                     <p class="auth-form__des -regular">An authentication code has been sent to your email.</p>
                 </div>
-                <form action="authNewpassword.html" id="auth-form">
+                <form onsubmit="validateFormVerify()" id="auth-form">
                     <fieldset class="auth-form__form">
                         <div id="input-group" class="auth-form__input -regular">
                             <input id="code" type="text" placeholder="VD: 7789BM6X">

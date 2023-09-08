@@ -1106,6 +1106,11 @@ input[type=file] {
 
 button {
   font-size: 1.4em;
+  cursor: pointer;
+}
+button[id=search] {
+  min-width: 5.6rem;
+  height: 5.6rem;
 }
 
 #myTabs {
@@ -5047,6 +5052,9 @@ body::-webkit-scrollbar {
   }
   .history-box__time > span {
     width: 1rem;
+  }
+  button[id=search] {
+    width: 100%;
   }
   .auth-form {
     background-color: #ffffff;

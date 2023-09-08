@@ -1,26 +1,10 @@
 $(document).ready(function () {
     const form = $('form')
     const inputContainers = $('#input-group input')
-    // auth
-    const email = $('#email')
+    
     const password = $('#password')
     const newPassword = $('#new-password')
     const rePassword = $('#re-password')
-    const firstName = $('#firstName')
-    const lastName = $('#lastName')
-    const phoneNumber = $('#phoneNumber')
-    const code = $('#code')
-    // add payment method
-    const cardNumber = $('#cardNumber')
-    const expDate = $('#expDate')
-    const cvc = $('#cvc')
-    const nameCard = $('#nameCard')
-    const country = $('#country')
-    //flight
-    const economy = $('#Economy')
-    const firstClass = $('#First-Class')
-    const businessClass = $('#Busines-Class')
-    //hotel
 
     const showPass = $('#showPassword')
     const showNewPass = $('#showNewPassword')
@@ -30,83 +14,83 @@ $(document).ready(function () {
     toggleShowPass(showRePass, rePassword)
 
     const windowPathName = window.location.href
-    let pathSlice;
-    if (windowPathName.includes("?")) {
-        pathSlice = windowPathName.slice(windowPathName.lastIndexOf('/') + 1, windowPathName.indexOf('?'))
-    } else {
-        pathSlice = windowPathName.slice(windowPathName.lastIndexOf('/') + 1)
-    }
+    // let pathSlice;
+    // if (windowPathName.includes("?")) {
+    //     pathSlice = windowPathName.slice(windowPathName.lastIndexOf('/') + 1, windowPathName.indexOf('?'))
+    // } else {
+    //     pathSlice = windowPathName.slice(windowPathName.lastIndexOf('/') + 1)
+    // }
     // console.log(pathSlice)   
 
     form.on('submit', function (e) {
         e.preventDefault();
         // validateInputs()
-        switch (pathSlice) {
-            case "authLogin.html":
-                validateFormLogin();
-                if (isFormValid()) {
-                    if (login()) {
-                        localStorage.setItem("isUser", true)
-                        setTimeout(() => {
-                            form.submit();
-                        }, 1000);
-                    }
-                } else {
-                    e.preventDefault();
-                    // localStorage.setItem("isUser", false)
-                }
-                break;
-            case "authSignup.html":
-                validateFormSignup()
-                if (isFormValid()) {
-                    onSignup();
-                    form.submit();
-                } else {
-                    e.preventDefault();
-                }
-                break;
-            case "addPayment.html":
-                validateFormAddPayment()
-                if (isFormValid()) {
-                    form.submit();
-                } else {
-                    e.preventDefault();
-                }
-                break;
-            case "authForgotpassword.html":
-                validateFormForgotPassword()
-                if (isFormValid()) {
-                    form.submit();
-                } else {
-                    e.preventDefault();
-                }
-                break;
-            case "authVerify.html":
-                validateFormVerify()
-                if (isFormValid()) {
-                    form.submit();
-                } else {
-                    e.preventDefault();
-                }
-                break;
-            case "authNewpassword.html":
-                validateFormNewPassword()
-                if (isFormValid()) {
-                    form.submit();
-                } else {
-                    e.preventDefault();
-                }
-                break;
-            case "flight.html":
-                validateFormFlight()
-                if (isFormValid()) {
-                    form.submit();
-                } else {
-                    e.preventDefault();
-                }
-                break;
-            default:
-        }
+        // switch (pathSlice) {
+        //     case "authLogin.html":
+        //         validateFormLogin();
+        //         if (isFormValid()) {
+        //             if (login()) {
+        //                 localStorage.setItem("isUser", true)
+        //                 setTimeout(() => {
+        //                     form.submit();
+        //                 }, 1000);
+        //             }
+        //         } else {
+        //             e.preventDefault();
+        //             // localStorage.setItem("isUser", false)
+        //         }
+        //         break;
+        //     case "authSignup.html":
+        //         validateFormSignup()
+        //         if (isFormValid()) {
+        //             onSignup();
+        //             form.submit();
+        //         } else {
+        //             e.preventDefault();
+        //         }
+        //         break;
+        //     case "addPayment.html":
+        //         validateFormAddPayment()
+        //         if (isFormValid()) {
+        //             form.submit();
+        //         } else {
+        //             e.preventDefault();
+        //         }
+        //         break;
+        //     case "authForgotpassword.html":
+        //         validateFormForgotPassword()
+        //         if (isFormValid()) {
+        //             form.submit();
+        //         } else {
+        //             e.preventDefault();
+        //         }
+        //         break;
+        //     case "authVerify.html":
+        //         validateFormVerify()
+        //         if (isFormValid()) {
+        //             form.submit();
+        //         } else {
+        //             e.preventDefault();
+        //         }
+        //         break;
+        //     case "authNewpassword.html":
+        //         validateFormNewPassword()
+        //         if (isFormValid()) {
+        //             form.submit();
+        //         } else {
+        //             e.preventDefault();
+        //         }
+        //         break;
+        //     case "flight.html":
+        //         validateFormFlight()
+        //         if (isFormValid()) {
+        //             form.submit();
+        //         } else {
+        //             e.preventDefault();
+        //         }
+        //         break;
+        //     default:
+        // }
     })
 
     inputContainers.on('input', function (e) {
@@ -117,158 +101,6 @@ $(document).ready(function () {
             $(this).removeClass('success')
         }
     })
-
-    const isFormValid = () => {
-        let result = false
-        inputContainers.each(function () {
-            if ($(this).hasClass('success')) result = true
-            else result = false
-        })
-        return result
-    }
-    const validateFormLogin = () => {
-        if (email.val().trim() == "") {
-            setError(email)
-        } else if (isValidEmail(email)) {
-            setSuccess(email)
-        }
-        if (password.val().trim() == "") {
-            setError(password)
-        }
-
-    }
-    const login = () => {
-
-        const user = localStorage.getItem('user-account')
-        const data = JSON.parse(user)
-        console.log(data)
-
-        if (email.val().trim() == data.email && password.val().trim() == data.password) {
-            alert('success')
-            return true
-        } else if (email.val().trim() == '' || email.val().trim() != data.email) {
-            alert('Wrong Email')
-            return false
-        }
-        // else if (password.val().trim() == '' || password.val().trim() != data.password) {
-        //     alert('Wrong Password')
-        //     return false
-        // }else {
-        //     alert('Invalid Email and Password')
-        //     return false
-        // }
-        //     return true
-        // } else {
-        //     // setTimeout(function () {
-        //     //     $("#alert").fadeOut(3000);
-        //     // }, 4000);
-        //     return false
-        // }
-    }
-
-    const validateFormSignup = () => {
-        if (firstName.val().trim() == "") {
-            setError(firstName)
-        }
-        if (lastName.val().trim() == "") {
-            setError(lastName)
-        }
-
-        if (phoneNumber.val().trim() == "") {
-            setError(phoneNumber)
-        }
-        if (email.val().trim() == "") {
-            setError(email)
-        } else if (isValidEmail(email)) {
-            setSuccess(email)
-        }
-        if (password.val().trim() == "") {
-            setError(password)
-        }
-        if (rePassword.val().trim() == "") {
-            setError(rePassword)
-        } else if (rePassword.val().trim() == password.val().trim()) {
-            setSuccess(rePassword)
-        } else {
-            setError(rePassword)
-            alert('password and confirm password do not match')
-        }
-    }
-    const onSignup = () => {
-        let user = {
-            firstName: firstName.val().trim(),
-            lastName: lastName.val().trim(),
-            phoneNumber: phoneNumber.val().trim(),
-            email: email.val().trim(),
-            password: password.val().trim(),
-        }
-
-        let json = JSON.stringify(user)
-        localStorage.setItem("user-account", json)
-        console.log(json)
-    }
-    const validateFormAddPayment = () => {
-        if (cardNumber.val().trim() == "") {
-            setError(cardNumber)
-        }
-        if (expDate.val().trim() == "") {
-            setError(expDate)
-        }
-
-        if (cvc.val().trim() == "") {
-            setError(cvc)
-        }
-        if (nameCard.val().trim() == "") {
-            setError(nameCard)
-        }
-        if (country.val().trim() == "") {
-            setError(country)
-        }
-    }
-    const validateFormForgotPassword = () => {
-        if (email.val().trim() == "") {
-            setError(email)
-        } else if (isValidEmail(email)) {
-            setSuccess(email)
-        }
-    }
-    const validateFormVerify = () => {
-        if (code.val().trim() == '') {
-            setError(code)
-        }
-    }
-
-    const validateFormNewPassword = () => {
-        if (newPassword.val().trim() == '') {
-            setError(newPassword)
-        }
-        if (rePassword.val().trim() == '') {
-            setError(rePassword)
-        } else if (rePassword.val().trim() == newPassword.val().trim()) {
-            setSuccess(rePassword)
-        } else {
-            setError(rePassword)
-            alert('password and confirm password do not match')
-        }
-    }
-    // const validateFormFlight = () => {
-    //     if (location.val().trim() == '') {
-    //         setError(location)
-    //     }
-    //     if (departReturn.val().trim() == '') {
-    //         setError(departReturn)
-    //     }
-
-    // }
-
-    
-
-    const isValidEmail = email => {
-        const reg = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-
-        return reg.test(email);
-    }
-
 
     const radBtnsClass = $('input[name=classify]')
 
@@ -396,20 +228,175 @@ const setSuccess = el => {
     el.addClass('success')
     el.removeClass('error')
 }
+const isValidEmail = email => {
+    const reg = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+    return reg.test(email);
+}
+
+const validateFormLogin = () => {
+
+    const email = $('#email')
+    const password = $('#password')
+
+    const user = localStorage.getItem('user-account')
+    const data = JSON.parse(user)
+
+    if (email.val().trim() == "") {
+        setError(email)
+    } else if (isValidEmail(email.val().trim())) {
+        setSuccess(email)
+    }
+    if (password.val().trim() == "") {
+        setError(password)
+    }
+    if (email.val().trim() == data.email && password.val().trim() == data.password) {
+        alert('success')
+        localStorage.setItem('isUser',true)
+        window.location.href = 'index.html'
+        // return true
+    } else if (email.val().trim() != '' && email.val().trim() != data.email) {
+        alert('Wrong Email')
+        // return false
+    }
+}
+
+const validateFormSignup = () => {
+    const email = $('#email')
+    const password = $('#password')
+    const rePassword = $('#re-password')
+    const firstName = $('#firstName')
+    const lastName = $('#lastName')
+    const phoneNumber = $('#phoneNumber')
+    if (firstName.val().trim() == "") {
+        setError(firstName)
+    }
+    if (lastName.val().trim() == "") {
+        setError(lastName)
+    }
+
+    if (phoneNumber.val().trim() == "") {
+        setError(phoneNumber)
+    }
+    if (email.val().trim() == "") {
+        setError(email)
+    } else if (isValidEmail(email.val().trim())) {
+        setSuccess(email)
+    }
+    if (password.val().trim() == "") {
+        setError(password)
+    }
+    if (rePassword.val().trim() == "") {
+        setError(rePassword)
+    } else if (rePassword.val().trim() == password.val().trim()) {
+        setSuccess(rePassword)
+    } else {
+        setError(rePassword)
+        alert('password and confirm password do not match')
+    }
+    let user = {
+        firstName: firstName.val().trim(),
+        lastName: lastName.val().trim(),
+        phoneNumber: phoneNumber.val().trim(),
+        email: email.val().trim(),
+        password: password.val().trim(),
+    }
+
+    if (firstName.val().trim() != "" &&
+        lastName.val().trim() != "" &&
+        phoneNumber.val().trim() != "" &&
+        email.val().trim() != "" &&
+        password.val().trim() != "" &&
+        rePassword.val().trim() != "" &&
+        rePassword.val().trim() == password.val().trim()) {
+
+        let json = JSON.stringify(user)
+        localStorage.setItem("user-account", json)
+        window.location.href = 'addPayment.html'
+    }
+}
+
+const validateFormAddPayment = () => {
+    const cardNumber = $('#cardNumber')
+    const expDate = $('#expDate')
+    const cvc = $('#cvc')
+    const nameCard = $('#nameCard')
+    const country = $('#country')
+    if (cardNumber.val().trim() == "") {
+        setError(cardNumber)
+    }
+    if (expDate.val().trim() == "") {
+        setError(expDate)
+    }
+
+    if (cvc.val().trim() == "") {
+        setError(cvc)
+    }
+    if (nameCard.val().trim() == "") {
+        setError(nameCard)
+    }
+    if (country.val().trim() == "") {
+        setError(country)
+    }
+    if (cardNumber.val().trim() != "" &&
+    expDate.val().trim() != "" &&
+    cvc.val().trim() != "" && 
+    nameCard.val().trim() != "" &&
+    country.val().trim() != ""){
+        window.location.href = "authLogin.html"
+    }
+}
+const validateFormForgotPassword = () => {
+    const email = $('#email')
+    if (email.val().trim() == "") {
+        setError(email)
+    } else if (isValidEmail(email.val().trim())) {
+        setSuccess(email)
+        window.location.href = 'authVerify.html'
+    }
+}
+const validateFormVerify = () => {
+    const code = $('#code')
+    if (code.val().trim() == '') {
+        setError(code)
+    }else {
+        window.location.href = 'authNewpassword.html'
+    }
+}
+
+const validateFormNewPassword = () => {
+    const newPassword = $('#new-password')
+    const rePassword = $('#re-password')
+    if (newPassword.val().trim() == '') {
+        setError(newPassword)
+    }
+    if (rePassword.val().trim() == '') {
+        setError(rePassword)
+    } else if (rePassword.val().trim() != newPassword.val().trim()) {
+        setError(rePassword)
+        alert('password and confirm password do not match')
+    } 
+    if (newPassword.val().trim() != '' &&
+    rePassword.val().trim() != '' && rePassword.val().trim() == newPassword.val().trim()){
+        window.location.href = 'authLogin.html'
+    }
+}
 
 const validateFormFlight = () => {
     const location = $('#location')
     const departReturn = $('#depart-return')
     if (location.val().trim() == '') {
         setError(location)
+        console.log('error location')
     }
     if (departReturn.val().trim() == '') {
         setError(departReturn)
+        console.log('error time')
     }
     else {
         window.location.href = "flightListing.html"
     }
-} 
+}
 const validateFormStay = (e) => {
     const address = $('#address')
     const checkIn = $('#check-in')
@@ -422,7 +409,7 @@ const validateFormStay = (e) => {
     }
     if (checkOut.val().trim() == '') {
         setError(checkOut)
-    }else {
+    } else {
         window.location.href = "hotelListing.html"
     }
 } 

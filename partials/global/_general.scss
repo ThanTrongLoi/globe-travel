@@ -635,6 +635,12 @@ input[type="file"] {
 
 button {
     font-size: 1.4em;
+    cursor: pointer;
+
+    &[id=search]{
+        min-width: 5.6rem;
+        height: 5.6rem;
+    }
 }
 
 

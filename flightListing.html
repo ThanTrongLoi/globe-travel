@@ -116,10 +116,10 @@
         </div>
     </header>
     <main>
-        <form class="flow-form container" method="post" action="#">
+        <form id="search" onsubmit="validateFormFlight()" class="flow-form container" >
             <!-- <fieldset class="hero-search__form"> -->
-            <div class="hero-search__input hero-input--flight">
-                <input id="location" type="text" value="Lahore - Karachi">
+            <div id="input-group" class="hero-search__input hero-input--flight">
+                <input id="location" type="text" placeholder="Lahore - Karachi">
                 <label class="-regular" for="location">From - To</label>
                 <div class="btn__icon hero-search__icon">
                     <img src="assets/icons/vector/ion_swap-horizontal.svg" alt="">
@@ -137,8 +137,8 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-search__input hero-input--flight">
-                <input id="depart-return" type="text" value="07 Nov 22 - 13 Nov 22">
+            <div id="input-group" class="hero-search__input hero-input--flight">
+                <input id="depart-return" type="text" placeholder="07 Nov 22 - 13 Nov 22">
                 <label class="-regular" for="depart-return">Depart - Return</label>
             </div>
             <div class="drop-down">
@@ -165,7 +165,8 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn btn--fill"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <button id="search" href="#" class="btn btn--fill" type="submit" value="">
+            <i class="fa-solid fa-magnifying-glass"></i></button>
             <!-- </fieldset> -->
         </form>
         <span class="flow-filter__icon -trade-gothic -semi-bold">Filters <i class="fa-solid fa-filter"></i></span>
@@ -703,8 +704,8 @@
         </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="js/flowListing.js" type="text/javascript"></script>
     <script src="js/form.js" type="text/javascript"></script>
+    <script src="js/flowListing.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
 </body>
 
