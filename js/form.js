@@ -39,7 +39,7 @@ $(document).ready(function () {
     console.log(pathSlice)
 
     form.on('submit', function (e) {
-        e.preventDefault();
+        // e.preventDefault();
         // validateInputs()
         switch (pathSlice) {
             case "authLogin.html":
