@@ -2940,10 +2940,10 @@ main {
   gap: 0 1.6rem;
   margin-top: 1.6rem;
 }
-.flow-button > a:nth-child(1) {
+.flow-button > a:nth-child(1), .flow-button > a:nth-child(2) {
   width: 4.8rem;
 }
-.flow-button > a:nth-child(2) {
+.flow-button > a:last-child {
   width: 100%;
 }
 .flow-price__des {

@@ -93,4 +93,20 @@ $(document).ready(function () {
             $(this).parent().children().not('.filter__main, .filter-icon').toggle('slow')
         })
     })
+
+    let isUser = localStorage.getItem('isUser')
+    const heart = $('.flow-button #heart')
+    console.log(heart)
+    heart.each(function(){
+        console.log($(this))
+        $(this).click(function(e){
+            e.preventDefault();
+            if(isUser){
+                // e.preventDefault();
+                $(this).children('img').toggle()
+            }else {
+                alert('Please login to add favorite')
+            }
+        })
+    })
 })
