@@ -23,22 +23,22 @@ $scroll-green: #d4fff0;
         @return (linear-gradient(to bottom,
                 rgba(0, 0, 0, 60%),
                 rgba(0, 0, 0, 0)),
-            url('/assets/images/ld-banner.png'));
+            url('../assets/images/ld-banner.png'));
     } @else if ($page == "flight") {
         @return (linear-gradient(90deg,
         rgba(0, 35, 77, 63%),
         rgba(0, 35, 77, 14%),
         rgba(0, 35, 77, 0)),
-        url('/assets/images/flight-banner.png'));
+        url('../assets/images/flight-banner.png'));
     } @else if ($page == "hotel"){
         @return (linear-gradient(90deg,
         rgba(0, 35, 77, 63%),
         rgba(0, 35, 77, 14%),
         rgba(0, 35, 77, 0)),
-        url('/assets/images/hotel-banner.png'));
+        url('../assets/images/hotel-banner.png'));
     } @else if ($page == "account"){
         @return (
-        url('/assets/images/acc-banner.png')); //account
+        url('../assets/images/acc-banner.png')); //account
     } @else {
         @error "Unknown address image"
     }
