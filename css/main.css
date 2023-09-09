@@ -5135,7 +5135,7 @@ body::-webkit-scrollbar {
     bottom: -10rem;
   }
   .hero-search--ld {
-    bottom: 2rem;
+    bottom: -5rem;
   }
   .hero-search__input {
     width: 100%;
@@ -5151,6 +5151,19 @@ body::-webkit-scrollbar {
   }
   .drop-down--hotel {
     padding-left: 8rem;
+  }
+  .drop-down-item__heading {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    gap: 0 2.4rem;
+  }
+  .drop-down-item__content article {
+    padding-left: 2rem;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    gap: 0 6rem;
   }
   #myTabs .tab-label {
     padding-left: 4.8rem;

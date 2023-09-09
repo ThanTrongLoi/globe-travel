@@ -717,7 +717,7 @@ body::-webkit-scrollbar {
             max-width: 95%;
             bottom: -10rem;
             &--ld {
-                bottom: 2rem;
+                bottom: -5rem;
             }
             &__input{
                 width: 100%;
@@ -738,6 +738,19 @@ body::-webkit-scrollbar {
 
         &--hotel {
             padding-left: 8rem;
+        }
+        &-item{
+            &__heading {
+                justify-content: flex-start;
+                gap: 0 2.4rem;
+            }
+            &__content {
+                article {
+                    padding-left: 2rem;
+                    justify-content: flex-start;
+                    gap: 0 6rem;
+                }
+            }
         }
     }
     #myTabs{

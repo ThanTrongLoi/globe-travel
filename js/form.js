@@ -322,6 +322,13 @@ const validateFormAddPayment = () => {
     const cvc = $('#cvc')
     const nameCard = $('#nameCard')
     const country = $('#country')
+    const windowPathName = window.location.href
+    let pathSlice;
+    if (windowPathName.includes("?")) {
+        pathSlice = windowPathName.slice(windowPathName.lastIndexOf('/') + 1, windowPathName.indexOf('?'))
+    } else {
+        pathSlice = windowPathName.slice(windowPathName.lastIndexOf('/') + 1)
+    }
     if (cardNumber.val().trim() == "") {
         setError(cardNumber)
     }
@@ -343,7 +350,11 @@ const validateFormAddPayment = () => {
     cvc.val().trim() != "" && 
     nameCard.val().trim() != "" &&
     country.val().trim() != ""){
-        window.location.href = "authLogin.html"
+        if(pathSlice == "flightBooking.html" || pathSlice == "hotelBooking.html"){
+            window.location.reload(true)
+        }else {
+            window.location.href = "authLogin.html"
+        }
     }
 }
 const validateFormForgotPassword = () => {
