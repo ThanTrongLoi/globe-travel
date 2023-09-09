@@ -715,7 +715,7 @@ body::-webkit-scrollbar {
         }
         &-search{
             max-width: 95%;
-            bottom: -10rem;
+            bottom: -15rem;
             &--ld {
                 bottom: -5rem;
             }
@@ -773,7 +773,7 @@ body::-webkit-scrollbar {
         width: 95%;
     }
     .plan {
-        margin-top: 4rem;
+        margin-top: 10rem;
         &-place {
             grid-template-columns: 1fr;
         }

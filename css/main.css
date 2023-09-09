@@ -5132,7 +5132,7 @@ body::-webkit-scrollbar {
   }
   .hero-search {
     max-width: 95%;
-    bottom: -10rem;
+    bottom: -15rem;
   }
   .hero-search--ld {
     bottom: -5rem;
@@ -5181,7 +5181,7 @@ body::-webkit-scrollbar {
     width: 95%;
   }
   .plan {
-    margin-top: 4rem;
+    margin-top: 10rem;
   }
   .plan-place {
     grid-template-columns: 1fr;
