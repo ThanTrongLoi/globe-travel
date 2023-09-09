@@ -57,18 +57,20 @@ $(document).ready(function () {
 
 
     const flowFilterIcon = $('.flow-filter__icon')
+    console.log(flowFilterIcon)
     const closeFilter = $('#close-filter')
     const filter = $('.flow-filter')
-    $(window).resize(function () {
+    $(window).on('load',function () {
         let width = $(window).width()
-        if (width < 1280) {
-            console.log(false)
+        if (width < 650) {
+            console.log('<650')
             // filter.addClass('flow-filter--res')
             flowFilterIcon.on('click', function () {
                 filter.css({
                     visibility: "visible",
                     opacity: 1,
-                    width: "80%",
+                    width: "100%",
+                    right: 0,
                 })
             })
             closeFilter.on('click', function () {
@@ -76,10 +78,34 @@ $(document).ready(function () {
                     visibility: "hidden",
                     opacity: 0,
                     width: 0,
+                    right: "-100%",
                 })
             })
 
-        } else {
+        } 
+        else if (650 < width < 1280) {
+            console.log('650 < width < 1280')
+            // filter.addClass('flow-filter--res')
+            flowFilterIcon.on('click', function () {
+                filter.css({
+                    visibility: "visible",
+                    opacity: 1,
+                    width: "80%",
+                    right: 0,
+                })
+            })
+            closeFilter.on('click', function () {
+                filter.css({
+                    visibility: "hidden",
+                    opacity: 0,
+                    width: 0,
+                    right: "-100%",
+                })
+            })
+
+        }
+        
+        else {
             console.log(true)
             // filter.removeClass('flow-filter--res')
             filter.removeAttr('style')
@@ -96,9 +122,9 @@ $(document).ready(function () {
 
     let isUser = localStorage.getItem('isUser')
     const heart = $('.flow-button #heart')
-    console.log(heart)
+    // console.log(heart)
     heart.each(function(){
-        console.log($(this))
+        // console.log($(this))
         $(this).click(function(e){
             e.preventDefault();
             if(isUser){

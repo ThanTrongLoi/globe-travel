@@ -89,5 +89,11 @@ function logout() {
     localStorage.removeItem('isUser')
     alert('Logout Success')
     document.location.reload(true)
+    if(window.location.href.slice(window.location.href.lastIndexOf('/') + 1) == "account.html"){
+        window.location.href = "index.html"
+    }else {
+
+    document.location.reload(true)
+    }
 }
 

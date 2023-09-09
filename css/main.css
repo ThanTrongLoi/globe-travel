@@ -2361,7 +2361,7 @@ main {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 100;
+  z-index: 101;
 }
 
 .--popup {
@@ -4739,7 +4739,7 @@ body::-webkit-scrollbar {
   .flow-filter {
     position: fixed;
     top: 0;
-    right: 0;
+    right: -100%;
     width: 0;
     max-width: 100vw;
     height: 100vh;
@@ -5105,5 +5105,208 @@ body::-webkit-scrollbar {
   }
   .footer-content__icon {
     margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 650px) {
+  html {
+    font-size: 38%;
+  }
+  .container {
+    width: 100%;
+  }
+  .header-logo {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    margin-right: 0;
+    display: none;
+  }
+  .header--ld {
+    padding: 2.4rem 2rem;
+  }
+  .hero--ld {
+    margin: 0;
+    border-radius: 0;
+  }
+  .hero-heading--ld {
+    display: none;
+  }
+  .hero-search {
+    max-width: 95%;
+    bottom: -10rem;
+  }
+  .hero-search--ld {
+    bottom: 2rem;
+  }
+  .hero-search__input {
+    width: 100%;
+  }
+  .hero-search__form {
+    gap: 2rem;
+  }
+  .hero-input--hotel:first-child > input {
+    padding-left: 8rem;
+  }
+  .drop-down {
+    width: 100%;
+  }
+  .drop-down--hotel {
+    padding-left: 8rem;
+  }
+  #myTabs .tab-label {
+    padding-left: 4.8rem;
+  }
+  #myTabs .tab-label--ld {
+    width: calc(100% / var(--j) - 2rem);
+  }
+  .heading-title {
+    width: 75%;
+  }
+  .heading-button {
+    right: 2rem;
+  }
+  #plan {
+    width: 95%;
+  }
+  .plan {
+    margin-top: 4rem;
+  }
+  .plan-place {
+    grid-template-columns: 1fr;
+  }
+  .place {
+    margin-top: 15rem;
+  }
+  .travel-one {
+    padding: 0 2rem;
+  }
+  .travel-one-box {
+    grid-template-columns: 1fr;
+  }
+  .travel-two {
+    padding: 0 2rem;
+  }
+  .flow-content {
+    padding: 0 2rem;
+  }
+  .flow-card--hotel {
+    height: auto;
+  }
+  .flow-card--hotel .flow-card__image {
+    width: 20rem;
+    height: auto;
+  }
+  .flow-hotel {
+    padding: 1.6rem;
+  }
+  .flight-check > label > span {
+    display: none;
+  }
+  .flight-image, .flight-detail {
+    padding: 0 2rem;
+  }
+  .flight-detail-heading {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 2rem 0;
+  }
+  .hotel-image, .hotel-overview, .hotel-rooms, .hotel-map, .hotel-amenities, .hotel-reviews {
+    padding: 0 2rem;
+  }
+  .hotel-review-content {
+    width: 80%;
+  }
+  .hotel-detail-line {
+    width: 100%;
+  }
+  .hotel-content {
+    width: 65%;
+  }
+  .recent {
+    padding: 0 2rem;
+    margin-top: 12rem;
+  }
+  .booking-heading {
+    margin-left: 2rem;
+  }
+  .booking {
+    padding: 0;
+  }
+  .booking-detail {
+    padding: 0 2rem;
+  }
+  .detail-info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .detail-times {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: center;
+        align-self: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 1.6rem;
+    border-right-width: 1px;
+  }
+  .detail-time {
+    margin: 0;
+  }
+  .detail-time:last-child {
+    margin-top: 0;
+  }
+  .detail-time__icon {
+    -webkit-transform: translateY(40%) rotate(0);
+            transform: translateY(40%) rotate(0);
+  }
+  .detail-time__line {
+    -webkit-transform: translateY(60%) rotate(90deg);
+            transform: translateY(60%) rotate(90deg);
+  }
+  .detail-time__line:nth-child(2) {
+    -webkit-transform: translateY(-50%) rotate(-90deg);
+            transform: translateY(-50%) rotate(-90deg);
+  }
+  .detail-card {
+    width: 100%;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 1.6rem;
+    border-left-width: 1px;
+  }
+  .account__banner {
+    border-radius: 0;
+  }
+  .account__top {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-left: 4rem;
+  }
+  .account__heading {
+    padding-left: 2rem;
+  }
+  .history-box__time {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 1.6rem 0;
+  }
+  .--popup {
+    width: 95%;
+    z-index: 101;
   }
 }

@@ -191,7 +191,7 @@ body::-webkit-scrollbar {
         &-filter {
             position: fixed;
             top: 0;
-            right: 0;
+            right: -100%;
             width: 0;
             max-width: 100vw;
             height: 100vh;
@@ -685,4 +685,234 @@ body::-webkit-scrollbar {
     }
 
 
+}
+
+@include media-sm {
+    html {
+        font-size: 38%;
+    }
+    .container {
+        width: 100%;
+    }
+    .header{
+        &-logo {
+            transform: scale(.5);
+            margin-right: 0;
+            display: none;
+        }
+        &--ld {
+            padding: 2.4rem 2rem;
+        }
+    }
+
+    .hero{
+        &--ld {
+            margin: 0;
+            border-radius: 0;
+        }
+        &-heading--ld {
+            display: none;
+        }
+        &-search{
+            max-width: 95%;
+            bottom: -10rem;
+            &--ld {
+                bottom: 2rem;
+            }
+            &__input{
+                width: 100%;
+            }
+            &__form {
+                gap: 2rem;
+            }
+        }
+        &-input--hotel {
+            &:first-child>input{
+                padding-left: 8rem;
+            }
+        }
+
+    }
+    .drop-down {
+        width: 100%;
+
+        &--hotel {
+            padding-left: 8rem;
+        }
+    }
+    #myTabs{
+        .tab-label {
+            padding-left: 4.8rem;
+            &--ld {
+                width: calc(100% / var(--j) - 2rem);
+            }
+        }
+    }
+    .heading {
+        &-title {
+            width: 75%;
+        }
+        &-button{
+            right: 2rem;
+        }
+    }
+    #plan {
+        width: 95%;
+    }
+    .plan {
+        margin-top: 4rem;
+        &-place {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .place {
+        margin-top: 15rem;
+    }
+    .travel {
+        &-one{
+            padding: 0 2rem;
+            &-box {
+                grid-template-columns: 1fr;
+            }
+        }
+        &-two {
+            padding: 0 2rem;
+        }
+    }
+
+    .flow {
+        &-content {
+            padding: 0 2rem;
+        }
+
+        &-card--hotel {
+            height: auto;
+
+            .flow-card__image {
+                width: 20rem;
+                height: auto;
+            }
+        }
+        &-hotel {
+            padding: 1.6rem;
+        }
+    }
+    .flight {
+        &-check{
+            &>label {
+                &>span {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .flight {
+        &-image,
+        &-detail {
+            padding: 0 2rem;
+        }
+        &-detail-heading {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2rem 0;
+        }
+    }
+    .hotel {
+        &-image,
+        &-overview,
+        &-rooms,
+        &-map,
+        &-amenities,
+        &-reviews {
+            padding: 0 2rem;
+        }
+        &-review-content {
+            width: 80%;
+        }
+        &-detail-line {
+            width: 100%;
+        }
+
+        &-content {
+            width: 65%;
+        }
+    }
+    .recent {
+        padding: 0 2rem;
+        margin-top: 12rem;
+    }
+    .booking-heading {
+        margin-left: 2rem;
+    }
+    .booking {
+        padding: 0;
+        &-detail {
+            padding: 0 2rem;
+        }
+    }
+
+    .detail{
+        &-info {
+            flex-direction: column;
+        }
+        &-times {
+            width: 100%;
+            display: flex;
+            align-self: center;
+            justify-content: space-between;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 1.6rem;
+            border-right-width: 1px;
+        }
+        &-time {
+            margin: 0;
+            &:last-child {
+                margin-top: 0;
+            }
+            &__icon {
+                transform: translateY(40%) rotate(0);
+            }
+            &__line {
+                transform: translateY(60%) rotate(90deg);
+                &:nth-child(2){
+                transform: translateY(-50%) rotate(-90deg);
+                }
+            }
+        }
+        &-card {
+            width: 100%;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 1.6rem;
+            border-left-width: 1px;
+        }
+    }
+
+    .account{
+        &__banner {
+            border-radius: 0;
+        }
+        &__top {
+            align-items: flex-start;
+            padding-left: 4rem;
+        }
+        &__heading {
+            padding-left: 2rem;
+        }
+    }
+
+    .history{
+        &-box__time {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.6rem 0;
+        }
+    }
+
+    .--popup {
+        width: 95%;
+        z-index: 101;
+    }
+    input{}
 }
