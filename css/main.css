@@ -5132,7 +5132,6 @@ body::-webkit-scrollbar {
   }
   .hero-search {
     max-width: 95%;
-    bottom: -15rem;
   }
   .hero-search--ld {
     bottom: -10rem;
@@ -5242,7 +5241,7 @@ body::-webkit-scrollbar {
   }
   .recent {
     padding: 0 2rem;
-    margin-top: 12rem;
+    margin-top: 20rem;
   }
   .booking-heading {
     margin-left: 2rem;
