@@ -717,7 +717,7 @@ body::-webkit-scrollbar {
             max-width: 95%;
             bottom: -15rem;
             &--ld {
-                bottom: -5rem;
+                bottom: -10rem;
             }
             &__input{
                 width: 100%;
@@ -773,14 +773,15 @@ body::-webkit-scrollbar {
         width: 95%;
     }
     .plan {
-        margin-top: 10rem;
+        margin-top: 20rem;
         &-place {
             grid-template-columns: 1fr;
         }
     }
 
     .place {
-        margin-top: 15rem;
+        margin-top: 20rem;
+        padding: 0 2rem;
     }
     .travel {
         &-one{
